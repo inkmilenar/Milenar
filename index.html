@@ -42,9 +42,13 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: clip;
     }
 
     body {
+      width: 100%;
+      max-width: 100vw;
+
       color: var(--text);
 
       font-family:
@@ -53,7 +57,7 @@
 
       font-weight: 300;
 
-      overflow-x: hidden;
+      overflow-x: clip;
 
       background:
         radial-gradient(
@@ -93,6 +97,12 @@
         );
 
       mix-blend-mode: multiply;
+    }
+
+    main {
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: clip;
     }
 
     a {
@@ -156,6 +166,7 @@
 
     .header-logo {
       display: block;
+      flex-shrink: 0;
     }
 
     .header-logo img {
@@ -171,11 +182,11 @@
     }
 
     .header-location {
-      font-size: 13px;
+      font-size: 15px;
 
-      font-weight: 400;
+      font-weight: 300;
 
-      letter-spacing: .19em;
+      letter-spacing: .12em;
 
       text-transform: uppercase;
 
@@ -191,6 +202,9 @@
     .intro {
       position: relative;
 
+      width: 100%;
+      max-width: 100%;
+
       min-height: 100vh;
 
       padding:
@@ -201,6 +215,8 @@
       display: flex;
 
       align-items: center;
+
+      overflow-x: clip;
     }
 
     .intro-grid {
@@ -369,21 +385,13 @@
 
     /* ========================================
        ESTRELA NA TRANSIÇÃO
-
-       São duas cópias da mesma estrela,
-       perfeitamente alinhadas.
-
-       A parte superior fica preta/cinza
-       sobre o creme.
-
-       A parte inferior fica branca
-       sobre o preto.
     ======================================== */
 
     .transition-star {
       position: relative;
 
       width: 100%;
+      max-width: 100vw;
       height: 0;
 
       z-index: 20;
@@ -406,6 +414,7 @@
       bottom: 0;
 
       width: var(--star-size);
+
       height:
         calc(var(--star-size) / 2);
 
@@ -440,6 +449,7 @@
       top: 0;
 
       width: var(--star-size);
+
       height:
         calc(var(--star-size) / 2);
 
@@ -476,6 +486,7 @@
       position: relative;
 
       width: 100%;
+      max-width: 100%;
 
       background:
         var(--dark);
@@ -488,7 +499,7 @@
         5%
         46px;
 
-      overflow: hidden;
+      overflow-x: clip;
     }
 
     .links-inner {
@@ -547,6 +558,8 @@
 
       color:
         rgba(255,255,255,.68);
+
+      white-space: nowrap;
     }
 
 
@@ -847,10 +860,6 @@
         width: 125px;
       }
 
-      .header-location {
-        font-size: 12px;
-      }
-
       .intro {
         min-height: 100vh;
 
@@ -949,6 +958,18 @@
     @media (max-width: 700px) {
 
 
+      /* BLOQUEIA QUALQUER MOVIMENTO LATERAL */
+
+      html,
+      body,
+      main {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+      }
+
+
+
       /* CABEÇALHO */
 
       .header {
@@ -958,6 +979,8 @@
           10px
           18px
           0;
+
+        overflow: hidden;
       }
 
       .header.scrolled {
@@ -967,18 +990,22 @@
       }
 
       .header-logo img {
-        width: 108px;
+        width: 103px;
       }
 
       .header.scrolled
       .header-logo img {
-        width: 100px;
+        width: 96px;
       }
 
       .header-location {
-        font-size: 9px;
+        font-size: 15px;
 
-        letter-spacing: .09em;
+        font-weight: 300;
+
+        letter-spacing: .06em;
+
+        white-space: nowrap;
       }
 
 
@@ -990,10 +1017,14 @@
 
         display: block;
 
+        width: 100%;
+
         padding:
           103px
           18px
           68px;
+
+        overflow-x: clip;
       }
 
       .intro-grid {
@@ -1002,6 +1033,8 @@
         flex-direction: column;
 
         gap: 0;
+
+        width: 100%;
       }
 
       .portrait-area {
@@ -1044,6 +1077,8 @@
       }
 
       .intro-content {
+        width: 100%;
+
         max-width: none;
       }
 
@@ -1083,8 +1118,17 @@
       /* ESTRELA */
 
       .transition-star {
+        width: 100%;
+        max-width: 100%;
+
         --star-size: 300px;
-        --star-right: -85px;
+        --star-right: -105px;
+      }
+
+      .star-top,
+      .star-bottom {
+        max-width:
+          var(--star-size);
       }
 
       .star-top img,
@@ -1097,14 +1141,23 @@
       /* LINKS */
 
       .links-section {
+        width: 100%;
+        max-width: 100%;
+
         padding:
           43px
           18px
           40px;
+
+        overflow-x: clip;
       }
 
       .links-heading {
         margin-bottom: 27px;
+      }
+
+      .links-heading-left {
+        max-width: 100%;
       }
 
       .links-title-image {
@@ -1120,11 +1173,14 @@
       }
 
       .links-description {
-        max-width: 210px;
+        width: max-content;
+        max-width: none;
 
         font-size: 13px;
 
         line-height: 1.4;
+
+        white-space: nowrap;
       }
 
 
@@ -1132,6 +1188,8 @@
       /* REDES */
 
       .social-grid {
+        width: 100%;
+
         grid-template-columns:
           repeat(2,minmax(0,1fr));
       }
@@ -1195,6 +1253,40 @@
         width: 18px;
         height: 18px;
       }
+    }
+
+
+
+    /* ========================================
+       CELULARES MAIS ESTREITOS
+    ======================================== */
+
+    @media (max-width: 390px) {
+
+      .header {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .header-logo img {
+        width: 96px;
+      }
+
+      .header.scrolled
+      .header-logo img {
+        width: 90px;
+      }
+
+      .header-location {
+        font-size: 14px;
+        letter-spacing: .035em;
+      }
+
+      .links-description {
+        font-size: 12px;
+        letter-spacing: .025em;
+      }
+
     }
 
 
@@ -1805,8 +1897,6 @@
 
   <script>
 
-    /* CABEÇALHO */
-
     const header =
       document.getElementById("header");
 
@@ -1836,8 +1926,6 @@
     updateHeader();
 
 
-
-    /* ENTRADA SUAVE */
 
     const revealElements =
       document.querySelectorAll(".reveal");
