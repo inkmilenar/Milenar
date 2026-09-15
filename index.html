@@ -2,21 +2,43 @@
 <html lang="pt-BR">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Milenar</title>
 
-  <link rel="icon" type="image/png" href="LOGOMARCA PRETA.png">
-  <link rel="apple-touch-icon" href="LOGOMARCA PRETA.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="icon"
+    type="image/png"
+    href="LOGOMARCA PRETA.png"
+  >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@300;400;500&display=swap"
+    rel="apple-touch-icon"
+    href="LOGOMARCA PRETA.png"
+  >
+
+
+  <!-- FONTES -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@300;400;500&family=Libre+Caslon+Display&display=swap"
     rel="stylesheet"
   >
+
 
   <style>
 
@@ -25,39 +47,110 @@
     ======================================== */
 
     :root {
-      --background: #f5f2eb;
+
+      --background: #f4f0e7;
       --text: #111111;
-      --line: rgba(17, 17, 17, 0.20);
+      --line: rgba(17,17,17,.25);
+
     }
+
 
     * {
+
       margin: 0;
       padding: 0;
+
       box-sizing: border-box;
+
     }
+
 
     html {
+
       scroll-behavior: smooth;
+
     }
 
+
     body {
-      background: var(--background);
+
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(0,0,0,.018) 0 1px,
+          transparent 1.5px
+        ),
+        radial-gradient(
+          circle at 70% 65%,
+          rgba(0,0,0,.014) 0 1px,
+          transparent 1.5px
+        ),
+        var(--background);
+
+      background-size:
+        17px 17px,
+        23px 23px;
+
       color: var(--text);
 
-      font-family: "IBM Plex Sans Condensed", sans-serif;
+      font-family:
+        "IBM Plex Sans Condensed",
+        sans-serif;
+
       font-weight: 300;
 
       overflow-x: hidden;
+
     }
+
 
     a {
+
       color: inherit;
       text-decoration: none;
+
     }
 
+
     img {
+
       display: block;
+
     }
+
+
+
+    /* ========================================
+       TEXTURA GERAL
+    ======================================== */
+
+    body::before {
+
+      content: "";
+
+      position: fixed;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      z-index: 9999;
+
+      opacity: .20;
+
+      background-image:
+
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 3px,
+          rgba(0,0,0,.008) 4px
+        );
+
+      mix-blend-mode: multiply;
+
+    }
+
 
 
     /* ========================================
@@ -65,20 +158,25 @@
     ======================================== */
 
     .header {
+
       position: fixed;
+
       top: 0;
       left: 0;
 
       width: 100%;
-      height: 82px;
+      height: 86px;
 
       display: flex;
+
       align-items: center;
       justify-content: space-between;
 
-      padding: 0 4%;
+      padding: 0 5%;
 
-      background: rgba(245, 242, 235, 0.96);
+      background: rgba(244,240,231,.93);
+
+      backdrop-filter: blur(8px);
 
       border-bottom: 1px solid transparent;
 
@@ -86,74 +184,100 @@
 
       transition:
         height .35s ease,
-        border-color .35s ease,
-        background .35s ease;
+        border-color .35s ease;
+
     }
+
 
     .header.scrolled {
+
       height: 68px;
+
       border-color: var(--line);
+
     }
+
 
     .header-logo {
+
       position: relative;
+
       z-index: 2;
+
     }
 
+
     .header-logo img {
+
       width: 150px;
       height: auto;
 
       transition: width .35s ease;
+
     }
+
 
     .header.scrolled .header-logo img {
+
       width: 130px;
+
     }
 
+
     .header-signature {
+
       position: absolute;
+
       left: 50%;
+
       transform: translateX(-50%);
 
-      font-size: 14px;
-      font-weight: 300;
+      font-size: 13px;
 
-      letter-spacing: .14em;
+      letter-spacing: .22em;
+
       text-transform: uppercase;
 
       white-space: nowrap;
+
     }
 
 
+
     /* ========================================
-       HAMBURGER
+       MENU BUTTON
     ======================================== */
 
     .menu-button {
+
       width: 42px;
       height: 42px;
 
       border: 0;
+
       background: transparent;
 
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
 
-      gap: 6px;
+      flex-direction: column;
+
+      justify-content: center;
+      align-items: center;
+
+      gap: 7px;
 
       cursor: pointer;
 
       position: relative;
+
       z-index: 1200;
+
     }
 
-    .menu-button span {
-      display: block;
 
-      width: 24px;
+    .menu-button span {
+
+      width: 25px;
       height: 1px;
 
       background: var(--text);
@@ -161,28 +285,43 @@
       transition:
         transform .35s ease,
         opacity .25s ease;
+
     }
+
 
     .menu-button.active span:first-child {
-      transform: translateY(3.5px) rotate(45deg);
+
+      transform:
+        translateY(4px)
+        rotate(45deg);
+
     }
 
+
     .menu-button.active span:last-child {
-      transform: translateY(-3.5px) rotate(-45deg);
+
+      transform:
+        translateY(-4px)
+        rotate(-45deg);
+
     }
+
 
 
     /* ========================================
-       OVERLAY
+       MENU OVERLAY
     ======================================== */
 
     .menu-overlay {
+
       position: fixed;
+
       inset: 0;
 
-      background: rgba(0, 0, 0, .22);
+      background: rgba(0,0,0,.22);
 
       opacity: 0;
+
       visibility: hidden;
 
       z-index: 1050;
@@ -190,12 +329,18 @@
       transition:
         opacity .35s ease,
         visibility .35s ease;
+
     }
 
+
     .menu-overlay.active {
+
       opacity: 1;
+
       visibility: visible;
+
     }
+
 
 
     /* ========================================
@@ -203,15 +348,19 @@
     ======================================== */
 
     .side-menu {
+
       position: fixed;
 
       top: 0;
       right: 0;
 
-      width: min(390px, 88vw);
+      width: min(390px,88vw);
       height: 100vh;
 
-      padding: 110px 46px 45px;
+      padding:
+        110px
+        46px
+        45px;
 
       background: var(--background);
 
@@ -219,204 +368,459 @@
 
       z-index: 1100;
 
-      transition: transform .45s cubic-bezier(.77, 0, .18, 1);
+      transition:
+        transform
+        .45s
+        cubic-bezier(.77,0,.18,1);
+
     }
+
 
     .side-menu.active {
+
       transform: translateX(0);
+
     }
+
 
     .menu-brand {
+
       margin-bottom: 52px;
+
     }
+
 
     .menu-brand img {
-      width: 60px;
-      height: auto;
+
+      width: 58px;
+
     }
+
 
     .menu-links {
+
       display: flex;
+
       flex-direction: column;
+
     }
 
+
     .menu-links a {
+
       padding: 17px 0;
 
-      border-bottom: 1px solid var(--line);
+      border-bottom:
+        1px solid var(--line);
 
       font-size: 24px;
-      font-weight: 300;
 
       transition:
         opacity .25s ease,
         padding-left .25s ease;
+
     }
+
 
     .menu-links a:first-child {
-      border-top: 1px solid var(--line);
+
+      border-top:
+        1px solid var(--line);
+
     }
 
+
     .menu-links a:hover {
+
       opacity: .55;
+
       padding-left: 6px;
+
     }
+
 
 
     /* ========================================
-       APRESENTAÇÃO / SOBRE
+       INTRO
     ======================================== */
 
-    .editorial-section {
-      padding: 142px 0 82px;
+    .intro {
+
+      min-height: 100vh;
+
+      padding:
+        142px
+        5%
+        70px;
+
+      display: flex;
+
+      align-items: center;
 
       scroll-margin-top: 80px;
+
     }
 
-    .editorial-grid {
-      width: 94%;
-      margin: 0 auto;
+
+    .intro-grid {
+
+      width: 100%;
 
       display: grid;
 
       grid-template-columns:
-        minmax(0, 31fr)
-        minmax(0, 42fr)
-        minmax(0, 27fr);
+        minmax(0, 48%)
+        minmax(0, 52%);
 
-      column-gap: 32px;
+      gap: clamp(55px,7vw,115px);
 
-      align-items: stretch;
+      align-items: center;
+
     }
 
 
-    /* FOTO */
 
-    .about-photo {
-      overflow: hidden;
+    /* ========================================
+       FOTO
+    ======================================== */
 
-      transform: translateX(-18px);
+    .portrait-area {
+
+      position: relative;
+
+      padding-left: 42px;
+
     }
 
-    .about-photo img {
+
+    .portrait-frame {
+
+      position: relative;
+
       width: 100%;
-      height: 100%;
 
-      min-height: 470px;
+      max-width: 600px;
+
+    }
+
+
+    .portrait-frame::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: -26px;
+      left: -25px;
+
+      width: 45%;
+      height: 30%;
+
+      background:
+        rgba(110,100,85,.08);
+
+      z-index: -1;
+
+    }
+
+
+    .portrait-frame img {
+
+      width: 100%;
+
+      height: min(68vh,720px);
+
+      min-height: 510px;
 
       object-fit: cover;
-      object-position: center 72%;
 
-      transition: transform .8s ease;
+      object-position: center 69%;
+
+      filter: grayscale(100%);
+
     }
 
-    .about-photo:hover img {
-      transform: scale(1.015);
+
+
+    /* ========================================
+       LOCALIZAÇÃO VERTICAL
+    ======================================== */
+
+    .portrait-location {
+
+      position: absolute;
+
+      left: 0;
+      top: 50%;
+
+      transform:
+        translateY(-50%)
+        rotate(180deg);
+
+      writing-mode: vertical-rl;
+
+      font-size: 11px;
+
+      letter-spacing: .28em;
+
+      text-transform: uppercase;
+
     }
 
 
-    /* TEXTO */
 
-    .about-content {
+    /* ========================================
+       ANO
+    ======================================== */
+
+    .portrait-year {
+
+      position: absolute;
+
+      left: 43px;
+      bottom: -28px;
+
       display: flex;
-      flex-direction: column;
 
-      justify-content: center;
+      align-items: center;
+
+      gap: 12px;
+
+      font-family:
+        "Libre Caslon Display",
+        serif;
+
+      font-size: 15px;
+
     }
 
-    .about-impact {
-      font-size: 21px;
-      line-height: 1.15;
+
+    .portrait-year::before {
+
+      content: "";
+
+      width: 1px;
+      height: 48px;
+
+      background: var(--text);
+
+    }
+
+
+
+    /* ========================================
+       CONTEÚDO
+    ======================================== */
+
+    .intro-content {
+
+      position: relative;
+
+      padding-right: 75px;
+
+    }
+
+
+    .intro-title {
+
+      max-width: 650px;
+
+      font-family:
+        "Libre Caslon Display",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(55px,5.2vw,90px);
 
       font-weight: 400;
 
-      margin-bottom: 26px;
+      line-height: .92;
 
-      letter-spacing: .01em;
+      letter-spacing: -.035em;
+
+      margin-bottom: 48px;
+
     }
 
-    .about-text p {
-      font-size: 15px;
+
+    .title-line {
+
+      display: block;
+
+    }
+
+
+
+    /* ========================================
+       LINHA EDITORIAL
+    ======================================== */
+
+    .editorial-line {
+
+      width: 54px;
+      height: 1px;
+
+      background: var(--text);
+
+      margin-bottom: 35px;
+
+    }
+
+
+
+    /* ========================================
+       TEXTO
+    ======================================== */
+
+    .intro-text {
+
+      max-width: 650px;
+
+    }
+
+
+    .intro-text p {
+
+      font-size: 16px;
+
       line-height: 1.58;
 
-      margin-bottom: 14px;
+      margin-bottom: 20px;
 
       text-align: justify;
 
       text-justify: inter-word;
+
     }
 
-    .about-text p:last-child {
+
+    .intro-text p:last-child {
+
       margin-bottom: 0;
+
     }
 
-    .about-text strong {
+
+    .intro-text strong {
+
       font-weight: 500;
+
     }
+
 
 
     /* ========================================
-       LINKS
+       FRASE VERTICAL
     ======================================== */
 
-    .links-column {
-      border-left: 1px solid var(--line);
+    .vertical-phrase {
 
-      padding-left: 32px;
+      position: absolute;
 
-      display: flex;
-      flex-direction: column;
-    }
+      right: 0;
+      top: 50%;
 
-    .links-title {
-      font-size: 20px;
-      font-weight: 400;
+      transform:
+        translateY(-50%)
+        rotate(180deg);
 
-      margin-bottom: 22px;
-    }
-
-    .links-list {
-      flex: 1;
+      writing-mode: vertical-rl;
 
       display: flex;
-      flex-direction: column;
 
-      border-top: 1px solid var(--line);
-    }
-
-    .link-row {
-      flex: 1;
-
-      min-height: 48px;
-
-      display: flex;
       align-items: center;
-      justify-content: space-between;
 
-      border-bottom: 1px solid var(--line);
+      gap: 20px;
 
-      font-size: 15px;
-      font-weight: 300;
+      font-size: 11px;
 
-      transition:
-        opacity .25s ease,
-        padding-left .25s ease;
+      letter-spacing: .28em;
+
+      text-transform: uppercase;
+
     }
 
-    .link-row span:last-child {
-      font-size: 15px;
 
-      transition: transform .25s ease;
+    .vertical-phrase::before,
+    .vertical-phrase::after {
+
+      content: "";
+
+      width: 1px;
+      height: 90px;
+
+      background: var(--line);
+
     }
 
-    .link-row:hover {
-      opacity: .55;
-      padding-left: 5px;
+
+
+    /* ========================================
+       CONTINUE
+    ======================================== */
+
+    .continue {
+
+      position: absolute;
+
+      left: 50%;
+
+      bottom: 22px;
+
+      transform: translateX(-50%);
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 6px;
+
+      font-size: 9px;
+
+      letter-spacing: .28em;
+
+      text-transform: uppercase;
+
     }
 
-    .link-row:hover span:last-child {
-      transform: translate(3px, -3px);
+
+    .continue-arrow {
+
+      font-size: 18px;
+
+      line-height: 1;
+
+      letter-spacing: 0;
+
+      animation:
+        arrowMove
+        1.8s
+        ease-in-out
+        infinite;
+
     }
+
+
+    @keyframes arrowMove {
+
+      0%,
+      100% {
+
+        transform: translateY(0);
+
+      }
+
+      50% {
+
+        transform: translateY(5px);
+
+      }
+
+    }
+
 
 
     /* ========================================
@@ -424,38 +828,83 @@
     ======================================== */
 
     .lifestyle {
+
       width: 94%;
+
       margin: 0 auto;
 
-      padding: 22px 0 0;
+      padding:
+        82px
+        0
+        0;
 
-      scroll-margin-top: 88px;
+      scroll-margin-top: 80px;
+
     }
 
-    .lifestyle-title {
-      font-size: 34px;
-      line-height: 1;
 
-      font-weight: 300;
+    .lifestyle-header {
+
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: space-between;
 
       margin-bottom: 25px;
+
     }
 
 
-    /* DESKTOP: UMA FILEIRA */
+    .lifestyle-title {
+
+      font-family:
+        "Libre Caslon Display",
+        Georgia,
+        serif;
+
+      font-size: 48px;
+
+      font-weight: 400;
+
+      line-height: 1;
+
+    }
+
+
+    .lifestyle-number {
+
+      font-size: 10px;
+
+      letter-spacing: .2em;
+
+    }
+
+
+
+    /* ========================================
+       LIFESTYLE DESKTOP
+       UMA FILEIRA
+    ======================================== */
 
     .visual-grid {
+
       width: 100%;
 
+      height: 260px;
+
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
+
+      grid-template-columns:
+        repeat(6,minmax(0,1fr));
 
       gap: 4px;
 
-      height: 260px;
     }
 
+
     .visual-item {
+
       display: block;
 
       position: relative;
@@ -464,9 +913,12 @@
       height: 260px;
 
       overflow: hidden;
+
     }
 
+
     .visual-item img {
+
       width: 100%;
       height: 100%;
 
@@ -475,38 +927,52 @@
       transition:
         transform .65s ease,
         filter .65s ease;
+
     }
 
+
     .visual-item::after {
+
       content: "↗";
 
       position: absolute;
 
-      right: 14px;
-      bottom: 11px;
+      right: 13px;
+      bottom: 10px;
 
-      color: #ffffff;
+      color: white;
 
-      font-size: 20px;
+      font-size: 19px;
 
       opacity: 0;
 
-      transform: translate(-3px, 3px);
+      transform:
+        translate(-3px,3px);
 
       transition:
         opacity .3s ease,
         transform .3s ease;
+
     }
+
 
     .visual-item:hover img {
+
       transform: scale(1.025);
-      filter: brightness(.72);
+
+      filter: brightness(.70);
+
     }
 
+
     .visual-item:hover::after {
+
       opacity: 1;
-      transform: translate(0, 0);
+
+      transform: translate(0);
+
     }
+
 
 
     /* ========================================
@@ -514,19 +980,27 @@
     ======================================== */
 
     .closing {
-      min-height: 140px;
+
+      min-height: 155px;
 
       display: flex;
-      align-items: center;
-      justify-content: center;
 
-      padding: 25px 20px;
+      justify-content: center;
+      align-items: center;
 
       text-align: center;
 
-      font-size: 18px;
-      font-weight: 300;
+      padding: 30px 20px;
+
+      font-family:
+        "Libre Caslon Display",
+        Georgia,
+        serif;
+
+      font-size: 22px;
+
     }
+
 
 
     /* ========================================
@@ -534,94 +1008,137 @@
     ======================================== */
 
     .footer {
-      min-height: 88px;
 
       width: 94%;
+
+      min-height: 88px;
+
       margin: 0 auto;
 
-      border-top: 1px solid var(--line);
+      border-top:
+        1px solid var(--line);
 
       display: flex;
+
       align-items: center;
       justify-content: space-between;
 
       gap: 20px;
+
     }
+
 
     .footer-copy {
-      font-size: 13px;
-      font-weight: 300;
+
+      font-size: 12px;
+
+      letter-spacing: .08em;
+
     }
 
+
     .socials {
+
       display: flex;
+
       align-items: center;
 
       gap: 5px;
+
     }
 
+
     .social-link {
+
       width: 42px;
       height: 42px;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
       transition:
         color .25s ease,
         transform .25s ease;
+
     }
+
 
     .social-link svg {
+
       width: 23px;
       height: 23px;
+
     }
 
+
     .social-link:hover {
+
       transform: translateY(-2px);
+
     }
+
 
     .social-link.instagram:hover,
     .social-link.instagram.active-color {
+
       color: #d62976;
+
     }
+
 
     .social-link.youtube:hover,
     .social-link.youtube.active-color {
+
       color: #ff0000;
+
     }
+
 
     .social-link.whatsapp:hover,
     .social-link.whatsapp.active-color {
+
       color: #25D366;
+
     }
+
 
     .social-link.youtube svg,
     .social-link.whatsapp svg {
+
       fill: currentColor;
       stroke: none;
+
     }
+
 
 
     /* ========================================
        REVEAL
     ======================================== */
 
-    .photo-reveal {
+    .reveal {
+
       opacity: 0;
 
-      transform: translateY(12px);
+      transform: translateY(14px);
 
       transition:
-        opacity .8s ease,
-        transform .8s ease;
+        opacity .85s ease,
+        transform .85s ease;
+
     }
 
-    .photo-reveal.visible {
+
+    .reveal.visible {
+
       opacity: 1;
+
       transform: translateY(0);
+
     }
+
 
 
     /* ========================================
@@ -630,303 +1147,566 @@
 
     @media (max-width: 700px) {
 
+
       /* HEADER */
 
       .header {
+
         height: 67px;
 
         padding: 0 18px;
+
       }
+
 
       .header.scrolled {
+
         height: 61px;
+
       }
+
 
       .header-logo img {
+
         width: 108px;
+
       }
 
-      .header.scrolled .header-logo img {
+
+      .header.scrolled
+      .header-logo img {
+
         width: 100px;
+
       }
 
-      /* Esconde a frase central no celular */
 
       .header-signature {
+
         display: none;
+
       }
+
 
       .menu-button {
+
         width: 38px;
         height: 38px;
+
       }
 
 
-      /* MENU */
+
+      /* SIDE MENU */
 
       .side-menu {
+
         width: 86vw;
 
         padding:
           94px
           28px
           35px;
+
       }
+
 
       .menu-brand {
+
         margin-bottom: 42px;
+
       }
+
 
       .menu-brand img {
+
         width: 52px;
+
       }
+
 
       .menu-links a {
-        font-size: 21px;
 
         padding: 15px 0;
+
+        font-size: 21px;
+
       }
 
 
-      /* APRESENTAÇÃO */
 
-      .editorial-section {
-        padding: 99px 0 58px;
+      /* INTRO */
+
+      .intro {
+
+        min-height: auto;
+
+        display: block;
+
+        padding:
+          102px
+          18px
+          72px;
+
       }
 
-      .editorial-grid {
-        width: calc(100% - 36px);
+
+      .intro-grid {
 
         display: flex;
+
         flex-direction: column;
 
         gap: 0;
+
       }
 
-      .about-photo {
+
+
+      /* FOTO */
+
+      .portrait-area {
+
         width: 100%;
 
-        transform: none;
+        padding-left: 23px;
 
-        margin-bottom: 27px;
+        margin-bottom: 58px;
+
       }
 
-      .about-photo img {
-        width: 100%;
-        height: 390px;
+
+      .portrait-frame {
+
+        max-width: none;
+
+      }
+
+
+      .portrait-frame::before {
+
+        top: -17px;
+        left: -15px;
+
+        width: 45%;
+        height: 28%;
+
+      }
+
+
+      .portrait-frame img {
+
+        height: 450px;
 
         min-height: 0;
 
-        object-fit: cover;
-        object-position: center 68%;
+        object-position:
+          center 68%;
+
       }
 
-      .about-content {
-        display: block;
+
+      .portrait-location {
+
+        left: -2px;
+
+        font-size: 8px;
+
+        letter-spacing: .22em;
+
       }
 
-      .about-impact {
-        font-size: 20px;
 
-        margin-bottom: 22px;
+      .portrait-year {
+
+        left: 24px;
+
+        bottom: -27px;
+
+        font-size: 13px;
+
       }
 
-      .about-text p {
+
+      .portrait-year::before {
+
+        height: 38px;
+
+      }
+
+
+
+      /* CONTEÚDO */
+
+      .intro-content {
+
+        width: 100%;
+
+        padding-right: 0;
+
+      }
+
+
+      .intro-title {
+
+        max-width: 100%;
+
+        font-size: 49px;
+
+        line-height: .94;
+
+        margin-bottom: 29px;
+
+      }
+
+
+      .editorial-line {
+
+        width: 42px;
+
+        margin-bottom: 27px;
+
+      }
+
+
+      .intro-text {
+
+        max-width: none;
+
+      }
+
+
+      .intro-text p {
+
         font-size: 15px;
+
         line-height: 1.58;
 
-        margin-bottom: 14px;
-
-        /* Mantém o texto justificado no celular */
+        margin-bottom: 16px;
 
         text-align: justify;
+
         text-justify: inter-word;
+
       }
 
 
-      /* LINKS */
 
-      .links-column {
-        border-left: 0;
+      /* FRASE VERTICAL SOME NO MOBILE */
 
-        padding-left: 0;
+      .vertical-phrase {
 
-        margin-top: 38px;
+        display: none;
+
       }
 
-      .links-title {
-        font-size: 20px;
 
-        margin-bottom: 18px;
+
+      /* CONTINUE SOME NO MOBILE */
+
+      .continue {
+
+        display: none;
+
       }
 
-      .links-list {
-        width: 100%;
-      }
-
-      .link-row {
-        flex: none;
-
-        min-height: 54px;
-
-        font-size: 16px;
-      }
 
 
       /* LIFESTYLE */
 
       .lifestyle {
-        width: calc(100% - 22px);
 
-        padding-top: 7px;
+        width:
+          calc(100% - 22px);
+
+        padding-top: 35px;
+
       }
+
+
+      .lifestyle-header {
+
+        margin:
+          0 7px
+          20px;
+
+      }
+
 
       .lifestyle-title {
-        font-size: 32px;
 
-        margin-left: 7px;
-        margin-bottom: 20px;
+        font-size: 39px;
+
       }
 
 
-      /* MOBILE: MOSAICO */
+      .lifestyle-number {
+
+        font-size: 9px;
+
+      }
+
+
+
+      /* MOSAICO */
 
       .visual-grid {
+
         display: grid;
 
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        grid-template-rows: none;
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
 
         width: 100%;
+
         height: auto;
 
         gap: 4px;
+
       }
+
 
       .visual-item {
+
         width: 100%;
         height: auto;
+
       }
 
-      /* 1 — largura inteira */
 
       .visual-item:nth-child(1) {
+
         grid-column: 1 / -1;
 
         aspect-ratio: 1.45 / 1;
+
       }
 
-      /* 2 e 3 */
 
       .visual-item:nth-child(2),
       .visual-item:nth-child(3) {
+
         grid-column: auto;
 
         aspect-ratio: .82 / 1;
+
       }
 
-      /* 4 — largura inteira */
 
       .visual-item:nth-child(4) {
+
         grid-column: 1 / -1;
 
         aspect-ratio: 1.45 / 1;
+
       }
 
-      /* 5 e 6 */
 
       .visual-item:nth-child(5),
       .visual-item:nth-child(6) {
+
         grid-column: auto;
 
         aspect-ratio: .82 / 1;
+
       }
 
+
       .visual-item img {
+
         width: 100%;
         height: 100%;
 
         object-fit: cover;
+
       }
 
+
       .visual-item::after {
+
         right: 11px;
         bottom: 9px;
 
         font-size: 18px;
 
-        opacity: .75;
+        opacity: .72;
 
         transform: none;
+
       }
 
 
-      /* FRASE FINAL */
+
+      /* CLOSING */
 
       .closing {
-        min-height: 110px;
 
-        padding: 22px 18px;
+        min-height: 115px;
 
-        font-size: 15px;
+        padding: 24px 18px;
+
+        font-size: 18px;
+
       }
+
 
 
       /* FOOTER */
 
       .footer {
-        width: calc(100% - 36px);
+
+        width:
+          calc(100% - 36px);
 
         min-height: 78px;
 
         gap: 10px;
+
       }
+
 
       .footer-copy {
+
         font-size: 10px;
+
       }
+
 
       .social-link {
+
         width: 36px;
         height: 36px;
+
       }
 
+
       .social-link svg {
+
         width: 21px;
         height: 21px;
+
       }
 
     }
+
+
+
+    /* ========================================
+       TELAS INTERMEDIÁRIAS
+    ======================================== */
+
+    @media
+    (min-width: 701px)
+    and
+    (max-width: 1050px) {
+
+
+      .intro {
+
+        padding-left: 4%;
+        padding-right: 4%;
+
+      }
+
+
+      .intro-grid {
+
+        grid-template-columns:
+          43% 57%;
+
+        gap: 42px;
+
+      }
+
+
+      .portrait-area {
+
+        padding-left: 30px;
+
+      }
+
+
+      .portrait-frame img {
+
+        min-height: 480px;
+
+      }
+
+
+      .intro-content {
+
+        padding-right: 55px;
+
+      }
+
+
+      .intro-title {
+
+        font-size: 55px;
+
+      }
+
+
+      .intro-text p {
+
+        font-size: 14px;
+
+      }
+
+
+      .vertical-phrase {
+
+        font-size: 9px;
+
+      }
+
+    }
+
 
 
     /* ========================================
        REDUCED MOTION
     ======================================== */
 
-    @media (prefers-reduced-motion: reduce) {
+    @media
+    (prefers-reduced-motion: reduce) {
+
 
       html {
+
         scroll-behavior: auto;
+
       }
+
 
       *,
       *::before,
       *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
 
-        transition-duration: .01ms !important;
+        animation-duration:
+          .01ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          .01ms !important;
+
       }
 
-      .photo-reveal {
+
+      .reveal {
+
         opacity: 1;
+
         transform: none;
+
       }
 
     }
 
   </style>
+
 </head>
 
 
@@ -937,15 +1717,31 @@
        HEADER
   ======================================= -->
 
-  <header class="header" id="header">
+  <header
+    class="header"
+    id="header"
+  >
 
-    <a href="#sobre" class="header-logo" aria-label="Milenar">
-      <img src="Logo preta.PNG" alt="Milenar">
+    <a
+      href="#sobre"
+      class="header-logo"
+      aria-label="Milenar"
+    >
+
+      <img
+        src="Logo preta.PNG"
+        alt="Milenar"
+      >
+
     </a>
 
+
     <div class="header-signature">
+
       Potential Artist &amp; Lifestyle
+
     </div>
+
 
     <button
       class="menu-button"
@@ -953,33 +1749,45 @@
       aria-label="Abrir menu"
       aria-expanded="false"
     >
+
       <span></span>
       <span></span>
+
     </button>
 
   </header>
+
 
 
   <!-- ======================================
        MENU
   ======================================= -->
 
-  <div class="menu-overlay" id="menuOverlay"></div>
+  <div
+    class="menu-overlay"
+    id="menuOverlay"
+  ></div>
 
-  <aside class="side-menu" id="sideMenu">
+
+  <aside
+    class="side-menu"
+    id="sideMenu"
+  >
 
     <div class="menu-brand">
-      <img src="LOGOMARCA PRETA.png" alt="MR">
+
+      <img
+        src="LOGOMARCA PRETA.png"
+        alt="MR"
+      >
+
     </div>
+
 
     <nav class="menu-links">
 
       <a href="#sobre">
         Sobre mim
-      </a>
-
-      <a href="#links">
-        Links
       </a>
 
       <a href="#lifestyle">
@@ -991,6 +1799,7 @@
   </aside>
 
 
+
   <main>
 
 
@@ -999,163 +1808,169 @@
     ===================================== -->
 
     <section
-      class="editorial-section"
+      class="intro"
       id="sobre"
     >
 
-      <div class="editorial-grid">
+
+      <div class="intro-grid">
 
 
         <!-- FOTO -->
 
-        <div class="about-photo photo-reveal">
-
-          <img
-            src="Minha foto .JPG"
-            alt="Milena Roberta"
-          >
-
-        </div>
-
-
-        <!-- TEXTO -->
-
-        <div class="about-content">
-
-          <div class="about-impact">
-            Potential Artist &amp; Lifestyle
-          </div>
-
-          <div class="about-text">
-
-            <p>
-              Meu nome é <strong>Milena Roberta</strong>.
-              Cresci em Belo Horizonte, sempre cercada pela arte
-              em suas diferentes formas. Desenho desde que me
-              lembro e criar sempre foi uma das coisas que mais
-              amo fazer.
-            </p>
-
-            <p>
-              Com o tempo, encontrei na tatuagem uma nova forma
-              de transformar desenho em expressão. Gosto de pensar
-              nela pelo que ela é: uma <strong>arte milenar</strong>,
-              que atravessa histórias, pessoas e gerações — e que
-              acabou dando sentido também ao nome Milenar.
-            </p>
-
-            <p>
-              Por aqui, compartilho não só o que crio, mas também
-              um pouco do meu lifestyle, das minhas referências e
-              do meu cotidiano. Porque, para mim,
-              <strong>a arte não está só no que a gente cria.
-              Ela está em cada parte da vida.</strong>
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- LINKS -->
-
         <div
-          class="links-column"
-          id="links"
+          class="portrait-area reveal"
         >
 
-          <div class="links-title">
-            Links
-          </div>
 
-          <div class="links-list">
+          <div class="portrait-location">
 
-
-            <!-- E-MAIL -->
-
-            <a
-              href="#"
-              class="link-row"
-            >
-              <span>E-mail</span>
-              <span>↗</span>
-            </a>
-
-
-            <!-- INSTAGRAM -->
-
-            <a
-              href="https://instagram.com/milenar.ink"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="link-row"
-            >
-              <span>Instagram</span>
-              <span>↗</span>
-            </a>
-
-
-            <!-- LINKEDIN -->
-
-            <a
-              href="#"
-              class="link-row"
-            >
-              <span>LinkedIn</span>
-              <span>↗</span>
-            </a>
-
-
-            <!-- PINTEREST -->
-
-            <a
-              href="#"
-              class="link-row"
-            >
-              <span>Pinterest</span>
-              <span>↗</span>
-            </a>
-
-
-            <!-- TIKTOK -->
-
-            <a
-              href="#"
-              class="link-row"
-            >
-              <span>TikTok</span>
-              <span>↗</span>
-            </a>
-
-
-            <!-- WHATSAPP -->
-
-            <a
-              href="#"
-              class="link-row"
-            >
-              <span>WhatsApp</span>
-              <span>↗</span>
-            </a>
-
-
-            <!-- YOUTUBE -->
-
-            <a
-              href="#"
-              class="link-row"
-            >
-              <span>YouTube</span>
-              <span>↗</span>
-            </a>
+            Belo Horizonte, MG
 
           </div>
+
+
+          <div class="portrait-frame">
+
+            <img
+              src="Minha foto .JPG"
+              alt="Milena Roberta"
+            >
+
+          </div>
+
+
+          <div class="portrait-year">
+
+            ’26
+
+          </div>
+
 
         </div>
+
+
+
+        <!-- CONTEÚDO -->
+
+        <div
+          class="intro-content reveal"
+        >
+
+
+          <h1 class="intro-title">
+
+            <span class="title-line">
+              Potential
+            </span>
+
+            <span class="title-line">
+              Artist &amp; Lifestyle
+            </span>
+
+          </h1>
+
+
+          <div
+            class="editorial-line"
+          ></div>
+
+
+          <div class="intro-text">
+
+
+            <p>
+
+              Meu nome é
+              <strong>
+                Milena Roberta
+              </strong>.
+
+              Cresci em Belo Horizonte,
+              sempre cercada pela arte
+              em suas diferentes formas.
+
+              Desenho desde que me lembro
+              e criar sempre foi uma das
+              coisas que mais amo fazer.
+
+            </p>
+
+
+            <p>
+
+              Com o tempo, encontrei na
+              tatuagem uma nova forma de
+              transformar desenho em expressão.
+
+              Gosto de pensar nela pelo que
+              ela é: uma
+              <strong>arte milenar</strong>,
+              que atravessa histórias,
+              pessoas e gerações — e que
+              acabou dando sentido também
+              ao nome Milenar.
+
+            </p>
+
+
+            <p>
+
+              Por aqui, compartilho não só
+              o que crio, mas também um pouco
+              do meu lifestyle, das minhas
+              referências e do meu cotidiano.
+
+              Porque, para mim,
+              <strong>
+                a arte não está só no que
+                a gente cria. Ela está em
+                cada parte da vida.
+              </strong>
+
+            </p>
+
+
+          </div>
+
+
+
+          <!-- FRASE VERTICAL -->
+
+          <div class="vertical-phrase">
+
+            Arte em tudo que me atravessa
+
+          </div>
+
+
+        </div>
+
 
       </div>
 
+
+
+      <!-- CONTINUE -->
+
+      <a
+        href="#lifestyle"
+        class="continue"
+      >
+
+        <span class="continue-arrow">
+          ↓
+        </span>
+
+        <span>
+          Continue
+        </span>
+
+      </a>
+
+
     </section>
+
 
 
     <!-- ====================================
@@ -1167,107 +1982,123 @@
       id="lifestyle"
     >
 
-      <h2 class="lifestyle-title">
-        Lifestyle
-      </h2>
+
+      <div class="lifestyle-header">
+
+        <h2 class="lifestyle-title">
+          Lifestyle
+        </h2>
+
+        <span class="lifestyle-number">
+          01 — 06
+        </span>
+
+      </div>
+
 
 
       <div class="visual-grid">
 
 
-        <!-- 01 -->
-
         <a
-          class="visual-item photo-reveal"
+          class="visual-item reveal"
           href="https://www.instagram.com/p/DVHYP_sjxG8/?stkn=MXR4NGk5ODU1NGZ4"
           target="_blank"
           rel="noopener noreferrer"
         >
+
           <img
             src="Imagem 2.JPG"
             alt="Lifestyle Milenar"
           >
+
         </a>
 
 
-        <!-- 02 -->
 
         <a
-          class="visual-item photo-reveal"
+          class="visual-item reveal"
           href="https://www.instagram.com/reel/DUB0davjxMN/?stkn=MTBkamFxODNwZDYzag=="
           target="_blank"
           rel="noopener noreferrer"
         >
+
           <img
             src="Imagem 3.JPG"
             alt="Lifestyle Milenar"
           >
+
         </a>
 
 
-        <!-- 03 -->
 
         <a
-          class="visual-item photo-reveal"
+          class="visual-item reveal"
           href="https://www.instagram.com/p/DUIqP0GDDMh/?stkn=MXEyZWFveXNjdHhw"
           target="_blank"
           rel="noopener noreferrer"
         >
+
           <img
             src="Imagem 4.JPG"
             alt="Lifestyle Milenar"
           >
+
         </a>
 
 
-        <!-- 04 -->
 
         <a
-          class="visual-item photo-reveal"
+          class="visual-item reveal"
           href="https://www.instagram.com/p/C4-_3OhrA0e/?stkn=bmprZXd0M3Z3cm03"
           target="_blank"
           rel="noopener noreferrer"
         >
+
           <img
             src="Imagem 5.JPG"
             alt="Lifestyle Milenar"
           >
+
         </a>
 
 
-        <!-- 05 -->
 
         <a
-          class="visual-item photo-reveal"
+          class="visual-item reveal"
           href="https://www.instagram.com/p/C4oRgfIPhzX/?stkn=YzR2amg4MG5rcWlj"
           target="_blank"
           rel="noopener noreferrer"
         >
+
           <img
             src="Imagem 6.JPG"
             alt="Lifestyle Milenar"
           >
+
         </a>
 
 
-        <!-- 06 -->
 
         <a
-          class="visual-item photo-reveal"
+          class="visual-item reveal"
           href="https://www.instagram.com/p/C4LIoxWMrx9/?stkn=MXdsYWRzbnNqY2xwZA=="
           target="_blank"
           rel="noopener noreferrer"
         >
+
           <img
             src="Foto 7.JPG"
             alt="Lifestyle Milenar"
           >
+
         </a>
 
 
       </div>
 
     </section>
+
 
 
     <!-- ====================================
@@ -1286,15 +2117,20 @@
   </main>
 
 
+
   <!-- ======================================
        FOOTER
   ======================================= -->
 
   <footer class="footer">
 
+
     <div class="footer-copy">
+
       © 2026 Milenar
+
     </div>
+
 
 
     <div class="socials">
@@ -1309,6 +2145,7 @@
         class="social-link instagram"
         aria-label="Instagram"
       >
+
 
         <svg
           viewBox="0 0 24 24"
@@ -1342,7 +2179,9 @@
 
         </svg>
 
+
       </a>
+
 
 
       <!-- YOUTUBE -->
@@ -1352,6 +2191,7 @@
         class="social-link youtube"
         aria-label="YouTube"
       >
+
 
         <svg
           viewBox="0 0 24 24"
@@ -1364,7 +2204,9 @@
 
         </svg>
 
+
       </a>
+
 
 
       <!-- WHATSAPP -->
@@ -1374,6 +2216,7 @@
         class="social-link whatsapp"
         aria-label="WhatsApp"
       >
+
 
         <svg
           viewBox="0 0 24 24"
@@ -1387,12 +2230,15 @@
 
         </svg>
 
+
       </a>
 
 
     </div>
 
+
   </footer>
+
 
 
   <!-- ======================================
@@ -1401,34 +2247,54 @@
 
   <script>
 
-    const header = document.getElementById("header");
+
+    const header =
+      document.getElementById("header");
+
 
     const menuButton =
       document.getElementById("menuButton");
 
+
     const sideMenu =
       document.getElementById("sideMenu");
+
 
     const menuOverlay =
       document.getElementById("menuOverlay");
 
+
     const menuLinks =
-      document.querySelectorAll(".menu-links a");
+      document.querySelectorAll(
+        ".menu-links a"
+      );
+
 
 
     /* ======================================
-       HEADER AO ROLAR
+       HEADER
     ======================================= */
 
     function updateHeader() {
 
+
       if (window.scrollY > 25) {
-        header.classList.add("scrolled");
+
+        header.classList.add(
+          "scrolled"
+        );
+
       } else {
-        header.classList.remove("scrolled");
+
+        header.classList.remove(
+          "scrolled"
+        );
+
       }
 
+
     }
+
 
     window.addEventListener(
       "scroll",
@@ -1436,7 +2302,9 @@
       { passive: true }
     );
 
+
     updateHeader();
+
 
 
     /* ======================================
@@ -1445,55 +2313,91 @@
 
     function openMenu() {
 
-      menuButton.classList.add("active");
 
-      sideMenu.classList.add("active");
+      menuButton.classList.add(
+        "active"
+      );
 
-      menuOverlay.classList.add("active");
+
+      sideMenu.classList.add(
+        "active"
+      );
+
+
+      menuOverlay.classList.add(
+        "active"
+      );
+
 
       menuButton.setAttribute(
         "aria-expanded",
         "true"
       );
 
-      document.body.style.overflow = "hidden";
+
+      document.body.style.overflow =
+        "hidden";
+
 
     }
 
 
+
     function closeMenu() {
 
-      menuButton.classList.remove("active");
 
-      sideMenu.classList.remove("active");
+      menuButton.classList.remove(
+        "active"
+      );
 
-      menuOverlay.classList.remove("active");
+
+      sideMenu.classList.remove(
+        "active"
+      );
+
+
+      menuOverlay.classList.remove(
+        "active"
+      );
+
 
       menuButton.setAttribute(
         "aria-expanded",
         "false"
       );
 
-      document.body.style.overflow = "";
+
+      document.body.style.overflow =
+        "";
+
 
     }
+
 
 
     menuButton.addEventListener(
       "click",
       () => {
 
-        const isOpen =
-          sideMenu.classList.contains("active");
 
-        if (isOpen) {
+        if (
+          sideMenu.classList.contains(
+            "active"
+          )
+        ) {
+
           closeMenu();
+
         } else {
+
           openMenu();
+
         }
+
 
       }
     );
+
 
 
     menuOverlay.addEventListener(
@@ -1502,125 +2406,196 @@
     );
 
 
-    menuLinks.forEach(link => {
 
-      link.addEventListener(
-        "click",
-        closeMenu
-      );
+    menuLinks.forEach(
+      link => {
 
-    });
+
+        link.addEventListener(
+          "click",
+          closeMenu
+        );
+
+
+      }
+    );
+
 
 
     document.addEventListener(
       "keydown",
       event => {
 
-        if (event.key === "Escape") {
+
+        if (
+          event.key === "Escape"
+        ) {
+
           closeMenu();
+
         }
+
 
       }
     );
 
 
+
     /* ======================================
-       REVEAL DAS FOTOS
+       REVEAL
     ======================================= */
 
     const revealElements =
-      document.querySelectorAll(".photo-reveal");
+      document.querySelectorAll(
+        ".reveal"
+      );
 
 
-    if ("IntersectionObserver" in window) {
+    if (
+      "IntersectionObserver"
+      in window
+    ) {
+
 
       const observer =
         new IntersectionObserver(
 
+
           entries => {
 
-            entries.forEach(entry => {
 
-              if (entry.isIntersecting) {
+            entries.forEach(
+              entry => {
 
-                entry.target.classList.add(
-                  "visible"
-                );
 
-                observer.unobserve(
+                if (
+                  entry.isIntersecting
+                ) {
+
+
                   entry.target
-                );
+                    .classList
+                    .add("visible");
+
+
+                  observer.unobserve(
+                    entry.target
+                  );
+
+
+                }
+
 
               }
+            );
 
-            });
 
           },
 
+
           {
-            threshold: 0.10
+            threshold: .08
           }
+
 
         );
 
 
-      revealElements.forEach(element => {
 
-        observer.observe(element);
+      revealElements.forEach(
+        element => {
 
-      });
+
+          observer.observe(
+            element
+          );
+
+
+        }
+      );
+
 
     } else {
 
-      revealElements.forEach(element => {
 
-        element.classList.add("visible");
+      revealElements.forEach(
+        element => {
 
-      });
+
+          element.classList.add(
+            "visible"
+          );
+
+
+        }
+      );
+
 
     }
 
 
+
     /* ======================================
-       CORES DOS ÍCONES NO TOUCH
+       SOCIAL TOUCH
     ======================================= */
 
     const socialLinks =
-      document.querySelectorAll(".social-link");
-
-
-    socialLinks.forEach(link => {
-
-      link.addEventListener(
-        "touchstart",
-        () => {
-
-          socialLinks.forEach(item => {
-
-            if (item !== link) {
-              item.classList.remove(
-                "active-color"
-              );
-            }
-
-          });
-
-          link.classList.toggle(
-            "active-color"
-          );
-
-        },
-
-        {
-          passive: true
-        }
-
+      document.querySelectorAll(
+        ".social-link"
       );
 
-    });
+
+    socialLinks.forEach(
+      link => {
+
+
+        link.addEventListener(
+          "touchstart",
+          () => {
+
+
+            socialLinks.forEach(
+              item => {
+
+
+                if (
+                  item !== link
+                ) {
+
+                  item.classList.remove(
+                    "active-color"
+                  );
+
+                }
+
+
+              }
+            );
+
+
+            link.classList.toggle(
+              "active-color"
+            );
+
+
+          },
+
+
+          {
+            passive: true
+          }
+
+
+        );
+
+
+      }
+    );
+
 
   </script>
 
 
 </body>
+
 </html>
