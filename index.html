@@ -62,7 +62,6 @@
 
       margin: 0;
       padding: 0;
-
       box-sizing: border-box;
 
     }
@@ -151,7 +150,7 @@
 
 
     /* ========================================
-       HEADER
+       CABEÇALHO
     ======================================== */
 
     .header {
@@ -162,16 +161,16 @@
       left: 0;
 
       width: 100%;
-      height: 86px;
+      height: 82px;
+
+      padding: 0 5%;
 
       display: flex;
 
       align-items: center;
       justify-content: space-between;
 
-      padding: 0 5%;
-
-      background: rgba(244,240,231,.93);
+      background: rgba(244,240,231,.94);
 
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
@@ -189,18 +188,9 @@
 
     .header.scrolled {
 
-      height: 68px;
+      height: 66px;
 
       border-color: var(--line);
-
-    }
-
-
-    .header-logo {
-
-      position: relative;
-
-      z-index: 2;
 
     }
 
@@ -215,24 +205,21 @@
     }
 
 
-    .header.scrolled .header-logo img {
+    .header.scrolled
+    .header-logo img {
 
       width: 130px;
 
     }
 
 
-    .header-signature {
+    .header-location {
 
-      position: absolute;
+      font-size: 11px;
 
-      left: 50%;
+      font-weight: 400;
 
-      transform: translateX(-50%);
-
-      font-size: 13px;
-
-      letter-spacing: .22em;
+      letter-spacing: .24em;
 
       text-transform: uppercase;
 
@@ -243,184 +230,7 @@
 
 
     /* ========================================
-       MENU
-    ======================================== */
-
-    .menu-button {
-
-      width: 42px;
-      height: 42px;
-
-      border: 0;
-
-      background: transparent;
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: center;
-      align-items: center;
-
-      gap: 7px;
-
-      cursor: pointer;
-
-      position: relative;
-
-      z-index: 1200;
-
-    }
-
-
-    .menu-button span {
-
-      width: 25px;
-      height: 1px;
-
-      background: var(--text);
-
-      transition: transform .35s ease;
-
-    }
-
-
-    .menu-button.active span:first-child {
-
-      transform:
-        translateY(4px)
-        rotate(45deg);
-
-    }
-
-
-    .menu-button.active span:last-child {
-
-      transform:
-        translateY(-4px)
-        rotate(-45deg);
-
-    }
-
-
-    .menu-overlay {
-
-      position: fixed;
-
-      inset: 0;
-
-      background: rgba(0,0,0,.25);
-
-      opacity: 0;
-      visibility: hidden;
-
-      z-index: 1050;
-
-      transition:
-        opacity .35s ease,
-        visibility .35s ease;
-
-    }
-
-
-    .menu-overlay.active {
-
-      opacity: 1;
-      visibility: visible;
-
-    }
-
-
-    .side-menu {
-
-      position: fixed;
-
-      top: 0;
-      right: 0;
-
-      width: min(390px,88vw);
-      height: 100vh;
-
-      padding:
-        110px
-        46px
-        45px;
-
-      background: var(--background);
-
-      transform: translateX(100%);
-
-      z-index: 1100;
-
-      transition:
-        transform .45s cubic-bezier(.77,0,.18,1);
-
-    }
-
-
-    .side-menu.active {
-
-      transform: translateX(0);
-
-    }
-
-
-    .menu-brand {
-
-      margin-bottom: 52px;
-
-    }
-
-
-    .menu-brand img {
-
-      width: 58px;
-
-    }
-
-
-    .menu-links {
-
-      display: flex;
-      flex-direction: column;
-
-    }
-
-
-    .menu-links a {
-
-      padding: 17px 0;
-
-      border-bottom: 1px solid var(--line);
-
-      font-size: 24px;
-
-      transition:
-        opacity .25s ease,
-        padding-left .25s ease;
-
-    }
-
-
-    .menu-links a:first-child {
-
-      border-top: 1px solid var(--line);
-
-    }
-
-
-    .menu-links a:hover {
-
-      opacity: .55;
-
-      padding-left: 6px;
-
-    }
-
-
-
-    /* ========================================
-       APRESENTAÇÃO
+       SOBRE MIM
     ======================================== */
 
     .intro {
@@ -428,15 +238,13 @@
       min-height: 100vh;
 
       padding:
-        142px
+        112px
         5%
-        72px;
+        42px;
 
       display: flex;
 
       align-items: center;
-
-      scroll-margin-top: 80px;
 
     }
 
@@ -448,10 +256,10 @@
       display: grid;
 
       grid-template-columns:
-        minmax(0,48%)
-        minmax(0,52%);
+        minmax(0,47%)
+        minmax(0,53%);
 
-      gap: clamp(55px,7vw,115px);
+      gap: clamp(48px,6vw,100px);
 
       align-items: center;
 
@@ -466,8 +274,6 @@
     .portrait-area {
 
       position: relative;
-
-      padding-left: 42px;
 
     }
 
@@ -489,13 +295,14 @@
 
       position: absolute;
 
-      top: -26px;
-      left: -25px;
+      top: -20px;
+      left: -20px;
 
-      width: 45%;
-      height: 30%;
+      width: 43%;
+      height: 28%;
 
-      background: rgba(110,100,85,.08);
+      background:
+        rgba(110,100,85,.08);
 
       z-index: -1;
 
@@ -506,9 +313,7 @@
 
       width: 100%;
 
-      height: min(68vh,720px);
-
-      min-height: 510px;
+      height: min(66vh,650px);
 
       object-fit: cover;
 
@@ -519,34 +324,12 @@
     }
 
 
-    .portrait-location {
-
-      position: absolute;
-
-      left: 0;
-      top: 50%;
-
-      transform:
-        translateY(-50%)
-        rotate(180deg);
-
-      writing-mode: vertical-rl;
-
-      font-size: 11px;
-
-      letter-spacing: .28em;
-
-      text-transform: uppercase;
-
-    }
-
-
     .portrait-year {
 
       position: absolute;
 
-      left: 43px;
-      bottom: -28px;
+      left: 0;
+      bottom: -26px;
 
       display: flex;
 
@@ -556,6 +339,7 @@
 
       font-family:
         "Libre Caslon Display",
+        Georgia,
         serif;
 
       font-size: 15px;
@@ -568,7 +352,7 @@
       content: "";
 
       width: 1px;
-      height: 48px;
+      height: 42px;
 
       background: var(--text);
 
@@ -577,14 +361,14 @@
 
 
     /* ========================================
-       TEXTO DA APRESENTAÇÃO
+       TEXTO
     ======================================== */
 
     .intro-content {
 
-      position: relative;
+      width: 100%;
 
-      padding-right: 75px;
+      max-width: 680px;
 
     }
 
@@ -599,15 +383,15 @@
         serif;
 
       font-size:
-        clamp(55px,5.2vw,90px);
+        clamp(52px,4.8vw,82px);
 
       font-weight: 400;
 
-      line-height: .92;
+      line-height: .93;
 
       letter-spacing: -.035em;
 
-      margin-bottom: 48px;
+      margin-bottom: 32px;
 
     }
 
@@ -621,12 +405,12 @@
 
     .editorial-line {
 
-      width: 54px;
+      width: 50px;
       height: 1px;
 
       background: var(--text);
 
-      margin-bottom: 35px;
+      margin-bottom: 27px;
 
     }
 
@@ -640,11 +424,11 @@
 
     .intro-text p {
 
-      font-size: 16px;
+      font-size: 15px;
 
-      line-height: 1.58;
+      line-height: 1.48;
 
-      margin-bottom: 20px;
+      margin-bottom: 15px;
 
       text-align: justify;
 
@@ -669,53 +453,117 @@
 
 
     /* ========================================
-       FRASE VERTICAL
+       TELAS DESKTOP MAIS BAIXAS
+
+       Isso faz a primeira seção se adaptar
+       também à ALTURA do monitor.
     ======================================== */
 
-    .vertical-phrase {
-
-      position: absolute;
-
-      right: 0;
-      top: 50%;
-
-      transform:
-        translateY(-50%)
-        rotate(180deg);
-
-      writing-mode: vertical-rl;
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 20px;
-
-      font-size: 10px;
-
-      letter-spacing: .28em;
-
-      text-transform: uppercase;
-
-    }
+    @media
+    (min-width: 901px)
+    and
+    (max-height: 760px) {
 
 
-    .vertical-phrase::before,
-    .vertical-phrase::after {
+      .header {
 
-      content: "";
+        height: 72px;
 
-      width: 1px;
-      height: 80px;
+      }
 
-      background: var(--line);
+
+      .header.scrolled {
+
+        height: 62px;
+
+      }
+
+
+      .header-logo img {
+
+        width: 140px;
+
+      }
+
+
+      .header.scrolled
+      .header-logo img {
+
+        width: 125px;
+
+      }
+
+
+      .intro {
+
+        min-height: 100vh;
+
+        padding:
+          94px
+          5%
+          30px;
+
+      }
+
+
+      .portrait-frame img {
+
+        height: calc(100vh - 150px);
+
+        min-height: 430px;
+
+        max-height: 570px;
+
+      }
+
+
+      .intro-title {
+
+        font-size:
+          clamp(48px,4.4vw,70px);
+
+        margin-bottom: 23px;
+
+      }
+
+
+      .editorial-line {
+
+        margin-bottom: 20px;
+
+      }
+
+
+      .intro-text p {
+
+        font-size: 14px;
+
+        line-height: 1.40;
+
+        margin-bottom: 11px;
+
+      }
+
+
+      .portrait-year {
+
+        bottom: -22px;
+
+      }
+
+
+      .portrait-year::before {
+
+        height: 34px;
+
+      }
 
     }
 
 
 
     /* ========================================
-       LINKS — FUNDO PRETO
+       LINKS
     ======================================== */
 
     .links-section {
@@ -727,11 +575,9 @@
       color: var(--dark-text);
 
       padding:
-        52px
+        48px
         5%
-        48px;
-
-      scroll-margin-top: 68px;
+        46px;
 
     }
 
@@ -756,7 +602,7 @@
 
       gap: 40px;
 
-      margin-bottom: 42px;
+      margin-bottom: 37px;
 
     }
 
@@ -781,7 +627,7 @@
 
       font-weight: 400;
 
-      margin-bottom: 15px;
+      margin-bottom: 14px;
 
     }
 
@@ -791,9 +637,10 @@
       width: 42px;
       height: 1px;
 
-      background: rgba(255,255,255,.72);
+      margin-bottom: 15px;
 
-      margin-bottom: 16px;
+      background:
+        rgba(255,255,255,.75);
 
     }
 
@@ -806,7 +653,8 @@
 
       letter-spacing: .04em;
 
-      color: rgba(255,255,255,.72);
+      color:
+        rgba(255,255,255,.70);
 
     }
 
@@ -817,37 +665,103 @@
 
       letter-spacing: .22em;
 
-      color: rgba(255,255,255,.48);
+      color:
+        rgba(255,255,255,.45);
 
     }
 
 
 
     /* ========================================
-       ÍCONES / LINKS
+       FILEIRA DE REDES
     ======================================== */
 
     .social-grid {
 
+      position: relative;
+
       display: grid;
 
       grid-template-columns:
-        repeat(7,minmax(0,1fr));
-
-      border-top:
-        1px solid var(--dark-line);
-
-      border-bottom:
-        1px solid var(--dark-line);
+        repeat(6,minmax(0,1fr));
 
     }
 
+
+    /*
+       LINHA SUPERIOR COM FADE
+    */
+
+    .social-grid::before {
+
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255,255,255,.10) 5%,
+          rgba(255,255,255,.22) 16%,
+          rgba(255,255,255,.22) 84%,
+          rgba(255,255,255,.10) 95%,
+          transparent 100%
+        );
+
+      pointer-events: none;
+
+    }
+
+
+    /*
+       LINHA INFERIOR COM FADE
+    */
+
+    .social-grid::after {
+
+      content: "";
+
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255,255,255,.10) 5%,
+          rgba(255,255,255,.22) 16%,
+          rgba(255,255,255,.22) 84%,
+          rgba(255,255,255,.10) 95%,
+          transparent 100%
+        );
+
+      pointer-events: none;
+
+    }
+
+
+
+    /* ========================================
+       CADA REDE
+    ======================================== */
 
     .network-link {
 
       min-width: 0;
 
-      height: 105px;
+      height: 104px;
 
       display: flex;
 
@@ -862,10 +776,6 @@
 
       border-right:
         1px solid var(--dark-line);
-
-      transition:
-        color .25s ease,
-        opacity .25s ease;
 
     }
 
@@ -887,9 +797,11 @@
       align-items: center;
       justify-content: center;
 
+      color: #ffffff;
+
       transition:
-        transform .25s ease,
-        color .25s ease;
+        color .25s ease,
+        transform .25s ease;
 
     }
 
@@ -912,10 +824,19 @@
 
       text-transform: uppercase;
 
-      transition: color .25s ease;
+      /*
+        O TEXTO SEMPRE CONTINUA BRANCO.
+      */
+
+      color: #ffffff;
 
     }
 
+
+
+    /* ========================================
+       HOVER — SOMENTE ÍCONE
+    ======================================== */
 
     .network-link:hover
     .network-icon {
@@ -925,255 +846,66 @@
     }
 
 
-    /* INSTAGRAM */
-
-    .network-link.instagram:hover {
+    .network-link.instagram:hover
+    .network-icon {
 
       color: #e1306c;
 
     }
 
 
-    /* TIKTOK */
-
-    .network-link.tiktok:hover {
+    .network-link.tiktok:hover
+    .network-icon {
 
       color: #25f4ee;
 
     }
 
 
-    /* PINTEREST */
-
-    .network-link.pinterest:hover {
+    .network-link.pinterest:hover
+    .network-icon {
 
       color: #e60023;
 
     }
 
 
-    /* LINKEDIN */
-
-    .network-link.linkedin:hover {
+    .network-link.linkedin:hover
+    .network-icon {
 
       color: #0a66c2;
 
     }
 
 
-    /* YOUTUBE */
-
-    .network-link.youtube:hover {
+    .network-link.youtube:hover
+    .network-icon {
 
       color: #ff0000;
 
     }
 
 
-    /* WHATSAPP */
-
-    .network-link.whatsapp:hover {
+    .network-link.whatsapp:hover
+    .network-icon {
 
       color: #25d366;
 
     }
 
 
-    /* EMAIL */
-
-    .network-link.email:hover {
-
-      color: #f4c542;
-
-    }
-
-
 
     /* ========================================
-       LIFESTYLE
-    ======================================== */
-
-    .lifestyle {
-
-      width: 94%;
-
-      margin: 0 auto;
-
-      padding:
-        82px
-        0
-        0;
-
-      scroll-margin-top: 80px;
-
-    }
-
-
-    .lifestyle-header {
-
-      display: flex;
-
-      align-items: flex-end;
-      justify-content: space-between;
-
-      margin-bottom: 25px;
-
-    }
-
-
-    .lifestyle-title {
-
-      font-family:
-        "Libre Caslon Display",
-        Georgia,
-        serif;
-
-      font-size: 48px;
-
-      font-weight: 400;
-
-      line-height: 1;
-
-    }
-
-
-    .lifestyle-number {
-
-      font-size: 10px;
-
-      letter-spacing: .2em;
-
-    }
-
-
-
-    /* ========================================
-       LIFESTYLE — PC EM UMA FILEIRA
-    ======================================== */
-
-    .visual-grid {
-
-      width: 100%;
-
-      height: 260px;
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(6,minmax(0,1fr));
-
-      gap: 4px;
-
-    }
-
-
-    .visual-item {
-
-      display: block;
-
-      position: relative;
-
-      width: 100%;
-      height: 260px;
-
-      overflow: hidden;
-
-    }
-
-
-    .visual-item img {
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      transition:
-        transform .65s ease,
-        filter .65s ease;
-
-    }
-
-
-    .visual-item::after {
-
-      content: "↗";
-
-      position: absolute;
-
-      right: 13px;
-      bottom: 10px;
-
-      color: #ffffff;
-
-      font-size: 19px;
-
-      opacity: 0;
-
-      transition: opacity .3s ease;
-
-    }
-
-
-    .visual-item:hover img {
-
-      transform: scale(1.025);
-
-      filter: brightness(.70);
-
-    }
-
-
-    .visual-item:hover::after {
-
-      opacity: 1;
-
-    }
-
-
-
-    /* ========================================
-       FRASE FINAL
-    ======================================== */
-
-    .closing {
-
-      min-height: 155px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      padding: 30px 20px;
-
-      text-align: center;
-
-      font-family:
-        "Libre Caslon Display",
-        Georgia,
-        serif;
-
-      font-size: 22px;
-
-    }
-
-
-
-    /* ========================================
-       FOOTER
+       RODAPÉ
     ======================================== */
 
     .footer {
 
-      width: 94%;
+      width: 100%;
 
-      min-height: 88px;
+      min-height: 92px;
 
-      margin: 0 auto;
-
-      border-top:
-        1px solid var(--line);
+      padding: 0 5%;
 
       display: flex;
 
@@ -1182,21 +914,25 @@
 
       gap: 20px;
 
+      background: var(--background);
+
     }
 
 
     .footer-copy {
 
-      font-size: 12px;
+      font-size: 11px;
 
-      letter-spacing: .08em;
+      letter-spacing: .10em;
+
+      text-transform: uppercase;
 
     }
 
 
     .footer-mark img {
 
-      width: 35px;
+      width: 34px;
       height: auto;
 
       opacity: .9;
@@ -1206,18 +942,18 @@
 
 
     /* ========================================
-       REVEAL
+       ENTRADA SUAVE
     ======================================== */
 
     .reveal {
 
       opacity: 0;
 
-      transform: translateY(14px);
+      transform: translateY(12px);
 
       transition:
-        opacity .85s ease,
-        transform .85s ease;
+        opacity .8s ease,
+        transform .8s ease;
 
     }
 
@@ -1233,26 +969,82 @@
 
 
     /* ========================================
+       TABLET
+    ======================================== */
+
+    @media
+    (min-width: 701px)
+    and
+    (max-width: 1000px) {
+
+
+      .intro {
+
+        padding-left: 4%;
+        padding-right: 4%;
+
+      }
+
+
+      .intro-grid {
+
+        grid-template-columns:
+          43% 57%;
+
+        gap: 40px;
+
+      }
+
+
+      .intro-title {
+
+        font-size: 52px;
+
+      }
+
+
+      .intro-text p {
+
+        font-size: 13px;
+
+      }
+
+
+      .network-name {
+
+        font-size: 9px;
+
+        letter-spacing: .07em;
+
+      }
+
+    }
+
+
+
+    /* ========================================
        MOBILE
     ======================================== */
 
-    @media (max-width:700px) {
+    @media (max-width: 700px) {
 
 
-      /* HEADER */
+      /* CABEÇALHO */
 
       .header {
 
-        height: 67px;
+        height: 66px;
 
-        padding: 0 18px;
+        padding:
+          0
+          18px;
 
       }
 
 
       .header.scrolled {
 
-        height: 61px;
+        height: 60px;
 
       }
 
@@ -1272,61 +1064,17 @@
       }
 
 
-      .header-signature {
+      .header-location {
 
-        display: none;
+        font-size: 8px;
 
-      }
-
-
-      .menu-button {
-
-        width: 38px;
-        height: 38px;
+        letter-spacing: .12em;
 
       }
 
 
 
-      /* MENU */
-
-      .side-menu {
-
-        width: 86vw;
-
-        padding:
-          94px
-          28px
-          35px;
-
-      }
-
-
-      .menu-brand {
-
-        margin-bottom: 42px;
-
-      }
-
-
-      .menu-brand img {
-
-        width: 52px;
-
-      }
-
-
-      .menu-links a {
-
-        padding: 15px 0;
-
-        font-size: 21px;
-
-      }
-
-
-
-      /* INTRO */
+      /* SOBRE MIM */
 
       .intro {
 
@@ -1335,9 +1083,9 @@
         display: block;
 
         padding:
-          102px
+          95px
           18px
-          72px;
+          65px;
 
       }
 
@@ -1357,15 +1105,14 @@
 
         width: 100%;
 
-        padding-left: 23px;
-
-        margin-bottom: 58px;
+        margin-bottom: 55px;
 
       }
 
 
       .portrait-frame {
 
+        width: 100%;
         max-width: none;
 
       }
@@ -1373,20 +1120,20 @@
 
       .portrait-frame::before {
 
-        top: -17px;
-        left: -15px;
+        top: -14px;
+        left: -9px;
 
-        width: 45%;
-        height: 28%;
+        width: 43%;
+        height: 26%;
 
       }
 
 
       .portrait-frame img {
 
-        height: 450px;
+        width: 100%;
 
-        min-height: 0;
+        height: 440px;
 
         object-position:
           center 68%;
@@ -1394,21 +1141,10 @@
       }
 
 
-      .portrait-location {
-
-        left: -2px;
-
-        font-size: 8px;
-
-        letter-spacing: .22em;
-
-      }
-
-
       .portrait-year {
 
-        left: 24px;
-        bottom: -27px;
+        left: 0;
+        bottom: -26px;
 
         font-size: 13px;
 
@@ -1417,16 +1153,14 @@
 
       .portrait-year::before {
 
-        height: 38px;
+        height: 37px;
 
       }
 
 
       .intro-content {
 
-        width: 100%;
-
-        padding-right: 0;
+        max-width: none;
 
       }
 
@@ -1435,11 +1169,11 @@
 
         max-width: 100%;
 
-        font-size: 49px;
+        font-size: 48px;
 
         line-height: .94;
 
-        margin-bottom: 29px;
+        margin-bottom: 27px;
 
       }
 
@@ -1448,7 +1182,14 @@
 
         width: 42px;
 
-        margin-bottom: 27px;
+        margin-bottom: 25px;
+
+      }
+
+
+      .intro-text {
+
+        max-width: none;
 
       }
 
@@ -1457,7 +1198,7 @@
 
         font-size: 15px;
 
-        line-height: 1.58;
+        line-height: 1.57;
 
         margin-bottom: 16px;
 
@@ -1468,17 +1209,8 @@
       }
 
 
-      .vertical-phrase {
 
-        display: none;
-
-      }
-
-
-
-      /* ====================================
-         LINKS MOBILE
-      ==================================== */
+      /* LINKS */
 
       .links-section {
 
@@ -1512,14 +1244,12 @@
 
         width: 38px;
 
-        margin-bottom: 15px;
+        margin-bottom: 14px;
 
       }
 
 
       .links-description {
-
-        max-width: 260px;
 
         font-size: 13px;
 
@@ -1533,6 +1263,9 @@
       }
 
 
+
+      /* GRID 2 COLUNAS */
+
       .social-grid {
 
         grid-template-columns:
@@ -1541,9 +1274,15 @@
       }
 
 
+      /*
+        No mobile mantemos o fade
+        apenas no começo e final
+        da grade completa.
+      */
+
       .network-link {
 
-        height: 112px;
+        height: 105px;
 
         border-right:
           1px solid var(--dark-line);
@@ -1561,21 +1300,10 @@
       }
 
 
-      .network-link:nth-child(7) {
-
-        grid-column: 1 / -1;
-
-        border-right: 0;
-
-        border-bottom: 0;
-
-      }
-
-
+      .network-link:nth-child(5),
       .network-link:nth-child(6) {
 
-        border-bottom:
-          1px solid var(--dark-line);
+        border-bottom: 0;
 
       }
 
@@ -1590,162 +1318,35 @@
 
       .network-name {
 
-        font-size: 11px;
+        font-size: 10px;
 
       }
 
 
 
-      /* LIFESTYLE */
-
-      .lifestyle {
-
-        width:
-          calc(100% - 22px);
-
-        padding-top: 55px;
-
-      }
-
-
-      .lifestyle-header {
-
-        margin:
-          0 7px
-          20px;
-
-      }
-
-
-      .lifestyle-title {
-
-        font-size: 39px;
-
-      }
-
-
-      .lifestyle-number {
-
-        font-size: 9px;
-
-      }
-
-
-
-      /* MOSAICO MOBILE */
-
-      .visual-grid {
-
-        display: grid;
-
-        grid-template-columns:
-          repeat(2,minmax(0,1fr));
-
-        width: 100%;
-
-        height: auto;
-
-        gap: 4px;
-
-      }
-
-
-      .visual-item {
-
-        width: 100%;
-        height: auto;
-
-      }
-
-
-      .visual-item:nth-child(1) {
-
-        grid-column: 1 / -1;
-
-        aspect-ratio: 1.45 / 1;
-
-      }
-
-
-      .visual-item:nth-child(2),
-      .visual-item:nth-child(3) {
-
-        aspect-ratio: .82 / 1;
-
-      }
-
-
-      .visual-item:nth-child(4) {
-
-        grid-column: 1 / -1;
-
-        aspect-ratio: 1.45 / 1;
-
-      }
-
-
-      .visual-item:nth-child(5),
-      .visual-item:nth-child(6) {
-
-        aspect-ratio: .82 / 1;
-
-      }
-
-
-      .visual-item img {
-
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-
-      }
-
-
-      .visual-item::after {
-
-        right: 11px;
-        bottom: 9px;
-
-        opacity: .72;
-
-      }
-
-
-
-      /* FINAL */
-
-      .closing {
-
-        min-height: 115px;
-
-        padding: 24px 18px;
-
-        font-size: 18px;
-
-      }
-
+      /* FOOTER */
 
       .footer {
 
-        width:
-          calc(100% - 36px);
-
         min-height: 78px;
+
+        padding:
+          0
+          18px;
 
       }
 
 
       .footer-copy {
 
-        font-size: 10px;
+        font-size: 9px;
 
       }
 
 
       .footer-mark img {
 
-        width: 30px;
+        width: 29px;
 
       }
 
@@ -1754,93 +1355,11 @@
 
 
     /* ========================================
-       TABLET
+       ACESSIBILIDADE
     ======================================== */
 
     @media
-    (min-width:701px)
-    and
-    (max-width:1050px) {
-
-
-      .intro {
-
-        padding-left: 4%;
-        padding-right: 4%;
-
-      }
-
-
-      .intro-grid {
-
-        grid-template-columns:
-          43% 57%;
-
-        gap: 42px;
-
-      }
-
-
-      .portrait-area {
-
-        padding-left: 30px;
-
-      }
-
-
-      .portrait-frame img {
-
-        min-height: 480px;
-
-      }
-
-
-      .intro-content {
-
-        padding-right: 55px;
-
-      }
-
-
-      .intro-title {
-
-        font-size: 55px;
-
-      }
-
-
-      .intro-text p {
-
-        font-size: 14px;
-
-      }
-
-
-      .vertical-phrase {
-
-        font-size: 9px;
-
-      }
-
-
-      .network-name {
-
-        font-size: 9px;
-
-        letter-spacing: .06em;
-
-      }
-
-    }
-
-
-
-    /* ========================================
-       REDUCED MOTION
-    ======================================== */
-
-    @media
-    (prefers-reduced-motion:reduce) {
+    (prefers-reduced-motion: reduce) {
 
 
       html {
@@ -1886,13 +1405,14 @@
 
 
   <!-- ======================================
-       HEADER
+       CABEÇALHO
   ======================================= -->
 
   <header
     class="header"
     id="header"
   >
+
 
     <a
       href="#sobre"
@@ -1908,71 +1428,14 @@
     </a>
 
 
-    <div class="header-signature">
+    <div class="header-location">
 
-      Potential Artist &amp; Lifestyle
+      Belo Horizonte — MG
 
     </div>
 
-
-    <button
-      class="menu-button"
-      id="menuButton"
-      aria-label="Abrir menu"
-      aria-expanded="false"
-    >
-
-      <span></span>
-      <span></span>
-
-    </button>
 
   </header>
-
-
-
-  <!-- ======================================
-       MENU LATERAL
-  ======================================= -->
-
-  <div
-    class="menu-overlay"
-    id="menuOverlay"
-  ></div>
-
-
-  <aside
-    class="side-menu"
-    id="sideMenu"
-  >
-
-    <div class="menu-brand">
-
-      <img
-        src="LOGOMARCA PRETA.png"
-        alt="MR"
-      >
-
-    </div>
-
-
-    <nav class="menu-links">
-
-      <a href="#sobre">
-        Sobre mim
-      </a>
-
-      <a href="#links">
-        Links
-      </a>
-
-      <a href="#lifestyle">
-        Lifestyle
-      </a>
-
-    </nav>
-
-  </aside>
 
 
 
@@ -1980,7 +1443,7 @@
 
 
     <!-- ====================================
-         APRESENTAÇÃO
+         SOBRE MIM
     ===================================== -->
 
     <section
@@ -1997,13 +1460,6 @@
         <div
           class="portrait-area reveal"
         >
-
-
-          <div class="portrait-location">
-
-            Belo Horizonte, MG
-
-          </div>
 
 
           <div class="portrait-frame">
@@ -2059,11 +1515,9 @@
 
               Meu nome é
               <strong>Milena Roberta</strong>.
-
               Cresci em Belo Horizonte,
               sempre cercada pela arte
               em suas diferentes formas.
-
               Desenho desde que me lembro
               e criar sempre foi uma das
               coisas que mais amo fazer.
@@ -2076,7 +1530,6 @@
               Com o tempo, encontrei na
               tatuagem uma nova forma de
               transformar desenho em expressão.
-
               Gosto de pensar nela pelo que
               ela é: uma
               <strong>arte milenar</strong>,
@@ -2094,7 +1547,6 @@
               o que crio, mas também um pouco
               do meu lifestyle, das minhas
               referências e do meu cotidiano.
-
               Porque, para mim,
               <strong>
                 a arte não está só no que
@@ -2104,13 +1556,6 @@
 
             </p>
 
-
-          </div>
-
-
-          <div class="vertical-phrase">
-
-            Arte em tudo que me atravessa
 
           </div>
 
@@ -2158,8 +1603,8 @@
 
             <p class="links-description">
 
-              Onde me encontrar,
-              acompanhar e conversar.
+              Um pouco de mim,
+              em outros lugares.
 
             </p>
 
@@ -2178,7 +1623,9 @@
 
 
 
-        <!-- REDES -->
+        <!-- =================================
+             REDES
+        ================================== -->
 
         <div class="social-grid">
 
@@ -2193,7 +1640,9 @@
             aria-label="Instagram"
           >
 
+
             <span class="network-icon">
+
 
               <svg
                 viewBox="0 0 24 24"
@@ -2226,11 +1675,16 @@
 
               </svg>
 
+
             </span>
 
+
             <span class="network-name">
+
               Instagram
+
             </span>
+
 
           </a>
 
@@ -2244,7 +1698,9 @@
             aria-label="TikTok"
           >
 
+
             <span class="network-icon">
+
 
               <svg
                 viewBox="0 0 24 24"
@@ -2257,11 +1713,16 @@
 
               </svg>
 
+
             </span>
 
+
             <span class="network-name">
+
               TikTok
+
             </span>
+
 
           </a>
 
@@ -2275,24 +1736,32 @@
             aria-label="Pinterest"
           >
 
+
             <span class="network-icon">
+
 
               <svg
                 viewBox="0 0 24 24"
                 fill="currentColor"
+                aria-hidden="true"
               >
 
                 <path
-                  d="M12 2C6.5 2 3 6 3 10.7c0 3.4 1.9 5.4 3.1 5.4.5 0 .8-1.4.8-1.8 0-.5-1.3-1.6-1.3-3.8 0-3.5 2.7-6 6.2-6 3 0 5.2 1.7 5.2 4.8 0 2.3-.9 6.5-3.9 6.5-1.1 0-2-1-2-2.1 0-1.6 1.1-3.1 1.1-4.7 0-2.7-3.9-2.2-3.9 1 0 .7.1 1.4.4 2-.6 2.5-1.8 6.2-1.8 8.8 0 .8.1 1.6.2 2.2.8-1.1 1.4-2.6 1.8-4 .3-1 .7-2.6.7-2.6.7 1.3 2.4 2 3.8 2 4.8 0 8.1-4.4 8.1-8.7C21.5 5.1 17.5 2 12 2Z"
+                  d="M12 2C6.477 2 2 6.03 2 11c0 3.708 2.11 6.91 5.172 8.42-.071-.714-.136-1.812.028-2.594.149-.706.963-4.086.963-4.086s-.246-.492-.246-1.22c0-1.143.663-1.997 1.488-1.997.702 0 1.041.527 1.041 1.159 0 .706-.449 1.761-.681 2.739-.194.819.41 1.486 1.217 1.486 1.46 0 2.583-1.54 2.583-3.763 0-1.968-1.414-3.344-3.433-3.344-2.339 0-3.712 1.754-3.712 3.567 0 .706.272 1.464.612 1.876.067.082.077.154.057.237-.062.26-.201.819-.228.934-.036.151-.119.183-.275.11-1.025-.477-1.666-1.974-1.666-3.177 0-2.587 1.88-4.962 5.419-4.962 2.846 0 5.057 2.029 5.057 4.741 0 2.829-1.783 5.105-4.257 5.105-.831 0-1.613-.432-1.881-.943l-.511 1.948c-.185.712-.686 1.604-1.021 2.149.769.237 1.582.365 2.424.365 5.523 0 10-4.03 10-9S17.523 2 12 2Z"
                 ></path>
 
               </svg>
 
+
             </span>
 
+
             <span class="network-name">
+
               Pinterest
+
             </span>
+
 
           </a>
 
@@ -2306,7 +1775,9 @@
             aria-label="LinkedIn"
           >
 
+
             <span class="network-icon">
+
 
               <svg
                 viewBox="0 0 24 24"
@@ -2319,11 +1790,16 @@
 
               </svg>
 
+
             </span>
 
+
             <span class="network-name">
+
               LinkedIn
+
             </span>
+
 
           </a>
 
@@ -2337,7 +1813,9 @@
             aria-label="YouTube"
           >
 
+
             <span class="network-icon">
+
 
               <svg
                 viewBox="0 0 24 24"
@@ -2350,11 +1828,16 @@
 
               </svg>
 
+
             </span>
 
+
             <span class="network-name">
+
               YouTube
+
             </span>
+
 
           </a>
 
@@ -2368,7 +1851,9 @@
             aria-label="WhatsApp"
           >
 
+
             <span class="network-icon">
+
 
               <svg
                 viewBox="0 0 24 24"
@@ -2381,52 +1866,16 @@
 
               </svg>
 
+
             </span>
 
+
             <span class="network-name">
+
               WhatsApp
-            </span>
-
-          </a>
-
-
-
-          <!-- EMAIL -->
-
-          <a
-            href="#"
-            class="network-link email"
-            aria-label="E-mail"
-          >
-
-            <span class="network-icon">
-
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-              >
-
-                <rect
-                  x="2.5"
-                  y="5"
-                  width="19"
-                  height="14"
-                  rx="1"
-                ></rect>
-
-                <path
-                  d="M3 6l9 7 9-7"
-                ></path>
-
-              </svg>
 
             </span>
 
-            <span class="network-name">
-              E-mail
-            </span>
 
           </a>
 
@@ -2440,159 +1889,12 @@
     </section>
 
 
-
-    <!-- ====================================
-         LIFESTYLE
-    ===================================== -->
-
-    <section
-      class="lifestyle"
-      id="lifestyle"
-    >
-
-
-      <div class="lifestyle-header">
-
-
-        <h2 class="lifestyle-title">
-
-          Lifestyle
-
-        </h2>
-
-
-        <span class="lifestyle-number">
-
-          01 — 06
-
-        </span>
-
-
-      </div>
-
-
-
-      <div class="visual-grid">
-
-
-        <a
-          class="visual-item reveal"
-          href="https://www.instagram.com/p/DVHYP_sjxG8/?stkn=MXR4NGk5ODU1NGZ4"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
-          <img
-            src="Imagem 2.JPG"
-            alt="Lifestyle Milenar"
-          >
-
-        </a>
-
-
-        <a
-          class="visual-item reveal"
-          href="https://www.instagram.com/reel/DUB0davjxMN/?stkn=MTBkamFxODNwZDYzag=="
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
-          <img
-            src="Imagem 3.JPG"
-            alt="Lifestyle Milenar"
-          >
-
-        </a>
-
-
-        <a
-          class="visual-item reveal"
-          href="https://www.instagram.com/p/DUIqP0GDDMh/?stkn=MXEyZWFveXNjdHhw"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
-          <img
-            src="Imagem 4.JPG"
-            alt="Lifestyle Milenar"
-          >
-
-        </a>
-
-
-        <a
-          class="visual-item reveal"
-          href="https://www.instagram.com/p/C4-_3OhrA0e/?stkn=bmprZXd0M3Z3cm03"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
-          <img
-            src="Imagem 5.JPG"
-            alt="Lifestyle Milenar"
-          >
-
-        </a>
-
-
-        <a
-          class="visual-item reveal"
-          href="https://www.instagram.com/p/C4oRgfIPhzX/?stkn=YzR2amg4MG5rcWlj"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
-          <img
-            src="Imagem 6.JPG"
-            alt="Lifestyle Milenar"
-          >
-
-        </a>
-
-
-        <a
-          class="visual-item reveal"
-          href="https://www.instagram.com/p/C4LIoxWMrx9/?stkn=MXdsYWRzbnNqY2xwZA=="
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
-          <img
-            src="Foto 7.JPG"
-            alt="Lifestyle Milenar"
-          >
-
-        </a>
-
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- ====================================
-         FRASE FINAL
-    ===================================== -->
-
-    <section class="closing">
-
-      <p>
-
-        Criar também é uma forma de viver.
-
-      </p>
-
-    </section>
-
-
   </main>
 
 
 
   <!-- ======================================
-       FOOTER
+       RODAPÉ
   ======================================= -->
 
   <footer class="footer">
@@ -2626,30 +1928,11 @@
   <script>
 
 
+    /* CABEÇALHO */
+
     const header =
       document.getElementById("header");
 
-
-    const menuButton =
-      document.getElementById("menuButton");
-
-
-    const sideMenu =
-      document.getElementById("sideMenu");
-
-
-    const menuOverlay =
-      document.getElementById("menuOverlay");
-
-
-    const menuLinks =
-      document.querySelectorAll(
-        ".menu-links a"
-      );
-
-
-
-    /* HEADER */
 
     function updateHeader() {
 
@@ -2683,137 +1966,7 @@
 
 
 
-    /* MENU */
-
-    function openMenu() {
-
-
-      menuButton.classList.add(
-        "active"
-      );
-
-
-      sideMenu.classList.add(
-        "active"
-      );
-
-
-      menuOverlay.classList.add(
-        "active"
-      );
-
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        "true"
-      );
-
-
-      document.body.style.overflow =
-        "hidden";
-
-
-    }
-
-
-
-    function closeMenu() {
-
-
-      menuButton.classList.remove(
-        "active"
-      );
-
-
-      sideMenu.classList.remove(
-        "active"
-      );
-
-
-      menuOverlay.classList.remove(
-        "active"
-      );
-
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-
-      document.body.style.overflow =
-        "";
-
-
-    }
-
-
-
-    menuButton.addEventListener(
-      "click",
-      () => {
-
-
-        if (
-          sideMenu.classList.contains(
-            "active"
-          )
-        ) {
-
-          closeMenu();
-
-        } else {
-
-          openMenu();
-
-        }
-
-
-      }
-    );
-
-
-
-    menuOverlay.addEventListener(
-      "click",
-      closeMenu
-    );
-
-
-
-    menuLinks.forEach(
-      link => {
-
-
-        link.addEventListener(
-          "click",
-          closeMenu
-        );
-
-
-      }
-    );
-
-
-
-    document.addEventListener(
-      "keydown",
-      event => {
-
-
-        if (event.key === "Escape") {
-
-          closeMenu();
-
-        }
-
-
-      }
-    );
-
-
-
-    /* REVEAL */
+    /* ENTRADA SUAVE */
 
     const revealElements =
       document.querySelectorAll(
@@ -2869,7 +2022,6 @@
 
 
         );
-
 
 
       revealElements.forEach(
