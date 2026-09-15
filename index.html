@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -23,8 +22,6 @@
     href="LOGOMARCA PRETA.png"
   >
 
-  <!-- FONTES -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -38,7 +35,6 @@
     rel="stylesheet"
   >
 
-
   <style>
 
     /* ========================================
@@ -46,7 +42,6 @@
     ======================================== */
 
     :root {
-
       --background: #f4f0e7;
       --text: #111111;
       --line: rgba(17,17,17,.24);
@@ -54,28 +49,19 @@
       --dark: #101010;
       --dark-text: #f5f2eb;
       --dark-line: rgba(255,255,255,.20);
-
     }
 
-
     * {
-
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-
     }
-
 
     html {
-
       scroll-behavior: smooth;
-
     }
 
-
     body {
-
       background:
         radial-gradient(
           circle at 20% 20%,
@@ -102,16 +88,12 @@
       font-weight: 300;
 
       overflow-x: hidden;
-
     }
 
-
     body::before {
-
       content: "";
 
       position: fixed;
-
       inset: 0;
 
       pointer-events: none;
@@ -129,22 +111,15 @@
         );
 
       mix-blend-mode: multiply;
-
     }
-
 
     a {
-
       color: inherit;
       text-decoration: none;
-
     }
 
-
     img {
-
       display: block;
-
     }
 
 
@@ -154,77 +129,72 @@
     ======================================== */
 
     .header {
-
       position: fixed;
 
       top: 0;
       left: 0;
 
       width: 100%;
-      height: 82px;
+      height: 92px;
 
-      padding: 0 5%;
+      padding:
+        12px
+        5%
+        0;
 
       display: flex;
 
       align-items: center;
       justify-content: space-between;
 
-      background: rgba(244,240,231,.94);
+      background:
+        rgba(244,240,231,.94);
 
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
 
-      border-bottom: 1px solid transparent;
+      border-bottom:
+        1px solid transparent;
 
       z-index: 1000;
 
       transition:
         height .35s ease,
+        padding .35s ease,
         border-color .35s ease;
-
     }
-
 
     .header.scrolled {
+      height: 68px;
 
-      height: 66px;
+      padding-top: 0;
 
       border-color: var(--line);
-
     }
 
-
     .header-logo img {
-
       width: 150px;
       height: auto;
 
-      transition: width .35s ease;
-
+      transition:
+        width .35s ease;
     }
-
 
     .header.scrolled
     .header-logo img {
-
       width: 130px;
-
     }
 
-
     .header-location {
-
-      font-size: 11px;
+      font-size: 13px;
 
       font-weight: 400;
 
-      letter-spacing: .24em;
+      letter-spacing: .20em;
 
       text-transform: uppercase;
 
       white-space: nowrap;
-
     }
 
 
@@ -234,7 +204,6 @@
     ======================================== */
 
     .intro {
-
       min-height: 100vh;
 
       padding:
@@ -245,12 +214,9 @@
       display: flex;
 
       align-items: center;
-
     }
 
-
     .intro-grid {
-
       width: 100%;
 
       display: grid;
@@ -259,38 +225,28 @@
         minmax(0,47%)
         minmax(0,53%);
 
-      gap: clamp(48px,6vw,100px);
+      gap:
+        clamp(48px,6vw,100px);
 
       align-items: center;
-
     }
 
 
 
-    /* ========================================
-       FOTO
-    ======================================== */
+    /* FOTO */
 
     .portrait-area {
-
       position: relative;
-
     }
 
-
     .portrait-frame {
-
       position: relative;
 
       width: 100%;
-
       max-width: 600px;
-
     }
 
-
     .portrait-frame::before {
-
       content: "";
 
       position: absolute;
@@ -305,27 +261,24 @@
         rgba(110,100,85,.08);
 
       z-index: -1;
-
     }
 
-
     .portrait-frame img {
-
       width: 100%;
 
-      height: min(66vh,650px);
+      height:
+        min(66vh,650px);
 
       object-fit: cover;
 
-      object-position: center 69%;
+      object-position:
+        center 69%;
 
-      filter: grayscale(100%);
-
+      filter:
+        grayscale(100%);
     }
 
-
     .portrait-year {
-
       position: absolute;
 
       left: 0;
@@ -343,38 +296,28 @@
         serif;
 
       font-size: 15px;
-
     }
 
-
     .portrait-year::before {
-
       content: "";
 
       width: 1px;
       height: 42px;
 
-      background: var(--text);
-
+      background:
+        var(--text);
     }
 
 
 
-    /* ========================================
-       TEXTO
-    ======================================== */
+    /* TEXTO */
 
     .intro-content {
-
       width: 100%;
-
       max-width: 680px;
-
     }
 
-
     .intro-title {
-
       max-width: 650px;
 
       font-family:
@@ -392,38 +335,27 @@
       letter-spacing: -.035em;
 
       margin-bottom: 32px;
-
     }
-
 
     .title-line {
-
       display: block;
-
     }
 
-
     .editorial-line {
-
       width: 50px;
       height: 1px;
 
-      background: var(--text);
+      background:
+        var(--text);
 
       margin-bottom: 27px;
-
     }
-
 
     .intro-text {
-
       max-width: 650px;
-
     }
 
-
     .intro-text p {
-
       font-size: 15px;
 
       line-height: 1.48;
@@ -433,30 +365,20 @@
       text-align: justify;
 
       text-justify: inter-word;
-
     }
-
 
     .intro-text p:last-child {
-
       margin-bottom: 0;
-
     }
 
-
     .intro-text strong {
-
       font-weight: 500;
-
     }
 
 
 
     /* ========================================
-       TELAS DESKTOP MAIS BAIXAS
-
-       Isso faz a primeira seção se adaptar
-       também à ALTURA do monitor.
+       DESKTOP COM POUCA ALTURA
     ======================================== */
 
     @media
@@ -464,100 +386,71 @@
     and
     (max-height: 760px) {
 
-
       .header {
+        height: 82px;
 
-        height: 72px;
-
+        padding-top: 10px;
       }
-
 
       .header.scrolled {
+        height: 64px;
 
-        height: 62px;
-
+        padding-top: 0;
       }
-
 
       .header-logo img {
-
         width: 140px;
-
       }
-
 
       .header.scrolled
       .header-logo img {
-
         width: 125px;
-
       }
 
-
       .intro {
-
         min-height: 100vh;
 
         padding:
-          94px
+          92px
           5%
-          30px;
-
+          28px;
       }
-
 
       .portrait-frame img {
+        height:
+          calc(100vh - 145px);
 
-        height: calc(100vh - 150px);
+        min-height: 420px;
 
-        min-height: 430px;
-
-        max-height: 570px;
-
+        max-height: 555px;
       }
-
 
       .intro-title {
-
         font-size:
-          clamp(48px,4.4vw,70px);
+          clamp(46px,4.25vw,68px);
 
-        margin-bottom: 23px;
-
+        margin-bottom: 21px;
       }
-
 
       .editorial-line {
-
-        margin-bottom: 20px;
-
+        margin-bottom: 18px;
       }
-
 
       .intro-text p {
-
         font-size: 14px;
 
-        line-height: 1.40;
+        line-height: 1.38;
 
-        margin-bottom: 11px;
-
+        margin-bottom: 10px;
       }
-
 
       .portrait-year {
-
-        bottom: -22px;
-
+        bottom: -21px;
       }
-
 
       .portrait-year::before {
-
-        height: 34px;
-
+        height: 33px;
       }
-
     }
 
 
@@ -567,34 +460,29 @@
     ======================================== */
 
     .links-section {
-
       width: 100%;
 
-      background: var(--dark);
+      background:
+        var(--dark);
 
-      color: var(--dark-text);
+      color:
+        var(--dark-text);
 
       padding:
         48px
         5%
         46px;
-
     }
 
-
     .links-inner {
-
       width: 100%;
 
       max-width: 1500px;
 
       margin: 0 auto;
-
     }
 
-
     .links-heading {
-
       display: flex;
 
       align-items: flex-end;
@@ -602,38 +490,28 @@
 
       gap: 40px;
 
-      margin-bottom: 37px;
-
+      margin-bottom: 34px;
     }
-
 
     .links-heading-left {
-
       max-width: 620px;
-
     }
 
 
-    .links-title {
 
-      font-family:
-        "Libre Caslon Display",
-        Georgia,
-        serif;
+    /* TÍTULO LINKS EM IMAGEM */
 
-      font-size: 46px;
+    .links-title-image {
+      width: 145px;
 
-      line-height: 1;
+      height: auto;
 
-      font-weight: 400;
+      object-fit: contain;
 
-      margin-bottom: 14px;
-
+      margin-bottom: 11px;
     }
-
 
     .links-small-line {
-
       width: 42px;
       height: 1px;
 
@@ -641,12 +519,9 @@
 
       background:
         rgba(255,255,255,.75);
-
     }
 
-
     .links-description {
-
       font-size: 14px;
 
       line-height: 1.5;
@@ -655,110 +530,66 @@
 
       color:
         rgba(255,255,255,.70);
-
     }
 
-
     .links-index {
-
       font-size: 10px;
 
       letter-spacing: .22em;
 
       color:
         rgba(255,255,255,.45);
-
     }
 
 
 
     /* ========================================
-       FILEIRA DE REDES
+       REDES
     ======================================== */
 
     .social-grid {
-
       position: relative;
 
       display: grid;
 
       grid-template-columns:
         repeat(6,minmax(0,1fr));
-
     }
 
+    .social-grid::before,
+    .social-grid::after {
+      content: "";
 
-    /*
-       LINHA SUPERIOR COM FADE
-    */
+      position: absolute;
+
+      left: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255,255,255,.10) 5%,
+          rgba(255,255,255,.22) 16%,
+          rgba(255,255,255,.22) 84%,
+          rgba(255,255,255,.10) 95%,
+          transparent 100%
+        );
+
+      pointer-events: none;
+    }
 
     .social-grid::before {
-
-      content: "";
-
-      position: absolute;
-
       top: 0;
-      left: 0;
-
-      width: 100%;
-      height: 1px;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent 0%,
-          rgba(255,255,255,.10) 5%,
-          rgba(255,255,255,.22) 16%,
-          rgba(255,255,255,.22) 84%,
-          rgba(255,255,255,.10) 95%,
-          transparent 100%
-        );
-
-      pointer-events: none;
-
     }
-
-
-    /*
-       LINHA INFERIOR COM FADE
-    */
 
     .social-grid::after {
-
-      content: "";
-
-      position: absolute;
-
       bottom: 0;
-      left: 0;
-
-      width: 100%;
-      height: 1px;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent 0%,
-          rgba(255,255,255,.10) 5%,
-          rgba(255,255,255,.22) 16%,
-          rgba(255,255,255,.22) 84%,
-          rgba(255,255,255,.10) 95%,
-          transparent 100%
-        );
-
-      pointer-events: none;
-
     }
 
-
-
-    /* ========================================
-       CADA REDE
-    ======================================== */
-
     .network-link {
-
       min-width: 0;
 
       height: 104px;
@@ -772,23 +603,17 @@
 
       gap: 10px;
 
-      color: #ffffff;
+      color: #fff;
 
       border-right:
         1px solid var(--dark-line);
-
     }
-
 
     .network-link:last-child {
-
       border-right: 0;
-
     }
 
-
     .network-icon {
-
       width: 29px;
       height: 29px;
 
@@ -797,100 +622,81 @@
       align-items: center;
       justify-content: center;
 
-      color: #ffffff;
+      color: #fff;
 
       transition:
         color .25s ease,
         transform .25s ease;
-
     }
 
-
     .network-icon svg {
-
       width: 100%;
       height: 100%;
 
       display: block;
-
     }
 
-
     .network-name {
-
       font-size: 11px;
 
       letter-spacing: .12em;
 
       text-transform: uppercase;
 
-      /*
-        O TEXTO SEMPRE CONTINUA BRANCO.
-      */
+      color: #fff;
+    }
 
-      color: #ffffff;
+    .network-link:hover
+    .network-icon {
+      transform:
+        scale(1.09);
+    }
 
+    .network-link.instagram:hover
+    .network-icon {
+      color: #e1306c;
+    }
+
+    .network-link.tiktok:hover
+    .network-icon {
+      color: #25f4ee;
+    }
+
+    .network-link.pinterest:hover
+    .network-icon {
+      color: #e60023;
+    }
+
+    .network-link.linkedin:hover
+    .network-icon {
+      color: #0a66c2;
+    }
+
+    .network-link.youtube:hover
+    .network-icon {
+      color: #ff0000;
+    }
+
+    .network-link.whatsapp:hover
+    .network-icon {
+      color: #25d366;
     }
 
 
 
     /* ========================================
-       HOVER — SOMENTE ÍCONE
+       ESPAÇO DE ENCERRAMENTO
+
+       Mantém o site respirando depois da
+       seção preta enquanto decidimos a
+       terceira seção.
     ======================================== */
 
-    .network-link:hover
-    .network-icon {
+    .ending-space {
+      min-height: 145px;
 
-      transform: scale(1.09);
-
-    }
-
-
-    .network-link.instagram:hover
-    .network-icon {
-
-      color: #e1306c;
-
-    }
-
-
-    .network-link.tiktok:hover
-    .network-icon {
-
-      color: #25f4ee;
-
-    }
-
-
-    .network-link.pinterest:hover
-    .network-icon {
-
-      color: #e60023;
-
-    }
-
-
-    .network-link.linkedin:hover
-    .network-icon {
-
-      color: #0a66c2;
-
-    }
-
-
-    .network-link.youtube:hover
-    .network-icon {
-
-      color: #ff0000;
-
-    }
-
-
-    .network-link.whatsapp:hover
-    .network-icon {
-
-      color: #25d366;
-
+      background:
+        var(--background);
     }
 
 
@@ -900,70 +706,106 @@
     ======================================== */
 
     .footer {
-
-      width: 100%;
+      width: 90%;
 
       min-height: 92px;
 
-      padding: 0 5%;
+      margin: 0 auto;
 
       display: flex;
 
       align-items: center;
       justify-content: space-between;
 
-      gap: 20px;
+      gap: 30px;
 
-      background: var(--background);
+      border-top:
+        1px solid var(--line);
 
+      background:
+        var(--background);
     }
 
-
     .footer-copy {
-
       font-size: 11px;
 
       letter-spacing: .10em;
 
       text-transform: uppercase;
 
+      white-space: nowrap;
     }
 
+    .footer-socials {
+      display: flex;
 
-    .footer-mark img {
+      align-items: center;
 
-      width: 34px;
-      height: auto;
+      gap: 21px;
+    }
 
-      opacity: .9;
+    .footer-social {
+      width: 19px;
+      height: 19px;
 
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      color: var(--text);
+
+      transition:
+        color .25s ease,
+        transform .25s ease;
+    }
+
+    .footer-social svg {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+    }
+
+    .footer-social:hover {
+      transform:
+        scale(1.08);
+    }
+
+    .footer-social.instagram:hover {
+      color: #e1306c;
+    }
+
+    .footer-social.youtube:hover {
+      color: #ff0000;
+    }
+
+    .footer-social.whatsapp:hover {
+      color: #25d366;
     }
 
 
 
     /* ========================================
-       ENTRADA SUAVE
+       ANIMAÇÃO
     ======================================== */
 
     .reveal {
-
       opacity: 0;
 
-      transform: translateY(12px);
+      transform:
+        translateY(12px);
 
       transition:
         opacity .8s ease,
         transform .8s ease;
-
     }
 
-
     .reveal.visible {
-
       opacity: 1;
 
-      transform: translateY(0);
-
+      transform:
+        translateY(0);
     }
 
 
@@ -977,47 +819,31 @@
     and
     (max-width: 1000px) {
 
-
       .intro {
-
         padding-left: 4%;
         padding-right: 4%;
-
       }
 
-
       .intro-grid {
-
         grid-template-columns:
           43% 57%;
 
         gap: 40px;
-
       }
-
 
       .intro-title {
-
         font-size: 52px;
-
       }
-
 
       .intro-text p {
-
         font-size: 13px;
-
       }
 
-
       .network-name {
-
         font-size: 9px;
 
         letter-spacing: .07em;
-
       }
-
     }
 
 
@@ -1028,145 +854,103 @@
 
     @media (max-width: 700px) {
 
-
-      /* CABEÇALHO */
-
       .header {
-
-        height: 66px;
+        height: 72px;
 
         padding:
-          0
-          18px;
-
+          9px
+          18px
+          0;
       }
-
 
       .header.scrolled {
+        height: 61px;
 
-        height: 60px;
-
+        padding-top: 0;
       }
-
 
       .header-logo img {
-
         width: 108px;
-
       }
-
 
       .header.scrolled
       .header-logo img {
-
         width: 100px;
-
       }
-
 
       .header-location {
+        font-size: 9px;
 
-        font-size: 8px;
-
-        letter-spacing: .12em;
-
+        letter-spacing: .10em;
       }
 
 
 
-      /* SOBRE MIM */
+      /* SOBRE */
 
       .intro {
-
         min-height: auto;
 
         display: block;
 
         padding:
-          95px
+          101px
           18px
           65px;
-
       }
 
-
       .intro-grid {
-
         display: flex;
 
         flex-direction: column;
 
         gap: 0;
-
       }
 
-
       .portrait-area {
-
         width: 100%;
 
         margin-bottom: 55px;
-
       }
-
 
       .portrait-frame {
-
         width: 100%;
-        max-width: none;
 
+        max-width: none;
       }
 
-
       .portrait-frame::before {
-
         top: -14px;
         left: -9px;
 
         width: 43%;
         height: 26%;
-
       }
 
-
       .portrait-frame img {
-
         width: 100%;
-
         height: 440px;
 
         object-position:
           center 68%;
-
       }
 
-
       .portrait-year {
-
         left: 0;
         bottom: -26px;
 
         font-size: 13px;
-
       }
-
 
       .portrait-year::before {
-
         height: 37px;
-
       }
-
 
       .intro-content {
-
         max-width: none;
-
       }
 
-
       .intro-title {
-
         max-width: 100%;
 
         font-size: 48px;
@@ -1174,28 +958,19 @@
         line-height: .94;
 
         margin-bottom: 27px;
-
       }
 
-
       .editorial-line {
-
         width: 42px;
 
         margin-bottom: 25px;
-
       }
-
 
       .intro-text {
-
         max-width: none;
-
       }
 
-
       .intro-text p {
-
         font-size: 15px;
 
         line-height: 1.57;
@@ -1205,7 +980,6 @@
         text-align: justify;
 
         text-justify: inter-word;
-
       }
 
 
@@ -1213,75 +987,44 @@
       /* LINKS */
 
       .links-section {
-
         padding:
           42px
           18px
           38px;
-
       }
-
 
       .links-heading {
-
         display: block;
 
-        margin-bottom: 31px;
-
+        margin-bottom: 30px;
       }
 
+      .links-title-image {
+        width: 125px;
 
-      .links-title {
-
-        font-size: 40px;
-
-        margin-bottom: 14px;
-
+        margin-bottom: 10px;
       }
-
 
       .links-small-line {
-
         width: 38px;
 
         margin-bottom: 14px;
-
       }
-
 
       .links-description {
-
         font-size: 13px;
-
       }
-
 
       .links-index {
-
         display: none;
-
       }
-
-
-
-      /* GRID 2 COLUNAS */
 
       .social-grid {
-
         grid-template-columns:
           repeat(2,minmax(0,1fr));
-
       }
 
-
-      /*
-        No mobile mantemos o fade
-        apenas no começo e final
-        da grade completa.
-      */
-
       .network-link {
-
         height: 105px;
 
         border-right:
@@ -1289,67 +1032,57 @@
 
         border-bottom:
           1px solid var(--dark-line);
-
       }
-
 
       .network-link:nth-child(even) {
-
         border-right: 0;
-
       }
-
 
       .network-link:nth-child(5),
       .network-link:nth-child(6) {
-
         border-bottom: 0;
-
       }
-
 
       .network-icon {
-
         width: 31px;
         height: 31px;
-
       }
-
 
       .network-name {
-
         font-size: 10px;
-
       }
 
 
 
-      /* FOOTER */
+      /* FINAL */
+
+      .ending-space {
+        min-height: 105px;
+      }
+
+
+
+      /* RODAPÉ */
 
       .footer {
+        width:
+          calc(100% - 36px);
 
         min-height: 78px;
-
-        padding:
-          0
-          18px;
-
       }
-
 
       .footer-copy {
-
         font-size: 9px;
-
       }
 
-
-      .footer-mark img {
-
-        width: 29px;
-
+      .footer-socials {
+        gap: 17px;
       }
 
+      .footer-social {
+        width: 18px;
+        height: 18px;
+      }
     }
 
 
@@ -1361,18 +1094,13 @@
     @media
     (prefers-reduced-motion: reduce) {
 
-
       html {
-
         scroll-behavior: auto;
-
       }
-
 
       *,
       *::before,
       *::after {
-
         animation-duration:
           .01ms !important;
 
@@ -1381,24 +1109,18 @@
 
         transition-duration:
           .01ms !important;
-
       }
 
-
       .reveal {
-
         opacity: 1;
 
         transform: none;
-
       }
-
     }
 
   </style>
 
 </head>
-
 
 
 <body>
@@ -1412,7 +1134,6 @@
     class="header"
     id="header"
   >
-
 
     <a
       href="#sobre"
@@ -1434,7 +1155,6 @@
 
     </div>
 
-
   </header>
 
 
@@ -1451,16 +1171,12 @@
       id="sobre"
     >
 
-
       <div class="intro-grid">
 
-
-        <!-- FOTO -->
 
         <div
           class="portrait-area reveal"
         >
-
 
           <div class="portrait-frame">
 
@@ -1471,24 +1187,19 @@
 
           </div>
 
-
           <div class="portrait-year">
 
             ’26
 
           </div>
 
-
         </div>
 
 
 
-        <!-- TEXTO -->
-
         <div
           class="intro-content reveal"
         >
-
 
           <h1 class="intro-title">
 
@@ -1510,61 +1221,51 @@
 
           <div class="intro-text">
 
-
             <p>
 
               Meu nome é
               <strong>Milena Roberta</strong>.
               Cresci em Belo Horizonte,
-              sempre cercada pela arte
-              em suas diferentes formas.
-              Desenho desde que me lembro
-              e criar sempre foi uma das
-              coisas que mais amo fazer.
+              sempre cercada pela arte em suas
+              diferentes formas. Desenho desde
+              que me lembro e criar sempre foi
+              uma das coisas que mais amo fazer.
 
             </p>
 
 
             <p>
 
-              Com o tempo, encontrei na
-              tatuagem uma nova forma de
-              transformar desenho em expressão.
-              Gosto de pensar nela pelo que
-              ela é: uma
+              Com o tempo, encontrei na tatuagem
+              uma nova forma de transformar
+              desenho em expressão. Gosto de
+              pensar nela pelo que ela é: uma
               <strong>arte milenar</strong>,
-              que atravessa histórias,
-              pessoas e gerações — e que
-              acabou dando sentido também
-              ao nome Milenar.
+              que atravessa histórias, pessoas
+              e gerações — e que acabou dando
+              sentido também ao nome Milenar.
 
             </p>
 
 
             <p>
 
-              Por aqui, compartilho não só
-              o que crio, mas também um pouco
-              do meu lifestyle, das minhas
-              referências e do meu cotidiano.
-              Porque, para mim,
+              Por aqui, compartilho não só o que
+              crio, mas também um pouco do meu
+              lifestyle, das minhas referências
+              e do meu cotidiano. Porque, para mim,
               <strong>
-                a arte não está só no que
-                a gente cria. Ela está em
-                cada parte da vida.
+                a arte não está só no que a gente
+                cria. Ela está em cada parte da vida.
               </strong>
 
             </p>
 
-
           </div>
-
 
         </div>
 
-
       </div>
-
 
     </section>
 
@@ -1579,21 +1280,24 @@
       id="links"
     >
 
-
       <div class="links-inner">
 
 
         <div class="links-heading">
 
-
           <div class="links-heading-left">
 
 
-            <h2 class="links-title">
+            <!--
+              NOVO TÍTULO COM A
+              TIPOGRAFIA DA MILENAR
+            -->
 
-              Links
-
-            </h2>
+            <img
+              src="links branco.png"
+              alt="Links"
+              class="links-title-image"
+            >
 
 
             <div
@@ -1608,7 +1312,6 @@
 
             </p>
 
-
           </div>
 
 
@@ -1618,14 +1321,9 @@
 
           </div>
 
-
         </div>
 
 
-
-        <!-- =================================
-             REDES
-        ================================== -->
 
         <div class="social-grid">
 
@@ -1640,9 +1338,7 @@
             aria-label="Instagram"
           >
 
-
             <span class="network-icon">
-
 
               <svg
                 viewBox="0 0 24 24"
@@ -1675,16 +1371,11 @@
 
               </svg>
 
-
             </span>
-
 
             <span class="network-name">
-
               Instagram
-
             </span>
-
 
           </a>
 
@@ -1698,9 +1389,7 @@
             aria-label="TikTok"
           >
 
-
             <span class="network-icon">
-
 
               <svg
                 viewBox="0 0 24 24"
@@ -1713,16 +1402,11 @@
 
               </svg>
 
-
             </span>
-
 
             <span class="network-name">
-
               TikTok
-
             </span>
-
 
           </a>
 
@@ -1736,9 +1420,7 @@
             aria-label="Pinterest"
           >
 
-
             <span class="network-icon">
-
 
               <svg
                 viewBox="0 0 24 24"
@@ -1752,16 +1434,11 @@
 
               </svg>
 
-
             </span>
-
 
             <span class="network-name">
-
               Pinterest
-
             </span>
-
 
           </a>
 
@@ -1775,9 +1452,7 @@
             aria-label="LinkedIn"
           >
 
-
             <span class="network-icon">
-
 
               <svg
                 viewBox="0 0 24 24"
@@ -1790,16 +1465,11 @@
 
               </svg>
 
-
             </span>
-
 
             <span class="network-name">
-
               LinkedIn
-
             </span>
-
 
           </a>
 
@@ -1813,9 +1483,7 @@
             aria-label="YouTube"
           >
 
-
             <span class="network-icon">
-
 
               <svg
                 viewBox="0 0 24 24"
@@ -1828,16 +1496,11 @@
 
               </svg>
 
-
             </span>
-
 
             <span class="network-name">
-
               YouTube
-
             </span>
-
 
           </a>
 
@@ -1851,9 +1514,7 @@
             aria-label="WhatsApp"
           >
 
-
             <span class="network-icon">
-
 
               <svg
                 viewBox="0 0 24 24"
@@ -1866,27 +1527,31 @@
 
               </svg>
 
-
             </span>
-
 
             <span class="network-name">
-
               WhatsApp
-
             </span>
-
 
           </a>
 
-
         </div>
-
 
       </div>
 
-
     </section>
+
+
+
+    <!--
+      ESPAÇO TEMPORÁRIO PARA A FUTURA
+      SEÇÃO DE ENCERRAMENTO
+    -->
+
+    <div
+      class="ending-space"
+      aria-hidden="true"
+    ></div>
 
 
   </main>
@@ -1907,12 +1572,99 @@
     </div>
 
 
-    <div class="footer-mark">
 
-      <img
-        src="LOGOMARCA PRETA.png"
-        alt="MR"
+    <div class="footer-socials">
+
+
+      <!-- INSTAGRAM -->
+
+      <a
+        href="https://instagram.com/milenar.ink"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer-social instagram"
+        aria-label="Instagram"
       >
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+        >
+
+          <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="5"
+          ></rect>
+
+          <circle
+            cx="12"
+            cy="12"
+            r="4"
+          ></circle>
+
+          <circle
+            cx="17.5"
+            cy="6.5"
+            r="1"
+            fill="currentColor"
+            stroke="none"
+          ></circle>
+
+        </svg>
+
+      </a>
+
+
+
+      <!-- YOUTUBE -->
+
+      <a
+        href="#"
+        class="footer-social youtube"
+        aria-label="YouTube"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+
+          <path
+            d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12Z"
+          ></path>
+
+        </svg>
+
+      </a>
+
+
+
+      <!-- WHATSAPP -->
+
+      <a
+        href="#"
+        class="footer-social whatsapp"
+        aria-label="WhatsApp"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.009-.371-.011-.57-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.89-9.884a9.82 9.82 0 0 1 7.021 2.91 9.825 9.825 0 0 1 2.9 7.022c-.003 5.45-4.437 9.884-9.927 9.884m8.413-18.297A11.815 11.815 0 0 0 12.055 0C5.495 0 .16 5.335.157 11.893c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.689 1.448h.005c6.558 0 11.893-5.335 11.896-11.893a11.82 11.82 0 0 0-3.488-8.413Z"
+          ></path>
+
+        </svg>
+
+      </a>
+
 
     </div>
 
@@ -1921,12 +1673,7 @@
 
 
 
-  <!-- ======================================
-       JAVASCRIPT
-  ======================================= -->
-
   <script>
-
 
     /* CABEÇALHO */
 
@@ -1935,7 +1682,6 @@
 
 
     function updateHeader() {
-
 
       if (window.scrollY > 25) {
 
@@ -1950,7 +1696,6 @@
         );
 
       }
-
 
     }
 
@@ -1979,47 +1724,36 @@
       in window
     ) {
 
-
       const observer =
         new IntersectionObserver(
 
-
           entries => {
-
 
             entries.forEach(
               entry => {
-
 
                 if (
                   entry.isIntersecting
                 ) {
 
-
                   entry.target
                     .classList
                     .add("visible");
-
 
                   observer.unobserve(
                     entry.target
                   );
 
-
                 }
-
 
               }
             );
 
-
           },
-
 
           {
             threshold: .08
           }
-
 
         );
 
@@ -2027,34 +1761,26 @@
       revealElements.forEach(
         element => {
 
-
           observer.observe(
             element
           );
 
-
         }
       );
 
-
     } else {
-
 
       revealElements.forEach(
         element => {
-
 
           element.classList.add(
             "visible"
           );
 
-
         }
       );
 
-
     }
-
 
   </script>
 
