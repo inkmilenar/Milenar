@@ -5,13 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Milenar — Art & Lifestyle</title>
+  <title>Milenar</title>
 
-  <!-- FAVICON -->
   <link rel="icon" type="image/png" href="LOGOMARCA PRETA.png">
   <link rel="apple-touch-icon" href="LOGOMARCA PRETA.png">
 
-  <!-- FONTE -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -22,28 +20,20 @@
 
   <style>
 
-    :root {
-      --bg: #f7f5ef;
-      --text: #111111;
-      --line: rgba(17,17,17,.18);
-
-      --instagram: #d62976;
-      --youtube: #ff0000;
-      --whatsapp: #25d366;
-
-      --page-width: 1220px;
-      --page-padding: 42px;
-    }
-
-
     /* ========================================
        BASE
     ======================================== */
 
+    :root {
+      --background: #f5f2eb;
+      --text: #111111;
+      --line: rgba(17, 17, 17, 0.20);
+    }
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -51,7 +41,7 @@
     }
 
     body {
-      background: var(--bg);
+      background: var(--background);
       color: var(--text);
 
       font-family: "IBM Plex Sans Condensed", sans-serif;
@@ -60,32 +50,13 @@
       overflow-x: hidden;
     }
 
-    body.menu-open {
-      overflow: hidden;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-    }
-
     a {
       color: inherit;
       text-decoration: none;
     }
 
-    button {
-      color: inherit;
-      font: inherit;
-    }
-
-    .container {
-      width: min(
-        var(--page-width),
-        calc(100% - (var(--page-padding) * 2))
-      );
-
-      margin-inline: auto;
+    img {
+      display: block;
     }
 
 
@@ -93,69 +64,55 @@
        HEADER
     ======================================== */
 
-    .site-header {
+    .header {
       position: fixed;
-
       top: 0;
       left: 0;
 
       width: 100%;
       height: 82px;
 
-      z-index: 1000;
-
-      background: rgba(247,245,239,.97);
-
-      border-bottom: 1px solid transparent;
-
-      transition:
-        height .3s ease,
-        border-color .3s ease;
-    }
-
-    .site-header.scrolled {
-      height: 68px;
-      border-bottom-color: var(--line);
-    }
-
-    .header-inner {
-      height: 100%;
-
-      position: relative;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      padding: 0 4%;
+
+      background: rgba(245, 242, 235, 0.96);
+
+      border-bottom: 1px solid transparent;
+
+      z-index: 1000;
+
+      transition:
+        height .35s ease,
+        border-color .35s ease,
+        background .35s ease;
     }
 
-
-    /* LOGO */
+    .header.scrolled {
+      height: 68px;
+      border-color: var(--line);
+    }
 
     .header-logo {
-      display: flex;
-      align-items: center;
+      position: relative;
+      z-index: 2;
     }
 
     .header-logo img {
       width: 150px;
-      height: 44px;
+      height: auto;
 
-      object-fit: contain;
-      object-position: left center;
-
-      transition: width .3s ease;
+      transition: width .35s ease;
     }
 
-    .site-header.scrolled .header-logo img {
+    .header.scrolled .header-logo img {
       width: 130px;
     }
 
-
-    /* FRASE CENTRAL */
-
     .header-signature {
       position: absolute;
-
       left: 50%;
       transform: translateX(-50%);
 
@@ -163,29 +120,29 @@
       font-weight: 300;
 
       letter-spacing: .14em;
+      text-transform: uppercase;
 
       white-space: nowrap;
     }
 
 
     /* ========================================
-       MENU BUTTON
+       HAMBURGER
     ======================================== */
 
     .menu-button {
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
 
       border: 0;
       background: transparent;
 
       display: flex;
       flex-direction: column;
-
       align-items: center;
       justify-content: center;
 
-      gap: 5px;
+      gap: 6px;
 
       cursor: pointer;
 
@@ -206,16 +163,12 @@
         opacity .25s ease;
     }
 
-    .menu-button.active span:nth-child(1) {
-      transform: translateY(6px) rotate(45deg);
+    .menu-button.active span:first-child {
+      transform: translateY(3.5px) rotate(45deg);
     }
 
-    .menu-button.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-button.active span:nth-child(3) {
-      transform: translateY(-6px) rotate(-45deg);
+    .menu-button.active span:last-child {
+      transform: translateY(-3.5px) rotate(-45deg);
     }
 
 
@@ -225,10 +178,9 @@
 
     .menu-overlay {
       position: fixed;
-
       inset: 0;
 
-      background: rgba(0,0,0,.25);
+      background: rgba(0, 0, 0, .22);
 
       opacity: 0;
       visibility: hidden;
@@ -247,7 +199,7 @@
 
 
     /* ========================================
-       MENU LATERAL
+       SIDE MENU
     ======================================== */
 
     .side-menu {
@@ -256,19 +208,18 @@
       top: 0;
       right: 0;
 
-      width: min(420px,34vw);
-      height: 100%;
+      width: min(390px, 88vw);
+      height: 100vh;
 
-      background: var(--bg);
+      padding: 110px 46px 45px;
 
-      z-index: 1100;
-
-      padding: 92px 55px 50px;
+      background: var(--background);
 
       transform: translateX(100%);
 
-      transition:
-        transform .45s cubic-bezier(.22,.75,.2,1);
+      z-index: 1100;
+
+      transition: transform .45s cubic-bezier(.77, 0, .18, 1);
     }
 
     .side-menu.active {
@@ -276,151 +227,62 @@
     }
 
     .menu-brand {
-      height: 105px;
-
-      display: flex;
-      align-items: center;
-
-      margin-bottom: 18px;
-
-      overflow: hidden;
+      margin-bottom: 52px;
     }
 
     .menu-brand img {
-      width: 120px;
-      height: 100px;
-
-      object-fit: contain;
-      object-position: left center;
+      width: 60px;
+      height: auto;
     }
 
-    .side-menu nav {
+    .menu-links {
       display: flex;
       flex-direction: column;
     }
 
-    .side-menu nav a {
-      padding: 19px 0;
+    .menu-links a {
+      padding: 17px 0;
 
       border-bottom: 1px solid var(--line);
 
-      font-size: 25px;
+      font-size: 24px;
       font-weight: 300;
 
       transition:
-        padding-left .25s ease,
-        opacity .25s ease;
+        opacity .25s ease,
+        padding-left .25s ease;
     }
 
-    .side-menu nav a:first-child {
+    .menu-links a:first-child {
       border-top: 1px solid var(--line);
     }
 
-    @media (hover:hover) {
-
-      .side-menu nav a:hover {
-        padding-left: 7px;
-        opacity: .55;
-      }
-
+    .menu-links a:hover {
+      opacity: .55;
+      padding-left: 6px;
     }
 
 
     /* ========================================
-       HERO
-    ======================================== */
-
-    .hero {
-      margin-top: 82px;
-
-      width: 100%;
-      height: 480px;
-
-      position: relative;
-
-      overflow: hidden;
-    }
-
-    .hero > img {
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-
-      transition: transform .8s ease;
-    }
-
-    .hero::after {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          to top,
-          rgba(0,0,0,.22),
-          rgba(0,0,0,0) 40%
-        );
-    }
-
-    @media (hover:hover) {
-
-      .hero:hover > img {
-        transform: scale(1.01);
-      }
-
-    }
-
-    .hero-content {
-      position: absolute;
-
-      z-index: 2;
-
-      left: 50%;
-      bottom: 32px;
-
-      width: min(
-        var(--page-width),
-        calc(100% - (var(--page-padding) * 2))
-      );
-
-      transform: translateX(-50%);
-    }
-
-    .hero-text {
-      color: #ffffff;
-
-      font-size: 26px;
-      font-weight: 300;
-
-      line-height: 1.14;
-
-      letter-spacing: .025em;
-    }
-
-
-    /* ========================================
-       SOBRE + FOTO + LINKS
+       APRESENTAÇÃO / SOBRE
     ======================================== */
 
     .editorial-section {
-      padding: 68px 0 78px;
+      padding: 142px 0 82px;
 
-      scroll-margin-top: 90px;
+      scroll-margin-top: 80px;
     }
 
     .editorial-grid {
       width: 94%;
-
       margin: 0 auto;
 
       display: grid;
 
       grid-template-columns:
-        minmax(0,31fr)
-        minmax(0,42fr)
-        minmax(0,27fr);
+        minmax(0, 31fr)
+        minmax(0, 42fr)
+        minmax(0, 27fr);
 
       column-gap: 32px;
 
@@ -443,65 +305,49 @@
       min-height: 470px;
 
       object-fit: cover;
-
-      /* CORTA MAIS A PARTE DE CIMA */
       object-position: center 72%;
 
-      transition: transform .7s ease;
+      transition: transform .8s ease;
     }
 
-    @media (hover:hover) {
-
-      .about-photo:hover img {
-        transform: scale(1.015);
-      }
-
+    .about-photo:hover img {
+      transform: scale(1.015);
     }
 
 
-    /* ========================================
-       SOBRE
-    ======================================== */
+    /* TEXTO */
 
     .about-content {
       display: flex;
       flex-direction: column;
 
-      padding-right: 2px;
-    }
-
-    .section-title {
-      font-size: 34px;
-      font-weight: 300;
-
-      line-height: 1;
-
-      letter-spacing: -.015em;
-
-      margin-bottom: 25px;
+      justify-content: center;
     }
 
     .about-impact {
-      font-size: 20px;
-      font-weight: 300;
+      font-size: 21px;
+      line-height: 1.15;
 
-      letter-spacing: .015em;
+      font-weight: 400;
 
-      margin-bottom: 21px;
+      margin-bottom: 26px;
+
+      letter-spacing: .01em;
     }
 
     .about-text p {
       font-size: 15px;
-      font-weight: 300;
-
       line-height: 1.58;
 
-      text-align: justify;
-      text-justify: inter-word;
-
-      letter-spacing: .003em;
-
       margin-bottom: 14px;
+
+      text-align: justify;
+
+      text-justify: inter-word;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
     }
 
     .about-text strong {
@@ -514,8 +360,6 @@
     ======================================== */
 
     .links-column {
-      min-width: 0;
-
       border-left: 1px solid var(--line);
 
       padding-left: 32px;
@@ -524,8 +368,11 @@
       flex-direction: column;
     }
 
-    .links-column .section-title {
-      flex: 0 0 auto;
+    .links-title {
+      font-size: 20px;
+      font-weight: 400;
+
+      margin-bottom: 22px;
     }
 
     .links-list {
@@ -540,19 +387,15 @@
     .link-row {
       flex: 1;
 
-      min-height: 55px;
+      min-height: 48px;
 
-      display: grid;
-
-      grid-template-columns:
-        minmax(0,1fr)
-        22px;
-
+      display: flex;
       align-items: center;
+      justify-content: space-between;
 
       border-bottom: 1px solid var(--line);
 
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 300;
 
       transition:
@@ -560,26 +403,19 @@
         padding-left .25s ease;
     }
 
-    .link-arrow {
-      justify-self: end;
-
+    .link-row span:last-child {
       font-size: 15px;
 
       transition: transform .25s ease;
     }
 
-    @media (hover:hover) {
+    .link-row:hover {
+      opacity: .55;
+      padding-left: 5px;
+    }
 
-      .link-row:hover {
-        opacity: .52;
-
-        padding-left: 6px;
-      }
-
-      .link-row:hover .link-arrow {
-        transform: translate(3px,-3px);
-      }
-
+    .link-row:hover span:last-child {
+      transform: translate(3px, -3px);
     }
 
 
@@ -588,30 +424,35 @@
     ======================================== */
 
     .lifestyle {
-      padding: 0;
+      width: 94%;
+      margin: 0 auto;
 
-      scroll-margin-top: 90px;
+      padding: 22px 0 0;
+
+      scroll-margin-top: 88px;
     }
 
-    .lifestyle .section-title {
-      margin-bottom: 24px;
+    .lifestyle-title {
+      font-size: 34px;
+      line-height: 1;
+
+      font-weight: 300;
+
+      margin-bottom: 25px;
     }
 
 
-    /* GALERIA COMPACTA */
+    /* DESKTOP: UMA FILEIRA */
 
     .visual-grid {
+      width: 100%;
+
       display: grid;
-
-      grid-template-columns:
-        repeat(12,1fr);
-
-      grid-template-rows:
-        300px 240px;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
 
       gap: 4px;
 
-      height: 544px;
+      height: 260px;
     }
 
     .visual-item {
@@ -619,9 +460,10 @@
 
       position: relative;
 
-      overflow: hidden;
+      width: 100%;
+      height: 260px;
 
-      aspect-ratio: auto !important;
+      overflow: hidden;
     }
 
     .visual-item img {
@@ -635,98 +477,35 @@
         filter .65s ease;
     }
 
-
-    /* PRIMEIRA LINHA */
-
-    .visual-item:nth-child(1) {
-      grid-column: span 5;
-      grid-row: 1;
-    }
-
-    .visual-item:nth-child(2) {
-      grid-column: span 7;
-      grid-row: 1;
-    }
-
-
-    /* SEGUNDA LINHA */
-
-    .visual-item:nth-child(3),
-    .visual-item:nth-child(4),
-    .visual-item:nth-child(5) {
-      grid-column: span 4;
-      grid-row: 2;
-    }
-
-
-    /* SEXTA FOTO ESCONDIDA NO DESKTOP */
-
-    .visual-item:nth-child(6) {
-      display: none;
-    }
-
-
-    /* INDICAÇÃO DE LINK */
-
     .visual-item::after {
       content: "↗";
 
       position: absolute;
 
-      right: 15px;
-      bottom: 12px;
+      right: 14px;
+      bottom: 11px;
 
       color: #ffffff;
 
-      font-size: 18px;
-      font-weight: 300;
+      font-size: 20px;
 
       opacity: 0;
 
-      transform: translate(-3px,3px);
+      transform: translate(-3px, 3px);
 
       transition:
-        opacity .25s ease,
-        transform .25s ease;
-
-      z-index: 2;
+        opacity .3s ease,
+        transform .3s ease;
     }
 
-    @media (hover:hover) {
-
-      .visual-item:hover img {
-        transform: scale(1.025);
-
-        filter: brightness(.78);
-      }
-
-      .visual-item:hover::after {
-        opacity: 1;
-
-        transform: translate(0,0);
-      }
-
+    .visual-item:hover img {
+      transform: scale(1.025);
+      filter: brightness(.72);
     }
 
-
-    /* ========================================
-       ANIMAÇÕES
-    ======================================== */
-
-    .photo-reveal {
-      opacity: 0;
-
-      transform: translateY(12px);
-
-      transition:
-        opacity .65s ease,
-        transform .65s ease;
-    }
-
-    .photo-reveal.visible {
+    .visual-item:hover::after {
       opacity: 1;
-
-      transform: translateY(0);
+      transform: translate(0, 0);
     }
 
 
@@ -741,12 +520,12 @@
       align-items: center;
       justify-content: center;
 
+      padding: 25px 20px;
+
       text-align: center;
 
       font-size: 18px;
       font-weight: 300;
-
-      letter-spacing: .025em;
     }
 
 
@@ -754,40 +533,31 @@
        FOOTER
     ======================================== */
 
-    footer {
-      border-top: 1px solid var(--line);
-    }
-
-    .footer-inner {
+    .footer {
       min-height: 88px;
+
+      width: 94%;
+      margin: 0 auto;
+
+      border-top: 1px solid var(--line);
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      gap: 30px;
+      gap: 20px;
     }
 
-    .copyright {
+    .footer-copy {
       font-size: 13px;
       font-weight: 300;
-
-      letter-spacing: .055em;
-
-      text-transform: uppercase;
     }
-
-
-    /* ========================================
-       REDES SOCIAIS
-    ======================================== */
 
     .socials {
       display: flex;
-
       align-items: center;
 
-      gap: 10px;
+      gap: 5px;
     }
 
     .social-link {
@@ -795,81 +565,62 @@
       height: 42px;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
-      color: var(--text);
-
       transition:
-        color .22s ease,
-        transform .22s ease;
+        color .25s ease,
+        transform .25s ease;
     }
 
     .social-link svg {
       width: 23px;
       height: 23px;
+    }
 
-      fill: none;
-      stroke: currentColor;
+    .social-link:hover {
+      transform: translateY(-2px);
+    }
 
-      stroke-width: 1.7;
+    .social-link.instagram:hover,
+    .social-link.instagram.active-color {
+      color: #d62976;
+    }
 
-      stroke-linecap: round;
-      stroke-linejoin: round;
+    .social-link.youtube:hover,
+    .social-link.youtube.active-color {
+      color: #ff0000;
+    }
+
+    .social-link.whatsapp:hover,
+    .social-link.whatsapp.active-color {
+      color: #25D366;
     }
 
     .social-link.youtube svg,
     .social-link.whatsapp svg {
       fill: currentColor;
-
       stroke: none;
     }
 
 
-    /* CORES */
+    /* ========================================
+       REVEAL
+    ======================================== */
 
-    @media (hover:hover) {
+    .photo-reveal {
+      opacity: 0;
 
-      .social-link.instagram:hover {
-        color: var(--instagram);
+      transform: translateY(12px);
 
-        transform:
-          translateY(-2px)
-          scale(1.07);
-      }
-
-      .social-link.youtube:hover {
-        color: var(--youtube);
-
-        transform:
-          translateY(-2px)
-          scale(1.07);
-      }
-
-      .social-link.whatsapp:hover {
-        color: var(--whatsapp);
-
-        transform:
-          translateY(-2px)
-          scale(1.07);
-      }
-
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
     }
 
-    .social-link.instagram:active,
-    .social-link.instagram.active-color {
-      color: var(--instagram);
-    }
-
-    .social-link.youtube:active,
-    .social-link.youtube.active-color {
-      color: var(--youtube);
-    }
-
-    .social-link.whatsapp:active,
-    .social-link.whatsapp.active-color {
-      color: var(--whatsapp);
+    .photo-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
 
@@ -877,112 +628,74 @@
        MOBILE
     ======================================== */
 
-    @media (max-width:700px) {
-
-      :root {
-        --page-padding: 22px;
-      }
-
+    @media (max-width: 700px) {
 
       /* HEADER */
 
-      .site-header {
+      .header {
         height: 67px;
+
+        padding: 0 18px;
       }
 
-      .site-header.scrolled {
+      .header.scrolled {
         height: 61px;
       }
 
       .header-logo img {
         width: 108px;
-        height: 35px;
       }
 
-      .site-header.scrolled .header-logo img {
+      .header.scrolled .header-logo img {
         width: 100px;
       }
 
-
-      /* FRASE DO HEADER */
+      /* Esconde a frase central no celular */
 
       .header-signature {
-        font-size: 9px;
-
-        letter-spacing: .04em;
+        display: none;
       }
-
-
-      /* MENU BUTTON */
 
       .menu-button {
         width: 38px;
         height: 38px;
       }
 
-      .menu-button span {
-        width: 21px;
-      }
 
-
-      /* MENU LATERAL */
+      /* MENU */
 
       .side-menu {
-        width: 82%;
+        width: 86vw;
 
         padding:
-          78px
+          94px
           28px
-          40px;
+          35px;
       }
 
       .menu-brand {
-        height: 100px;
-
-        margin-bottom: 12px;
+        margin-bottom: 42px;
       }
 
       .menu-brand img {
-        width: 115px;
-        height: 95px;
+        width: 52px;
       }
 
-      .side-menu nav a {
-        font-size: 23px;
-
-        padding: 19px 0;
-      }
-
-
-      /* HERO */
-
-      .hero {
-        margin-top: 67px;
-
-        height: 390px;
-      }
-
-      .hero-content {
-        bottom: 24px;
-      }
-
-      .hero-text {
+      .menu-links a {
         font-size: 21px;
 
-        line-height: 1.15;
+        padding: 15px 0;
       }
 
 
-      /* ====================================
-         SOBRE MOBILE
-      ==================================== */
+      /* APRESENTAÇÃO */
 
       .editorial-section {
-        padding: 54px 0 66px;
+        padding: 99px 0 58px;
       }
 
       .editorial-grid {
-        width: 100%;
+        width: calc(100% - 36px);
 
         display: flex;
         flex-direction: column;
@@ -990,173 +703,158 @@
         gap: 0;
       }
 
-      .mobile-about-title {
-        display: block;
-
-        order: 1;
-      }
-
-      .desktop-about-title {
-        display: none;
-      }
-
-
-      /* FOTO */
-
       .about-photo {
-        order: 2;
-
         width: 100%;
 
         transform: none;
 
-        margin-bottom: 26px;
+        margin-bottom: 27px;
       }
 
       .about-photo img {
-        height: auto;
+        width: 100%;
+        height: 390px;
 
         min-height: 0;
 
-        aspect-ratio: 4 / 5;
-
         object-fit: cover;
-
-        /* UM POUCO MENOS CORTADA NO CELULAR */
         object-position: center 68%;
       }
 
-
-      /* TEXTO */
-
       .about-content {
-        order: 3;
-
-        padding-right: 0;
-      }
-
-      .section-title {
-        font-size: 32px;
-
-        margin-bottom: 24px;
+        display: block;
       }
 
       .about-impact {
-        font-size: 19px;
+        font-size: 20px;
 
-        margin-bottom: 20px;
+        margin-bottom: 22px;
       }
 
       .about-text p {
         font-size: 15px;
+        line-height: 1.58;
 
-        line-height: 1.62;
+        margin-bottom: 14px;
 
-        text-align: left;
+        /* Mantém o texto justificado no celular */
 
-        margin-bottom: 15px;
+        text-align: justify;
+        text-justify: inter-word;
       }
 
 
       /* LINKS */
 
       .links-column {
-        order: 4;
-
-        width: 100%;
-
-        margin-top: 44px;
-
         border-left: 0;
 
         padding-left: 0;
+
+        margin-top: 38px;
+      }
+
+      .links-title {
+        font-size: 20px;
+
+        margin-bottom: 18px;
       }
 
       .links-list {
-        display: block;
+        width: 100%;
       }
 
       .link-row {
+        flex: none;
+
         min-height: 54px;
 
         font-size: 16px;
       }
 
 
-      /* ====================================
-         LIFESTYLE MOBILE
-      ==================================== */
+      /* LIFESTYLE */
 
-      .lifestyle .section-title {
-        margin-bottom: 23px;
+      .lifestyle {
+        width: calc(100% - 22px);
+
+        padding-top: 7px;
       }
 
-      .visual-grid {
-        height: auto;
+      .lifestyle-title {
+        font-size: 32px;
 
-        grid-template-columns:
-          repeat(2,1fr);
+        margin-left: 7px;
+        margin-bottom: 20px;
+      }
+
+
+      /* MOBILE: MOSAICO */
+
+      .visual-grid {
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
         grid-template-rows: none;
+
+        width: 100%;
+        height: auto;
 
         gap: 4px;
       }
 
-
-      /* FOTO 1 */
-
-      .visual-item:nth-child(1) {
-        display: block;
-
-        grid-column: 1 / -1;
-        grid-row: auto;
-
-        aspect-ratio: 1.35 / 1 !important;
+      .visual-item {
+        width: 100%;
+        height: auto;
       }
 
+      /* 1 — largura inteira */
 
-      /* FOTO 2 + 3 */
+      .visual-item:nth-child(1) {
+        grid-column: 1 / -1;
+
+        aspect-ratio: 1.45 / 1;
+      }
+
+      /* 2 e 3 */
 
       .visual-item:nth-child(2),
       .visual-item:nth-child(3) {
-        display: block;
+        grid-column: auto;
 
-        grid-column: span 1;
-        grid-row: auto;
-
-        aspect-ratio: .9 / 1 !important;
+        aspect-ratio: .82 / 1;
       }
 
-
-      /* FOTO 4 */
+      /* 4 — largura inteira */
 
       .visual-item:nth-child(4) {
-        display: block;
-
         grid-column: 1 / -1;
-        grid-row: auto;
 
-        aspect-ratio: 1.25 / 1 !important;
+        aspect-ratio: 1.45 / 1;
       }
 
-
-      /* FOTO 5 + 6 */
+      /* 5 e 6 */
 
       .visual-item:nth-child(5),
       .visual-item:nth-child(6) {
-        display: block;
+        grid-column: auto;
 
-        grid-column: span 1;
-        grid-row: auto;
+        aspect-ratio: .82 / 1;
+      }
 
-        aspect-ratio: .9 / 1 !important;
+      .visual-item img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
       }
 
       .visual-item::after {
-        right: 10px;
-        bottom: 8px;
+        right: 11px;
+        bottom: 9px;
 
-        font-size: 16px;
+        font-size: 18px;
 
         opacity: .75;
 
@@ -1169,30 +867,24 @@
       .closing {
         min-height: 110px;
 
+        padding: 22px 18px;
+
         font-size: 15px;
       }
 
 
       /* FOOTER */
 
-      .footer-inner {
+      .footer {
+        width: calc(100% - 36px);
+
         min-height: 78px;
 
-        gap: 7px;
+        gap: 10px;
       }
 
-      .copyright {
-        max-width: 205px;
-
+      .footer-copy {
         font-size: 10px;
-
-        line-height: 1.4;
-
-        letter-spacing: .035em;
-      }
-
-      .socials {
-        gap: 1px;
       }
 
       .social-link {
@@ -1209,27 +901,10 @@
 
 
     /* ========================================
-       DESKTOP
+       REDUCED MOTION
     ======================================== */
 
-    @media (min-width:701px) {
-
-      .mobile-about-title {
-        display: none;
-      }
-
-      .desktop-about-title {
-        display: block;
-      }
-
-    }
-
-
-    /* ========================================
-       REDUZ MOVIMENTO
-    ======================================== */
-
-    @media (prefers-reduced-motion:reduce) {
+    @media (prefers-reduced-motion: reduce) {
 
       html {
         scroll-behavior: auto;
@@ -1238,112 +913,66 @@
       *,
       *::before,
       *::after {
-        transition: none !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: .01ms !important;
       }
 
       .photo-reveal {
         opacity: 1;
-
         transform: none;
       }
 
     }
 
   </style>
-
 </head>
 
 
 <body>
 
 
-  <!-- ========================================
+  <!-- ======================================
        HEADER
-  ========================================= -->
+  ======================================= -->
 
-  <header
-    class="site-header"
-    id="siteHeader"
-  >
+  <header class="header" id="header">
 
-    <div class="container header-inner">
+    <a href="#sobre" class="header-logo" aria-label="Milenar">
+      <img src="Logo preta.PNG" alt="Milenar">
+    </a>
 
-
-      <!-- LOGO -->
-
-      <a
-        href="#top"
-        class="header-logo"
-        aria-label="Milenar - início"
-      >
-
-        <img
-          src="Logo preta.PNG"
-          alt="Milenar"
-        >
-
-      </a>
-
-
-      <!-- FRASE CENTRAL -->
-
-      <div class="header-signature">
-        POTENTIAL ARTIST &amp; LIFESTYLE
-      </div>
-
-
-      <!-- MENU -->
-
-      <button
-        class="menu-button"
-        id="menuButton"
-        type="button"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-      >
-
-        <span></span>
-        <span></span>
-        <span></span>
-
-      </button>
-
-
+    <div class="header-signature">
+      Potential Artist &amp; Lifestyle
     </div>
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+    </button>
 
   </header>
 
 
-  <!-- OVERLAY -->
+  <!-- ======================================
+       MENU
+  ======================================= -->
 
-  <div
-    class="menu-overlay"
-    id="menuOverlay"
-  ></div>
+  <div class="menu-overlay" id="menuOverlay"></div>
 
-
-  <!-- ========================================
-       MENU LATERAL
-  ========================================= -->
-
-  <aside
-    class="side-menu"
-    id="sideMenu"
-    aria-hidden="true"
-  >
-
+  <aside class="side-menu" id="sideMenu">
 
     <div class="menu-brand">
-
-      <img
-        src="LOGOMARCA PRETA.png"
-        alt="MR"
-      >
-
+      <img src="LOGOMARCA PRETA.png" alt="MR">
     </div>
 
-
-    <nav>
+    <nav class="menu-links">
 
       <a href="#sobre">
         Sobre mim
@@ -1359,64 +988,22 @@
 
     </nav>
 
-
   </aside>
 
 
-  <!-- ========================================
-       HERO
-  ========================================= -->
-
-  <section
-    class="hero"
-    id="top"
-  >
-
-    <img
-      src="Imagem 1.JPG"
-      alt="Universo Milenar"
-    >
+  <main>
 
 
-    <div class="hero-content">
-
-      <div class="hero-text">
-
-        arte em tudo<br>
-        que me atravessa.
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ========================================
-       CONTEÚDO
-  ========================================= -->
-
-  <main class="container">
-
-
-    <!-- ======================================
-         SOBRE
-    ======================================= -->
+    <!-- ====================================
+         APRESENTAÇÃO
+    ===================================== -->
 
     <section
       class="editorial-section"
       id="sobre"
     >
 
-
       <div class="editorial-grid">
-
-
-        <!-- TÍTULO MOBILE -->
-
-        <h2 class="section-title mobile-about-title">
-          Sobre mim
-        </h2>
 
 
         <!-- FOTO -->
@@ -1435,179 +1022,152 @@
 
         <div class="about-content">
 
-
-          <h2 class="section-title desktop-about-title">
-            Sobre mim
-          </h2>
-
-
           <div class="about-impact">
-
             Potential Artist &amp; Lifestyle
-
           </div>
-
 
           <div class="about-text">
 
-
             <p>
-
-              Meu nome é
-              <strong>Milena Roberta</strong>.
-              Cresci em Belo Horizonte, sempre
-              cercada pela arte em suas diferentes
-              formas. Desenho desde que me lembro
-              e criar sempre foi uma das coisas
-              que mais amo fazer.
-
+              Meu nome é <strong>Milena Roberta</strong>.
+              Cresci em Belo Horizonte, sempre cercada pela arte
+              em suas diferentes formas. Desenho desde que me
+              lembro e criar sempre foi uma das coisas que mais
+              amo fazer.
             </p>
 
-
             <p>
-
-              Com o tempo, encontrei na tatuagem
-              uma nova forma de transformar desenho
-              em expressão. Gosto de pensar nela
-              pelo que ela é: uma
-              <strong>arte milenar</strong>,
-              que atravessa histórias, pessoas e
-              gerações — e que acabou dando sentido
-              também ao nome Milenar.
-
+              Com o tempo, encontrei na tatuagem uma nova forma
+              de transformar desenho em expressão. Gosto de pensar
+              nela pelo que ela é: uma <strong>arte milenar</strong>,
+              que atravessa histórias, pessoas e gerações — e que
+              acabou dando sentido também ao nome Milenar.
             </p>
 
-
             <p>
-
-              Por aqui, compartilho não só o que
-              crio, mas também um pouco do meu
-              lifestyle, das minhas referências
-              e do meu cotidiano. Porque, para mim,
-
-              <strong>
-                a arte não está só no que a gente
-                cria. Ela está em cada parte da vida.
-              </strong>
-
+              Por aqui, compartilho não só o que crio, mas também
+              um pouco do meu lifestyle, das minhas referências e
+              do meu cotidiano. Porque, para mim,
+              <strong>a arte não está só no que a gente cria.
+              Ela está em cada parte da vida.</strong>
             </p>
-
 
           </div>
-
 
         </div>
 
 
-        <!-- =================================
-             LINKS
-        ================================== -->
+        <!-- LINKS -->
 
         <div
           class="links-column"
           id="links"
         >
 
-
-          <h2 class="section-title">
+          <div class="links-title">
             Links
-          </h2>
-
+          </div>
 
           <div class="links-list">
 
 
+            <!-- E-MAIL -->
+
             <a
-              class="link-row"
               href="#"
+              class="link-row"
             >
-
               <span>E-mail</span>
-              <span class="link-arrow">↗</span>
-
+              <span>↗</span>
             </a>
 
 
+            <!-- INSTAGRAM -->
+
             <a
-              class="link-row"
               href="https://instagram.com/milenar.ink"
               target="_blank"
               rel="noopener noreferrer"
+              class="link-row"
             >
-
               <span>Instagram</span>
-              <span class="link-arrow">↗</span>
-
+              <span>↗</span>
             </a>
 
 
-            <a
-              class="link-row"
-              href="#"
-            >
+            <!-- LINKEDIN -->
 
+            <a
+              href="#"
+              class="link-row"
+            >
+              <span>LinkedIn</span>
+              <span>↗</span>
+            </a>
+
+
+            <!-- PINTEREST -->
+
+            <a
+              href="#"
+              class="link-row"
+            >
               <span>Pinterest</span>
-              <span class="link-arrow">↗</span>
-
+              <span>↗</span>
             </a>
 
 
-            <a
-              class="link-row"
-              href="#"
-            >
+            <!-- TIKTOK -->
 
+            <a
+              href="#"
+              class="link-row"
+            >
               <span>TikTok</span>
-              <span class="link-arrow">↗</span>
-
+              <span>↗</span>
             </a>
 
 
-            <a
-              class="link-row"
-              href="#"
-            >
+            <!-- WHATSAPP -->
 
+            <a
+              href="#"
+              class="link-row"
+            >
               <span>WhatsApp</span>
-              <span class="link-arrow">↗</span>
-
+              <span>↗</span>
             </a>
 
+
+            <!-- YOUTUBE -->
 
             <a
-              class="link-row"
               href="#"
+              class="link-row"
             >
-
               <span>YouTube</span>
-              <span class="link-arrow">↗</span>
-
+              <span>↗</span>
             </a>
-
 
           </div>
 
-
         </div>
 
-
       </div>
-
 
     </section>
 
 
-    <!-- ========================================
+    <!-- ====================================
          LIFESTYLE
-    ========================================= -->
+    ===================================== -->
 
     <section
       class="lifestyle"
       id="lifestyle"
     >
 
-
-      <h2 class="section-title">
+      <h2 class="lifestyle-title">
         Lifestyle
       </h2>
 
@@ -1615,273 +1175,233 @@
       <div class="visual-grid">
 
 
-        <!-- 1 -->
+        <!-- 01 -->
 
         <a
           class="visual-item photo-reveal"
           href="https://www.instagram.com/p/DVHYP_sjxG8/?stkn=MXR4NGk5ODU1NGZ4"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Ver publicação no Instagram"
         >
-
           <img
             src="Imagem 2.JPG"
-            alt=""
+            alt="Lifestyle Milenar"
           >
-
         </a>
 
 
-        <!-- 2 -->
+        <!-- 02 -->
 
         <a
-          class="visual-item"
+          class="visual-item photo-reveal"
           href="https://www.instagram.com/reel/DUB0davjxMN/?stkn=MTBkamFxODNwZDYzag=="
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Ver Reel no Instagram"
         >
-
           <img
             src="Imagem 3.JPG"
-            alt=""
+            alt="Lifestyle Milenar"
           >
-
         </a>
 
 
-        <!-- 3 -->
+        <!-- 03 -->
 
         <a
-          class="visual-item"
+          class="visual-item photo-reveal"
           href="https://www.instagram.com/p/DUIqP0GDDMh/?stkn=MXEyZWFveXNjdHhw"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Ver publicação no Instagram"
         >
-
           <img
             src="Imagem 4.JPG"
-            alt=""
+            alt="Lifestyle Milenar"
           >
-
         </a>
 
 
-        <!-- 4 -->
+        <!-- 04 -->
 
         <a
-          class="visual-item"
+          class="visual-item photo-reveal"
           href="https://www.instagram.com/p/C4-_3OhrA0e/?stkn=bmprZXd0M3Z3cm03"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Ver publicação no Instagram"
         >
-
           <img
             src="Imagem 5.JPG"
-            alt=""
+            alt="Lifestyle Milenar"
           >
-
         </a>
 
 
-        <!-- 5 -->
+        <!-- 05 -->
 
         <a
-          class="visual-item"
+          class="visual-item photo-reveal"
           href="https://www.instagram.com/p/C4oRgfIPhzX/?stkn=YzR2amg4MG5rcWlj"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Ver publicação no Instagram"
         >
-
           <img
             src="Imagem 6.JPG"
-            alt=""
+            alt="Lifestyle Milenar"
           >
-
         </a>
 
 
-        <!-- 6
-             VISÍVEL NO CELULAR -->
+        <!-- 06 -->
 
         <a
-          class="visual-item"
+          class="visual-item photo-reveal"
           href="https://www.instagram.com/p/C4LIoxWMrx9/?stkn=MXdsYWRzbnNqY2xwZA=="
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Ver publicação no Instagram"
         >
-
           <img
             src="Foto 7.JPG"
-            alt=""
+            alt="Lifestyle Milenar"
           >
-
         </a>
 
 
       </div>
 
-
     </section>
 
 
-    <!-- ========================================
+    <!-- ====================================
          FRASE FINAL
-    ========================================= -->
+    ===================================== -->
 
-    <div class="closing">
+    <section class="closing">
 
-      Criar também é uma forma de viver.
+      <p>
+        Criar também é uma forma de viver.
+      </p>
 
-    </div>
+    </section>
 
 
   </main>
 
 
-  <!-- ========================================
+  <!-- ======================================
        FOOTER
-  ========================================= -->
+  ======================================= -->
 
-  <footer>
+  <footer class="footer">
 
-
-    <div class="container footer-inner">
-
-
-      <div class="copyright">
-
-        © 2026 MILENAR — TODOS OS DIREITOS RESERVADOS
-
-      </div>
+    <div class="footer-copy">
+      © 2026 Milenar
+    </div>
 
 
-      <div class="socials">
+    <div class="socials">
 
 
-        <!-- INSTAGRAM -->
+      <!-- INSTAGRAM -->
 
-        <a
-          class="social-link instagram"
-          href="https://instagram.com/milenar.ink"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
+      <a
+        href="https://instagram.com/milenar.ink"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-link instagram"
+        aria-label="Instagram"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          aria-hidden="true"
         >
 
-          <svg viewBox="0 0 24 24">
+          <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="5"
+          ></rect>
 
-            <rect
-              x="3"
-              y="3"
-              width="18"
-              height="18"
-              rx="5"
-            ></rect>
+          <circle
+            cx="12"
+            cy="12"
+            r="4"
+          ></circle>
 
-            <circle
-              cx="12"
-              cy="12"
-              r="4"
-            ></circle>
+          <circle
+            cx="17.5"
+            cy="6.5"
+            r="1"
+            fill="currentColor"
+            stroke="none"
+          ></circle>
 
-            <circle
-              cx="17.5"
-              cy="6.5"
-              r=".8"
-              fill="currentColor"
-              stroke="none"
-            ></circle>
+        </svg>
 
-          </svg>
-
-        </a>
+      </a>
 
 
-        <!-- YOUTUBE -->
+      <!-- YOUTUBE -->
 
-        <a
-          class="social-link youtube"
-          href="#"
-          aria-label="YouTube"
+      <a
+        href="#"
+        class="social-link youtube"
+        aria-label="YouTube"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
         >
 
-          <svg viewBox="0 0 24 24">
+          <path
+            d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12Z"
+          ></path>
 
-            <path
-              d="
-              M21.6 7.2
-              C21.4 5.9 20.4 4.9 19.1 4.7
-              C17.3 4.4 14.8 4.3 12 4.3
-              C9.2 4.3 6.7 4.4 4.9 4.7
-              C3.6 4.9 2.6 5.9 2.4 7.2
-              C2.1 8.6 2 10.2 2 12
-              C2 13.8 2.1 15.4 2.4 16.8
-              C2.6 18.1 3.6 19.1 4.9 19.3
-              C6.7 19.6 9.2 19.7 12 19.7
-              C14.8 19.7 17.3 19.6 19.1 19.3
-              C20.4 19.1 21.4 18.1 21.6 16.8
-              C21.9 15.4 22 13.8 22 12
-              C22 10.2 21.9 8.6 21.6 7.2
-              Z
+        </svg>
 
-              M10 15.5
-              V8.5
-              L16 12
-              Z
-              "
-            ></path>
-
-          </svg>
-
-        </a>
+      </a>
 
 
-        <!-- WHATSAPP -->
+      <!-- WHATSAPP -->
 
-        <a
-          class="social-link whatsapp"
-          href="#"
-          aria-label="WhatsApp"
+      <a
+        href="#"
+        class="social-link whatsapp"
+        aria-label="WhatsApp"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
         >
 
-          <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
+          <path
+            fill="currentColor"
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.009-.371-.011-.57-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.89-9.884a9.82 9.82 0 0 1 7.021 2.91 9.825 9.825 0 0 1 2.9 7.022c-.003 5.45-4.437 9.884-9.927 9.884m8.413-18.297A11.815 11.815 0 0 0 12.055 0C5.495 0 .16 5.335.157 11.893c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.689 1.448h.005c6.558 0 11.893-5.335 11.896-11.893a11.82 11.82 0 0 0-3.488-8.413Z"
+          ></path>
 
-            <path
-              fill="currentColor"
-              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.496.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.906-9.884 2.645.001 5.133 1.03 7.002 2.9a9.825 9.825 0 012.9 7.002c-.003 5.45-4.438 9.875-9.924 9.875"
-            ></path>
+        </svg>
 
-          </svg>
-
-        </a>
-
-
-      </div>
+      </a>
 
 
     </div>
 
-
   </footer>
 
 
-  <!-- ========================================
+  <!-- ======================================
        JAVASCRIPT
-  ========================================= -->
+  ======================================= -->
 
   <script>
 
-
-    /* MENU */
+    const header = document.getElementById("header");
 
     const menuButton =
       document.getElementById("menuButton");
@@ -1892,6 +1412,36 @@
     const menuOverlay =
       document.getElementById("menuOverlay");
 
+    const menuLinks =
+      document.querySelectorAll(".menu-links a");
+
+
+    /* ======================================
+       HEADER AO ROLAR
+    ======================================= */
+
+    function updateHeader() {
+
+      if (window.scrollY > 25) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+
+    }
+
+    window.addEventListener(
+      "scroll",
+      updateHeader,
+      { passive: true }
+    );
+
+    updateHeader();
+
+
+    /* ======================================
+       MENU
+    ======================================= */
 
     function openMenu() {
 
@@ -1901,23 +1451,12 @@
 
       menuOverlay.classList.add("active");
 
-      document.body.classList.add("menu-open");
-
-
       menuButton.setAttribute(
         "aria-expanded",
         "true"
       );
 
-      menuButton.setAttribute(
-        "aria-label",
-        "Fechar menu"
-      );
-
-      sideMenu.setAttribute(
-        "aria-hidden",
-        "false"
-      );
+      document.body.style.overflow = "hidden";
 
     }
 
@@ -1930,23 +1469,12 @@
 
       menuOverlay.classList.remove("active");
 
-      document.body.classList.remove("menu-open");
-
-
       menuButton.setAttribute(
         "aria-expanded",
         "false"
       );
 
-      menuButton.setAttribute(
-        "aria-label",
-        "Abrir menu"
-      );
-
-      sideMenu.setAttribute(
-        "aria-hidden",
-        "true"
-      );
+      document.body.style.overflow = "";
 
     }
 
@@ -1955,16 +1483,13 @@
       "click",
       () => {
 
-        if (
-          sideMenu.classList.contains("active")
-        ) {
+        const isOpen =
+          sideMenu.classList.contains("active");
 
+        if (isOpen) {
           closeMenu();
-
         } else {
-
           openMenu();
-
         }
 
       }
@@ -1977,16 +1502,14 @@
     );
 
 
-    document
-      .querySelectorAll(".side-menu a")
-      .forEach(link => {
+    menuLinks.forEach(link => {
 
-        link.addEventListener(
-          "click",
-          closeMenu
-        );
+      link.addEventListener(
+        "click",
+        closeMenu
+      );
 
-      });
+    });
 
 
     document.addEventListener(
@@ -2001,128 +1524,103 @@
     );
 
 
-    /* ========================================
-       HEADER AO ROLAR
-    ========================================= */
-
-    const header =
-      document.getElementById("siteHeader");
-
-
-    window.addEventListener(
-      "scroll",
-      () => {
-
-        header.classList.toggle(
-          "scrolled",
-          window.scrollY > 30
-        );
-
-      },
-
-      {
-        passive: true
-      }
-    );
-
-
-    /* ========================================
+    /* ======================================
        REVEAL DAS FOTOS
-    ========================================= */
+    ======================================= */
 
-    const photos =
-      document.querySelectorAll(
-        ".photo-reveal"
-      );
+    const revealElements =
+      document.querySelectorAll(".photo-reveal");
 
 
-    if (
-      "IntersectionObserver" in window
-    ) {
-
+    if ("IntersectionObserver" in window) {
 
       const observer =
         new IntersectionObserver(
 
           entries => {
 
-            entries.forEach(
-              entry => {
+            entries.forEach(entry => {
 
-                if (
-                  entry.isIntersecting
-                ) {
+              if (entry.isIntersecting) {
 
+                entry.target.classList.add(
+                  "visible"
+                );
+
+                observer.unobserve(
                   entry.target
-                    .classList
-                    .add("visible");
-
-
-                  observer.unobserve(
-                    entry.target
-                  );
-
-                }
+                );
 
               }
-            );
+
+            });
 
           },
 
           {
-            threshold: .12
+            threshold: 0.10
           }
 
         );
 
 
-      photos.forEach(
-        photo =>
-          observer.observe(photo)
-      );
+      revealElements.forEach(element => {
 
+        observer.observe(element);
+
+      });
 
     } else {
 
+      revealElements.forEach(element => {
 
-      photos.forEach(
-        photo =>
-          photo.classList.add("visible")
-      );
+        element.classList.add("visible");
 
+      });
 
     }
 
 
-    /* ========================================
-       COR DAS REDES NO TOQUE
-    ========================================= */
+    /* ======================================
+       CORES DOS ÍCONES NO TOUCH
+    ======================================= */
 
-    document
-      .querySelectorAll(".social-link")
-      .forEach(link => {
+    const socialLinks =
+      document.querySelectorAll(".social-link");
 
-        link.addEventListener(
-          "touchstart",
-          () => {
 
-            link.classList.add(
-              "active-color"
-            );
+    socialLinks.forEach(link => {
 
-          },
+      link.addEventListener(
+        "touchstart",
+        () => {
 
-          {
-            passive: true
-          }
-        );
+          socialLinks.forEach(item => {
 
-      });
+            if (item !== link) {
+              item.classList.remove(
+                "active-color"
+              );
+            }
 
+          });
+
+          link.classList.toggle(
+            "active-color"
+          );
+
+        },
+
+        {
+          passive: true
+        }
+
+      );
+
+    });
 
   </script>
 
 
 </body>
-
 </html>
