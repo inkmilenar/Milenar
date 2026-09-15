@@ -9,10 +9,11 @@
 <style>
 
 :root {
-  --fundo: #f8f7f3;
-  --preto: #111111;
-  --cinza: #777;
-  --linha: #d8d6d0;
+  --bg: #f8f7f3;
+  --black: #111;
+  --text: #333;
+  --muted: #777;
+  --line: #d8d6d0;
 }
 
 * {
@@ -26,81 +27,85 @@ html {
 }
 
 body {
-  background: var(--fundo);
-  color: var(--preto);
+  background: var(--bg);
+  color: var(--black);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 img {
-  display: block;
   width: 100%;
+  display: block;
 }
 
-/* ---------- TOPO ---------- */
+/* LOGO */
 
-.topo {
-  min-height: 58vh;
-  padding: 35px 7% 50px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+header {
+  width: 88%;
+  max-width: 1050px;
+  margin: auto;
+  padding: 30px 0 55px;
 }
 
-.mini-topo {
+.top-line {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
 
-.logo-area {
-  width: 100%;
+.logo-box {
+  max-width: 720px;
+  margin: 55px auto 0;
   text-align: center;
 }
 
-.logo {
-  width: min(92%, 650px);
-  margin: 0 auto;
+.logo-box img {
+  width: 100%;
 }
 
-.assinatura {
-  margin-top: 25px;
+.tagline {
+  margin-top: 28px;
 
-  font-size: 9px;
-  letter-spacing: 4px;
+  font-size: 12px;
+  letter-spacing: 5px;
   text-transform: uppercase;
 }
 
-/* ---------- FOTO LIFESTYLE ---------- */
+
+/* HERO */
 
 .hero {
   width: 100%;
+  max-height: 750px;
   position: relative;
+  overflow: hidden;
 }
 
 .hero img {
-  height: 68vh;
+  width: 100%;
+  height: min(68vw, 750px);
   object-fit: cover;
 }
 
-.hero-frase {
+.hero-caption {
   position: absolute;
-  bottom: 35px;
   left: 7%;
+  bottom: 7%;
 
   color: white;
 
-  font-size: 10px;
-  line-height: 2;
+  font-size: 14px;
+  line-height: 1.7;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
 
-/* ---------- CONTEÚDO ---------- */
+
+/* CONTAINER */
 
 .container {
   width: 86%;
@@ -108,321 +113,446 @@ img {
   margin: auto;
 }
 
-.sobre {
-  padding: 110px 0;
+
+/* SOBRE */
+
+.about {
+  padding: 95px 0;
 
   display: grid;
   grid-template-columns: .85fr 1.15fr;
-  gap: 9%;
+  gap: 8%;
   align-items: center;
 }
 
-.sobre-foto img {
+.about-photo img {
   aspect-ratio: 4 / 5;
   object-fit: cover;
   filter: grayscale(100%);
 }
 
-.label {
-  font-size: 9px;
+.eyebrow {
+  font-size: 13px;
   letter-spacing: 4px;
   text-transform: uppercase;
-
-  margin-bottom: 28px;
+  margin-bottom: 25px;
 }
 
-.sobre-texto h2 {
-  font-size: clamp(28px, 5vw, 55px);
+.about h1 {
+  font-size: clamp(38px, 5vw, 58px);
   font-weight: 400;
   line-height: 1.05;
+  letter-spacing: -2px;
 
   margin-bottom: 30px;
 }
 
-.sobre-texto p {
-  max-width: 480px;
+.about-copy {
+  max-width: 500px;
 
-  font-size: 13px;
-  line-height: 1.8;
-  color: #444;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
 }
 
-.assina {
-  margin-top: 30px !important;
-  color: var(--preto) !important;
+.welcome {
+  margin-top: 30px;
+
+  font-size: 17px;
   font-style: italic;
 }
 
-/* ---------- LINKS ---------- */
+
+/* LINKS */
 
 .links {
-  padding: 40px 0 120px;
+  padding: 10px 0 100px;
 }
 
-.titulo-secao {
+.section-heading {
   display: flex;
   align-items: center;
   gap: 25px;
 
-  margin-bottom: 35px;
-}
+  margin-bottom: 25px;
 
-.titulo-secao span {
-  font-size: 9px;
+  font-size: 13px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  white-space: nowrap;
 }
 
-.titulo-secao::after {
+.section-heading::after {
   content: "";
+  flex: 1;
   height: 1px;
-  width: 100%;
-  background: var(--linha);
+  background: var(--line);
 }
 
 .link {
+  min-height: 76px;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
-  padding: 23px 4px;
-
-  border-top: 1px solid var(--linha);
+  border-top: 1px solid var(--line);
 
   text-decoration: none;
-  color: var(--preto);
+  color: var(--black);
 
-  transition: .25s;
+  transition: padding .25s ease;
 }
 
 .link:last-child {
-  border-bottom: 1px solid var(--linha);
+  border-bottom: 1px solid var(--line);
 }
 
 .link:hover {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.link-nome {
-  font-size: 12px;
+.link-name {
+  font-size: 15px;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
 
-.link-desc {
-  font-size: 10px;
-  color: var(--cinza);
+.link-description {
   margin-left: auto;
-  margin-right: 25px;
+  margin-right: 45px;
+
+  font-size: 13px;
+  color: var(--muted);
 }
 
-/* ---------- ARTE + TATTOO ---------- */
 
-.processo {
-  padding-bottom: 130px;
+/* SETA DESENHADA EM CSS */
 
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 7%;
-  align-items: end;
+.arrow {
+  width: 18px;
+  height: 18px;
+
+  position: relative;
+
+  flex-shrink: 0;
 }
 
-.processo img {
-  object-fit: cover;
+.arrow::before {
+  content: "";
+
+  position: absolute;
+  width: 13px;
+  height: 1.5px;
+
+  background: var(--black);
+
+  left: 1px;
+  top: 9px;
+
+  transform: rotate(-45deg);
+  transform-origin: right center;
 }
 
-.processo-lifestyle img {
-  aspect-ratio: 4 / 5;
+.arrow::after {
+  content: "";
+
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  border-top: 1.5px solid var(--black);
+  border-right: 1.5px solid var(--black);
+
+  right: 1px;
+  top: 1px;
 }
 
-.processo-tattoo img {
-  aspect-ratio: 4 / 5;
+
+/* PROCESSO */
+
+.visual {
+  padding: 20px 0 100px;
 }
 
-.pequeno-texto {
-  margin-top: 18px;
-
-  font-size: 9px;
-  letter-spacing: 3px;
-  line-height: 1.8;
-  text-transform: uppercase;
-}
-
-/* ---------- FRASE ---------- */
-
-.frase-final {
-  min-height: 55vh;
+.visual-intro {
+  margin-bottom: 40px;
 
   display: flex;
   align-items: center;
+  gap: 25px;
+}
+
+.visual-intro span {
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.visual-intro::after {
+  content: "";
+  height: 1px;
+  background: var(--line);
+  flex: 1;
+}
+
+.visual-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.visual-card img {
+  object-fit: cover;
+}
+
+.art-image {
+  aspect-ratio: 4 / 5;
+}
+
+.tattoo-card {
+  margin-top: 100px;
+}
+
+.tattoo-image {
+  aspect-ratio: 4 / 5;
+}
+
+.image-caption {
+  margin-top: 15px;
+
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+/* FRASE FINAL */
+
+.statement {
+  min-height: 380px;
+
+  display: flex;
   justify-content: center;
+  align-items: center;
 
   text-align: center;
 }
 
-.frase-final p {
-  max-width: 500px;
-
-  font-size: 13px;
-  letter-spacing: 5px;
+.statement p {
+  font-size: 15px;
   line-height: 2;
+  letter-spacing: 5px;
   text-transform: uppercase;
 }
 
-/* ---------- RODAPÉ ---------- */
+
+/* FOOTER */
 
 footer {
   width: 86%;
   max-width: 1050px;
+
   margin: auto;
 
-  border-top: 1px solid var(--linha);
+  border-top: 1px solid var(--line);
 
-  padding: 35px 0 50px;
+  padding: 30px 0 45px;
 
   display: flex;
   justify-content: space-between;
 
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
 
-/* =========================
-   CELULAR
-========================= */
+
+/* ======================
+   MOBILE
+====================== */
 
 @media (max-width: 700px) {
 
-  .topo {
-    min-height: 48vh;
-    padding: 25px 6% 35px;
+  header {
+    width: 88%;
+    padding: 25px 0 40px;
   }
 
-  .mini-topo {
-    font-size: 7px;
+  .top-line {
+    font-size: 10px;
     letter-spacing: 2px;
   }
 
-  .logo {
-    width: 94%;
+  .logo-box {
+    margin-top: 40px;
   }
 
-  .assinatura {
-    font-size: 7px;
-    letter-spacing: 3px;
+  .tagline {
+    margin-top: 22px;
+
+    font-size: 10px;
+    letter-spacing: 3.5px;
   }
+
+
+  /* lifestyle agora é a foto correta */
 
   .hero img {
-    height: 57vh;
+    height: 62vh;
+    min-height: 500px;
+
+    object-position: center;
   }
 
-  .hero-frase {
-    left: 8%;
-    bottom: 25px;
+  .hero-caption {
+    left: 7%;
+    bottom: 6%;
 
-    font-size: 8px;
+    font-size: 12px;
+    line-height: 1.8;
   }
 
-  .container {
-    width: 86%;
-  }
 
-  .sobre {
-    padding: 80px 0;
+  /* sobre */
 
+  .about {
     display: block;
+    padding: 75px 0 80px;
   }
 
-  .sobre-foto {
-    width: 72%;
+  .about-photo {
+    width: 76%;
     margin-bottom: 50px;
   }
 
-  .sobre-texto h2 {
-    font-size: 35px;
-    max-width: 300px;
+  .eyebrow {
+    font-size: 12px;
+    margin-bottom: 22px;
   }
 
-  .sobre-texto p {
-    font-size: 12px;
+  .about h1 {
+    font-size: 42px;
+    line-height: 1.02;
+    letter-spacing: -1.5px;
+
+    margin-bottom: 30px;
   }
+
+  .about-copy {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .welcome {
+    font-size: 17px;
+  }
+
+
+  /* links */
 
   .links {
-    padding-bottom: 100px;
+    padding-bottom: 85px;
+  }
+
+  .section-heading {
+    font-size: 12px;
+    letter-spacing: 3px;
   }
 
   .link {
-    padding: 20px 2px;
+    min-height: 72px;
   }
 
-  .link-desc {
+  .link-name {
+    font-size: 14px;
+    letter-spacing: 2.5px;
+  }
+
+  .link-description {
     display: none;
   }
 
-  .link-nome {
-    font-size: 10px;
+  .arrow {
+    margin-left: auto;
   }
 
-  .processo {
-    display: grid;
-    grid-template-columns: 1.15fr .85fr;
+
+  /* processo */
+
+  .visual {
+    padding-bottom: 60px;
+  }
+
+  .visual-intro {
+    margin-bottom: 30px;
+  }
+
+  .visual-intro span {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+
+  .visual-grid {
+    grid-template-columns: 1.12fr .88fr;
     gap: 12px;
-
-    padding-bottom: 80px;
   }
 
-  .processo-tattoo {
+  .tattoo-card {
     margin-top: 70px;
   }
 
-  .pequeno-texto {
-    font-size: 7px;
-    letter-spacing: 2px;
+  .image-caption {
+    font-size: 10px;
+    letter-spacing: 1.5px;
   }
 
-  .frase-final {
-    min-height: 42vh;
+
+  /* final */
+
+  .statement {
+    min-height: 300px;
   }
 
-  .frase-final p {
-    font-size: 9px;
-    letter-spacing: 4px;
+  .statement p {
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 3px;
   }
 
   footer {
-    width: 86%;
-    font-size: 7px;
+    font-size: 9px;
     letter-spacing: 2px;
   }
+
 }
 
 </style>
 </head>
 
+
 <body>
 
 
-<!-- TOPO -->
+<!-- LOGO -->
 
-<header class="topo">
+<header>
 
-  <div class="mini-topo">
+  <div class="top-line">
     <span>Milenar.ink</span>
     <span>BH · MG</span>
   </div>
 
-  <div class="logo-area">
+  <div class="logo-box">
 
     <img
-      class="logo"
       src="LOGO PRETA.png"
       alt="Milenar"
     >
 
-    <p class="assinatura">
+    <p class="tagline">
       arte · processo · lifestyle
     </p>
 
@@ -431,16 +561,17 @@ footer {
 </header>
 
 
+
 <!-- LIFESTYLE -->
 
 <section class="hero">
 
   <img
-    src="IMG_2690.jpeg"
+    src="IMG_9326_jpg.jpeg"
     alt="Lifestyle Milenar"
   >
 
-  <p class="hero-frase">
+  <p class="hero-caption">
     arte em tudo<br>
     que me atravessa.
   </p>
@@ -448,14 +579,15 @@ footer {
 </section>
 
 
+
 <main class="container">
 
 
 <!-- SOBRE -->
 
-<section class="sobre" id="sobre">
+<section class="about">
 
-  <div class="sobre-foto">
+  <div class="about-photo">
 
     <img
       src="FullSizeRender_VSCO.jpeg"
@@ -464,132 +596,176 @@ footer {
 
   </div>
 
-  <div class="sobre-texto">
 
-    <p class="label">Sobre mim</p>
+  <div>
 
-    <h2>
-      arte, processo<br>
-      & vida real.
-    </h2>
-
-    <p>
-      Sou Milena, artista em construção e futura tatuadora.
-      Aqui compartilho um pouco do meu processo, dos meus
-      desenhos, das minhas referências e da vida além da tatuagem.
+    <p class="eyebrow">
+      Sobre mim
     </p>
 
-    <p class="assina">
-      seja bem-vindo(a). ♡
+    <h1>
+      arte, processo<br>
+      & vida real.
+    </h1>
+
+    <p class="about-copy">
+      Sou Milena, artista em construção e futura tatuadora.
+      Aqui compartilho meu processo, meus desenhos, minhas
+      referências e um pouco da vida além da tatuagem.
+    </p>
+
+    <p class="welcome">
+      seja bem-vindo(a).
     </p>
 
   </div>
 
 </section>
+
 
 
 <!-- LINKS -->
 
 <section class="links">
 
-  <div class="titulo-secao">
-    <span>Me encontre por aqui</span>
+  <div class="section-heading">
+    Me encontre por aqui
   </div>
 
 
-  <a class="link"
-     href="https://instagram.com/milenar.ink"
-     target="_blank">
+  <a
+    class="link"
+    href="https://instagram.com/milenar.ink"
+    target="_blank"
+  >
 
-    <span class="link-nome">Instagram</span>
-    <span class="link-desc">meu dia a dia</span>
-    <span>↗</span>
+    <span class="link-name">
+      Instagram
+    </span>
 
-  </a>
+    <span class="link-description">
+      meu dia a dia
+    </span>
 
-
-  <a class="link"
-     href="#"
-     target="_blank">
-
-    <span class="link-nome">WhatsApp</span>
-    <span class="link-desc">orçamentos & contato</span>
-    <span>↗</span>
+    <span class="arrow"></span>
 
   </a>
 
 
-  <a class="link"
-     href="#"
-     target="_blank">
+  <a class="link" href="#">
 
-    <span class="link-nome">YouTube</span>
-    <span class="link-desc">vídeos & processos</span>
-    <span>↗</span>
+    <span class="link-name">
+      WhatsApp
+    </span>
 
-  </a>
+    <span class="link-description">
+      orçamentos & contato
+    </span>
 
-
-  <a class="link"
-     href="#"
-     target="_blank">
-
-    <span class="link-nome">Pinterest</span>
-    <span class="link-desc">referências</span>
-    <span>↗</span>
+    <span class="arrow"></span>
 
   </a>
 
 
-  <a class="link"
-     href="#">
+  <a class="link" href="#">
 
-    <span class="link-nome">Portfólio</span>
-    <span class="link-desc">arte & tattoo</span>
-    <span>↗</span>
+    <span class="link-name">
+      YouTube
+    </span>
+
+    <span class="link-description">
+      vídeos & processos
+    </span>
+
+    <span class="arrow"></span>
+
+  </a>
+
+
+  <a class="link" href="#">
+
+    <span class="link-name">
+      Pinterest
+    </span>
+
+    <span class="link-description">
+      referências
+    </span>
+
+    <span class="arrow"></span>
+
+  </a>
+
+
+  <a class="link" href="#">
+
+    <span class="link-name">
+      Portfólio
+    </span>
+
+    <span class="link-description">
+      arte & tattoo
+    </span>
+
+    <span class="arrow"></span>
 
   </a>
 
 </section>
 
 
-<!-- PROCESSO / TATTOO -->
 
-<section class="processo">
+<!-- ARTE + TATTOO -->
 
-  <div class="processo-lifestyle">
+<section class="visual">
 
-    <img
-      src="IMG_9326_jpg.jpeg"
-      alt="Processo artístico Milenar"
-    >
-
-    <p class="pequeno-texto">
-      processo · estudo · criação
-    </p>
-
+  <div class="visual-intro">
+    <span>Processo & criação</span>
   </div>
 
 
-  <div class="processo-tattoo">
+  <div class="visual-grid">
 
-    <img
-      src="IMG_2690.jpeg"
-      alt="Lifestyle Milenar"
-    >
 
-    <p class="pequeno-texto">
-      entre arte & cotidiano
-    </p>
+    <div class="visual-card">
+
+      <img
+        class="art-image"
+        src="IMG_2690.jpeg"
+        alt="Processo artístico"
+      >
+
+      <p class="image-caption">
+        estudo · processo · referências
+      </p>
+
+    </div>
+
+
+    <div class="visual-card tattoo-card">
+
+      <img
+        class="tattoo-image"
+        src="IMG_9326_jpg.jpeg"
+        alt="Tattoo Milenar"
+      >
+
+      <p class="image-caption">
+        tattoo · arte na pele
+      </p>
+
+    </div>
+
 
   </div>
 
 </section>
+
 
 
 <!-- FRASE -->
 
-<section class="frase-final">
+<section class="statement">
 
   <p>
     criar também é uma<br>
@@ -602,11 +778,16 @@ footer {
 </main>
 
 
+
 <footer>
 
-  <span>© Milenar</span>
+  <span>
+    © Milenar
+  </span>
 
-  <span>@milenar.ink</span>
+  <span>
+    @milenar.ink
+  </span>
 
 </footer>
 
