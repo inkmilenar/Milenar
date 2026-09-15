@@ -14,6 +14,7 @@
   <!-- FONTE -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600&display=swap"
     rel="stylesheet"
@@ -24,15 +25,20 @@
     :root {
       --bg: #f7f5ef;
       --text: #111111;
-      --line: rgba(17, 17, 17, 0.18);
+      --line: rgba(17,17,17,.18);
 
       --instagram: #d62976;
       --youtube: #ff0000;
       --whatsapp: #25d366;
 
-      --page-width: 1180px;
+      --page-width: 1220px;
       --page-padding: 42px;
     }
+
+
+    /* ========================================
+       BASE
+    ======================================== */
 
     * {
       box-sizing: border-box;
@@ -83,12 +89,13 @@
     }
 
 
-    /* ================================
+    /* ========================================
        HEADER
-    ================================ */
+    ======================================== */
 
     .site-header {
       position: fixed;
+
       top: 0;
       left: 0;
 
@@ -97,7 +104,7 @@
 
       z-index: 1000;
 
-      background: rgba(247, 245, 239, 0.97);
+      background: rgba(247,245,239,.97);
 
       border-bottom: 1px solid transparent;
 
@@ -119,6 +126,9 @@
       justify-content: space-between;
     }
 
+
+    /* LOGO PRINCIPAL */
+
     .header-logo {
       display: flex;
       align-items: center;
@@ -138,13 +148,15 @@
       width: 130px;
     }
 
+
+    /* DIREITA DO HEADER */
+
     .header-right {
       display: flex;
       align-items: center;
-      gap: 22px;
-    }
 
-    /* BELO HORIZONTE MAIOR */
+      gap: 20px;
+    }
 
     .location {
       font-size: 18px;
@@ -156,9 +168,9 @@
     }
 
 
-    /* ================================
+    /* ========================================
        HAMBÚRGUER
-    ================================ */
+    ======================================== */
 
     .menu-button {
       width: 44px;
@@ -169,6 +181,7 @@
 
       display: flex;
       flex-direction: column;
+
       align-items: center;
       justify-content: center;
 
@@ -206,12 +219,13 @@
     }
 
 
-    /* ================================
+    /* ========================================
        OVERLAY
-    ================================ */
+    ======================================== */
 
     .menu-overlay {
       position: fixed;
+
       inset: 0;
 
       background: rgba(0,0,0,.25);
@@ -232,9 +246,9 @@
     }
 
 
-    /* ================================
+    /* ========================================
        MENU LATERAL
-    ================================ */
+    ======================================== */
 
     .side-menu {
       position: fixed;
@@ -242,7 +256,7 @@
       top: 0;
       right: 0;
 
-      width: min(420px, 34vw);
+      width: min(420px,34vw);
       height: 100%;
 
       background: var(--bg);
@@ -250,7 +264,7 @@
       z-index: 1100;
 
       padding:
-        105px
+        92px
         55px
         50px;
 
@@ -264,19 +278,30 @@
       transform: translateX(0);
     }
 
-    /* NOVA LOGOMARCA MR */
+
+    /* LOGOMARCA MR */
 
     .menu-brand {
-      margin-bottom: 42px;
+      height: 105px;
+
+      display: flex;
+      align-items: center;
+
+      margin-bottom: 18px;
+
+      overflow: hidden;
     }
 
     .menu-brand img {
-      width: 72px;
-      height: 72px;
+      width: 120px;
+      height: 100px;
 
       object-fit: contain;
       object-position: left center;
     }
+
+
+    /* LINKS DO MENU */
 
     .side-menu nav {
       display: flex;
@@ -300,7 +325,7 @@
       border-top: 1px solid var(--line);
     }
 
-    @media (hover: hover) {
+    @media (hover:hover) {
 
       .side-menu nav a:hover {
         padding-left: 7px;
@@ -310,9 +335,9 @@
     }
 
 
-    /* ================================
+    /* ========================================
        HERO
-    ================================ */
+    ======================================== */
 
     .hero {
       margin-top: 82px;
@@ -338,6 +363,7 @@
       content: "";
 
       position: absolute;
+
       inset: 0;
 
       background:
@@ -348,7 +374,7 @@
         );
     }
 
-    @media (hover: hover) {
+    @media (hover:hover) {
 
       .hero:hover > img {
         transform: scale(1.01);
@@ -379,14 +405,15 @@
       font-weight: 300;
 
       line-height: 1.12;
+
       letter-spacing: .05em;
     }
 
 
-    /* ================================
+    /* ========================================
        BLOCO EDITORIAL
        FOTO + SOBRE + LINKS
-    ================================ */
+    ======================================== */
 
     .editorial-section {
       padding: 76px 0 88px;
@@ -397,22 +424,34 @@
     .editorial-grid {
       display: grid;
 
-      /* FOTO / SOBRE / LINKS */
+      /*
+        FOTO | SOBRE | LINKS
+      */
+
       grid-template-columns:
-        minmax(0, 34fr)
-        minmax(0, 38fr)
-        minmax(0, 28fr);
+        minmax(0,31fr)
+        minmax(0,42fr)
+        minmax(0,27fr);
 
-      gap: 46px;
+      column-gap: 34px;
 
-      align-items: start;
+      align-items: stretch;
     }
 
 
-    /* FOTO */
+    /* ========================================
+       FOTO
+    ======================================== */
 
     .about-photo {
       overflow: hidden;
+
+      /*
+        Leva a foto um pouco mais
+        para a esquerda no PC
+      */
+
+      margin-left: -20px;
     }
 
     .about-photo img {
@@ -426,7 +465,7 @@
       transition: transform .7s ease;
     }
 
-    @media (hover: hover) {
+    @media (hover:hover) {
 
       .about-photo:hover img {
         transform: scale(1.015);
@@ -435,7 +474,13 @@
     }
 
 
-    /* SOBRE */
+    /* ========================================
+       SOBRE MIM
+    ======================================== */
+
+    .about-content {
+      padding-right: 10px;
+    }
 
     .section-title {
       font-size: 41px;
@@ -459,9 +504,16 @@
       font-size: 17px;
       font-weight: 300;
 
-      line-height: 1.55;
+      line-height: 1.58;
 
-      letter-spacing: .008em;
+      /*
+        JUSTIFICADO NO PC
+      */
+
+      text-align: justify;
+      text-justify: inter-word;
+
+      letter-spacing: .006em;
 
       margin-bottom: 16px;
     }
@@ -470,12 +522,16 @@
       font-weight: 500;
     }
 
-    /* ESTRELAS */
+
+    /* ========================================
+       ESTRELAS
+    ======================================== */
 
     .stars {
       margin-top: 27px;
 
       font-size: 17px;
+
       letter-spacing: .3em;
 
       user-select: none;
@@ -489,7 +545,7 @@
       transition: transform .8s ease;
     }
 
-    @media (hover: hover) {
+    @media (hover:hover) {
 
       .stars:hover span:last-child {
         transform: rotate(45deg);
@@ -498,12 +554,20 @@
     }
 
 
-    /* ================================
-       LINKS — TERCEIRA COLUNA
-    ================================ */
+    /* ========================================
+       LINKS
+    ======================================== */
 
     .links-column {
       min-width: 0;
+
+      /*
+        LINHA VERTICAL
+      */
+
+      border-left: 1px solid var(--line);
+
+      padding-left: 34px;
     }
 
     .links-list {
@@ -516,7 +580,7 @@
       display: grid;
 
       grid-template-columns:
-        minmax(0, 1fr)
+        minmax(0,1fr)
         25px;
 
       align-items: center;
@@ -539,7 +603,7 @@
       transition: transform .25s ease;
     }
 
-    @media (hover: hover) {
+    @media (hover:hover) {
 
       .link-row:hover {
         opacity: .55;
@@ -553,9 +617,9 @@
     }
 
 
-    /* ================================
+    /* ========================================
        DIÁRIO VISUAL
-    ================================ */
+    ======================================== */
 
     .visual {
       padding: 0 0 30px;
@@ -571,7 +635,7 @@
       display: grid;
 
       grid-template-columns:
-        repeat(12, 1fr);
+        repeat(12,1fr);
 
       gap: 5px;
     }
@@ -591,49 +655,59 @@
         filter .7s ease;
     }
 
+
+    /* FOTO 1 */
+
     .visual-item:nth-child(1) {
       grid-column: span 5;
+
       aspect-ratio: 1.25 / 1;
     }
 
+
+    /* FOTO 2 */
+
     .visual-item:nth-child(2) {
       grid-column: span 7;
+
       aspect-ratio: 1.75 / 1;
     }
 
-    .visual-item:nth-child(3) {
-      grid-column: span 4;
-      aspect-ratio: 1 / 1;
-    }
 
-    .visual-item:nth-child(4) {
-      grid-column: span 4;
-      aspect-ratio: 1 / 1;
-    }
+    /* FOTOS 3, 4 E 5 */
 
+    .visual-item:nth-child(3),
+    .visual-item:nth-child(4),
     .visual-item:nth-child(5) {
       grid-column: span 4;
+
       aspect-ratio: 1 / 1;
     }
+
+
+    /* FOTO 6 */
 
     .visual-item:nth-child(6) {
       grid-column: span 12;
+
       aspect-ratio: 2.4 / 1;
     }
 
-    @media (hover: hover) {
+
+    @media (hover:hover) {
 
       .visual-item:hover img {
         transform: scale(1.025);
+
         filter: brightness(.92);
       }
 
     }
 
 
-    /* ================================
-       REVEAL DISCRETO
-    ================================ */
+    /* ========================================
+       ANIMAÇÃO DISCRETA
+    ======================================== */
 
     .photo-reveal {
       opacity: 0;
@@ -647,13 +721,14 @@
 
     .photo-reveal.visible {
       opacity: 1;
+
       transform: translateY(0);
     }
 
 
-    /* ================================
+    /* ========================================
        FRASE FINAL
-    ================================ */
+    ======================================== */
 
     .closing {
       padding: 30px 0 38px;
@@ -667,16 +742,16 @@
     }
 
 
-    /* ================================
+    /* ========================================
        FOOTER
-    ================================ */
+    ======================================== */
 
     footer {
       border-top: 1px solid var(--line);
     }
 
     .footer-inner {
-      min-height: 86px;
+      min-height: 88px;
 
       display: flex;
       align-items: center;
@@ -684,8 +759,6 @@
 
       gap: 30px;
     }
-
-    /* TEXTO MAIOR */
 
     .copyright {
       font-size: 14px;
@@ -697,22 +770,24 @@
     }
 
 
-    /* ================================
-       REDES SOCIAIS MAIORES
-    ================================ */
+    /* ========================================
+       REDES SOCIAIS
+    ======================================== */
 
     .socials {
       display: flex;
+
       align-items: center;
 
       gap: 10px;
     }
 
     .social-link {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
@@ -724,40 +799,74 @@
     }
 
     .social-link svg {
-      width: 22px;
-      height: 22px;
+      width: 23px;
+      height: 23px;
 
       fill: none;
+
       stroke: currentColor;
 
       stroke-width: 1.7;
+
       stroke-linecap: round;
       stroke-linejoin: round;
     }
+
+
+    /* YOUTUBE */
 
     .social-link.youtube svg {
       fill: currentColor;
       stroke: none;
     }
 
-    @media (hover: hover) {
+
+    /* WHATSAPP */
+
+    .social-link.whatsapp svg {
+      fill: none;
+
+      stroke: currentColor;
+
+      stroke-width: 1.55;
+
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+
+    /* CORES NO HOVER */
+
+    @media (hover:hover) {
 
       .social-link.instagram:hover {
         color: var(--instagram);
-        transform: translateY(-2px) scale(1.07);
+
+        transform:
+          translateY(-2px)
+          scale(1.07);
       }
 
       .social-link.youtube:hover {
         color: var(--youtube);
-        transform: translateY(-2px) scale(1.07);
+
+        transform:
+          translateY(-2px)
+          scale(1.07);
       }
 
       .social-link.whatsapp:hover {
         color: var(--whatsapp);
-        transform: translateY(-2px) scale(1.07);
+
+        transform:
+          translateY(-2px)
+          scale(1.07);
       }
 
     }
+
+
+    /* CORES NO TOQUE */
 
     .social-link.instagram:active,
     .social-link.instagram.active-color {
@@ -775,15 +884,16 @@
     }
 
 
-    /* =====================================
+    /* ========================================
        MOBILE
-    ====================================== */
+    ======================================== */
 
-    @media (max-width: 700px) {
+    @media (max-width:700px) {
 
       :root {
         --page-padding: 22px;
       }
+
 
       /* HEADER */
 
@@ -805,14 +915,13 @@
       }
 
       .header-right {
-        gap: 4px;
+        gap: 3px;
       }
-
-      /* BELO HORIZONTE MAIOR NO CELULAR TAMBÉM */
 
       .location {
         font-size: 14px;
-        letter-spacing: .025em;
+
+        letter-spacing: .02em;
       }
 
       .menu-button {
@@ -831,22 +940,25 @@
         width: 82%;
 
         padding:
-          92px
+          78px
           28px
           40px;
       }
 
       .menu-brand {
-        margin-bottom: 35px;
+        height: 100px;
+
+        margin-bottom: 12px;
       }
 
       .menu-brand img {
-        width: 62px;
-        height: 62px;
+        width: 115px;
+        height: 95px;
       }
 
       .side-menu nav a {
         font-size: 25px;
+
         padding: 19px 0;
       }
 
@@ -855,6 +967,7 @@
 
       .hero {
         margin-top: 67px;
+
         height: 465px;
       }
 
@@ -864,14 +977,14 @@
 
       .hero-text {
         font-size: 23px;
+
         line-height: 1.13;
       }
 
 
-      /* =================================
-         EDITORIAL MOBILE
-         VOLTA A SER EMPILHADO
-      ================================= */
+      /* ====================================
+         BLOCO EDITORIAL MOBILE
+      ==================================== */
 
       .editorial-section {
         padding: 56px 0 68px;
@@ -879,58 +992,14 @@
 
       .editorial-grid {
         display: flex;
+
         flex-direction: column;
 
         gap: 0;
       }
 
-      /*
-        No celular:
-        Sobre mim
-        foto
-        texto
-        estrelas
-        Links
-      */
 
-      .about-column {
-        display: contents;
-      }
-
-      .about-photo {
-        order: 2;
-
-        width: 100%;
-
-        margin-bottom: 27px;
-      }
-
-      .about-photo img {
-        aspect-ratio: 4 / 5;
-        object-position: center 65%;
-      }
-
-      .about-content {
-        order: 3;
-      }
-
-      .links-column {
-        order: 4;
-
-        width: 100%;
-
-        margin-top: 49px;
-      }
-
-      .section-title {
-        font-size: 38px;
-
-        margin-bottom: 27px;
-      }
-
-      /*
-        Este título fica acima da foto
-      */
+      /* TÍTULO */
 
       .mobile-about-title {
         display: block;
@@ -942,8 +1011,42 @@
         display: none;
       }
 
+
+      /* FOTO */
+
+      .about-photo {
+        order: 2;
+
+        width: 100%;
+
+        margin-left: 0;
+        margin-bottom: 27px;
+      }
+
+      .about-photo img {
+        aspect-ratio: 4 / 5;
+
+        object-position: center 65%;
+      }
+
+
+      /* TEXTO */
+
+      .about-content {
+        order: 3;
+
+        padding-right: 0;
+      }
+
+      .section-title {
+        font-size: 38px;
+
+        margin-bottom: 27px;
+      }
+
       .about-impact {
         font-size: 24px;
+
         margin-bottom: 21px;
       }
 
@@ -951,6 +1054,12 @@
         font-size: 17px;
 
         line-height: 1.6;
+
+        /*
+          NO CELULAR NÃO JUSTIFICA
+        */
+
+        text-align: left;
 
         margin-bottom: 17px;
       }
@@ -964,6 +1073,22 @@
 
       /* LINKS */
 
+      .links-column {
+        order: 4;
+
+        width: 100%;
+
+        margin-top: 49px;
+
+        /*
+          SEM LINHA VERTICAL NO CELULAR
+        */
+
+        border-left: 0;
+
+        padding-left: 0;
+      }
+
       .link-row {
         min-height: 58px;
 
@@ -971,7 +1096,7 @@
       }
 
 
-      /* DIÁRIO */
+      /* DIÁRIO VISUAL */
 
       .visual {
         padding-bottom: 25px;
@@ -1011,7 +1136,7 @@
       }
 
 
-      /* FRASE */
+      /* FRASE FINAL */
 
       .closing {
         padding: 26px 0 32px;
@@ -1023,9 +1148,9 @@
       /* FOOTER */
 
       .footer-inner {
-        min-height: 76px;
+        min-height: 78px;
 
-        gap: 8px;
+        gap: 7px;
       }
 
       .copyright {
@@ -1035,29 +1160,31 @@
 
         line-height: 1.35;
 
-        letter-spacing: .045em;
+        letter-spacing: .04em;
       }
 
       .socials {
-        gap: 2px;
+        gap: 1px;
       }
 
       .social-link {
-        width: 34px;
-        height: 34px;
+        width: 36px;
+        height: 36px;
       }
 
       .social-link svg {
-        width: 20px;
-        height: 20px;
+        width: 21px;
+        height: 21px;
       }
 
     }
 
 
-    /* DESKTOP */
+    /* ========================================
+       DESKTOP
+    ======================================== */
 
-    @media (min-width: 701px) {
+    @media (min-width:701px) {
 
       .mobile-about-title {
         display: none;
@@ -1070,9 +1197,11 @@
     }
 
 
-    /* ACESSIBILIDADE */
+    /* ========================================
+       ACESSIBILIDADE
+    ======================================== */
 
-    @media (prefers-reduced-motion: reduce) {
+    @media (prefers-reduced-motion:reduce) {
 
       html {
         scroll-behavior: auto;
@@ -1086,19 +1215,23 @@
 
       .photo-reveal {
         opacity: 1;
+
         transform: none;
       }
 
     }
 
   </style>
+
 </head>
 
 
 <body>
 
 
-  <!-- HEADER -->
+  <!-- ========================================
+       HEADER
+  ========================================= -->
 
   <header
     class="site-header"
@@ -1107,23 +1240,28 @@
 
     <div class="container header-inner">
 
+
       <a
         href="#top"
         class="header-logo"
         aria-label="Milenar - início"
       >
+
         <img
           src="Logo preta.PNG"
           alt="Milenar"
         >
+
       </a>
 
 
       <div class="header-right">
 
+
         <span class="location">
           Belo Horizonte • MG
         </span>
+
 
         <button
           class="menu-button"
@@ -1132,12 +1270,16 @@
           aria-label="Abrir menu"
           aria-expanded="false"
         >
+
           <span></span>
           <span></span>
           <span></span>
+
         </button>
 
+
       </div>
+
 
     </div>
 
@@ -1152,7 +1294,9 @@
   ></div>
 
 
-  <!-- MENU LATERAL -->
+  <!-- ========================================
+       MENU LATERAL
+  ========================================= -->
 
   <aside
     class="side-menu"
@@ -1160,13 +1304,16 @@
     aria-hidden="true"
   >
 
+
     <!-- LOGOMARCA MR -->
 
     <div class="menu-brand">
+
       <img
         src="LOGOMARCA PRETA.png"
         alt="MR"
       >
+
     </div>
 
 
@@ -1186,10 +1333,13 @@
 
     </nav>
 
+
   </aside>
 
 
-  <!-- HERO -->
+  <!-- ========================================
+       HERO
+  ========================================= -->
 
   <section
     class="hero"
@@ -1201,11 +1351,14 @@
       alt="Universo Milenar"
     >
 
+
     <div class="hero-content">
 
       <div class="hero-text">
+
         arte em tudo<br>
         que me atravessa.
+
       </div>
 
     </div>
@@ -1213,29 +1366,32 @@
   </section>
 
 
+  <!-- ========================================
+       CONTEÚDO
+  ========================================= -->
+
   <main class="container">
 
 
-    <!-- ==================================
-         FOTO + SOBRE + LINKS
-    =================================== -->
+    <!-- FOTO + SOBRE + LINKS -->
 
     <section
       class="editorial-section"
       id="sobre"
     >
 
+
       <div class="editorial-grid">
 
 
-        <!-- TÍTULO APENAS NO MOBILE -->
+        <!-- TÍTULO MOBILE -->
 
         <h2 class="section-title mobile-about-title">
           Sobre mim
         </h2>
 
 
-        <!-- COLUNA 1: FOTO -->
+        <!-- FOTO -->
 
         <div class="about-photo photo-reveal">
 
@@ -1247,9 +1403,10 @@
         </div>
 
 
-        <!-- COLUNA 2: SOBRE -->
+        <!-- SOBRE -->
 
         <div class="about-content">
+
 
           <h2 class="section-title desktop-about-title">
             Sobre mim
@@ -1257,23 +1414,30 @@
 
 
           <div class="about-impact">
+
             Potential Artist &amp; Lifestyle
+
           </div>
 
 
           <div class="about-text">
 
-            <p>
-              Meu nome é
-              <strong>Milena Roberta</strong>.
-              Cresci em Belo Horizonte,
-              sempre cercada pela arte em suas
-              diferentes formas. Desenho desde
-              que me lembro e criar sempre foi
-              uma das coisas que mais amo fazer.
-            </p>
 
             <p>
+
+              Meu nome é
+              <strong>Milena Roberta</strong>.
+              Cresci em Belo Horizonte, sempre
+              cercada pela arte em suas diferentes
+              formas. Desenho desde que me lembro
+              e criar sempre foi uma das coisas
+              que mais amo fazer.
+
+            </p>
+
+
+            <p>
+
               Com o tempo, encontrei na tatuagem
               uma nova forma de transformar desenho
               em expressão. Gosto de pensar nela
@@ -1282,18 +1446,24 @@
               que atravessa histórias, pessoas e
               gerações — e que acabou dando sentido
               também ao nome Milenar.
+
             </p>
 
+
             <p>
+
               Por aqui, compartilho não só o que
               crio, mas também um pouco do meu
               lifestyle, das minhas referências
               e do meu cotidiano. Porque, para mim,
+
               <strong>
                 a arte não está só no que a gente
                 cria. Ela está em cada parte da vida.
               </strong>
+
             </p>
+
 
           </div>
 
@@ -1302,19 +1472,23 @@
             class="stars"
             aria-hidden="true"
           >
+
             <span>✶</span>
             <span>✶</span>
+
           </div>
+
 
         </div>
 
 
-        <!-- COLUNA 3: LINKS -->
+        <!-- LINKS -->
 
         <div
           class="links-column"
           id="links"
         >
+
 
           <h2 class="section-title">
             Links
@@ -1323,14 +1497,17 @@
 
           <div class="links-list">
 
+
             <a
               class="link-row"
               href="https://instagram.com/milenar.ink"
               target="_blank"
               rel="noopener noreferrer"
             >
+
               <span>Instagram</span>
               <span class="link-arrow">↗</span>
+
             </a>
 
 
@@ -1338,8 +1515,10 @@
               class="link-row"
               href="#"
             >
+
               <span>Pinterest</span>
               <span class="link-arrow">↗</span>
+
             </a>
 
 
@@ -1347,8 +1526,10 @@
               class="link-row"
               href="#"
             >
+
               <span>Portfólio</span>
               <span class="link-arrow">↗</span>
+
             </a>
 
 
@@ -1356,8 +1537,10 @@
               class="link-row"
               href="#"
             >
+
               <span>WhatsApp</span>
               <span class="link-arrow">↗</span>
+
             </a>
 
 
@@ -1365,28 +1548,34 @@
               class="link-row"
               href="#"
             >
+
               <span>YouTube</span>
               <span class="link-arrow">↗</span>
+
             </a>
 
+
           </div>
+
 
         </div>
 
 
       </div>
 
+
     </section>
 
 
-    <!-- ==================================
+    <!-- ========================================
          DIÁRIO VISUAL
-    =================================== -->
+    ========================================= -->
 
     <section
       class="visual"
       id="visual"
     >
+
 
       <h2 class="section-title">
         Diário visual
@@ -1395,31 +1584,69 @@
 
       <div class="visual-grid">
 
-        <div class="visual-item photo-reveal">
-          <img src="Imagem 2.JPG" alt="">
-        </div>
-
-        <div class="visual-item">
-          <img src="Imagem 3.JPG" alt="">
-        </div>
-
-        <div class="visual-item">
-          <img src="Imagem 4.JPG" alt="">
-        </div>
 
         <div class="visual-item photo-reveal">
-          <img src="Imagem 5.JPG" alt="">
+
+          <img
+            src="Imagem 2.JPG"
+            alt=""
+          >
+
         </div>
 
-        <div class="visual-item">
-          <img src="Imagem 6.JPG" alt="">
-        </div>
 
         <div class="visual-item">
-          <img src="Foto 7.JPG" alt="">
+
+          <img
+            src="Imagem 3.JPG"
+            alt=""
+          >
+
         </div>
+
+
+        <div class="visual-item">
+
+          <img
+            src="Imagem 4.JPG"
+            alt=""
+          >
+
+        </div>
+
+
+        <div class="visual-item photo-reveal">
+
+          <img
+            src="Imagem 5.JPG"
+            alt=""
+          >
+
+        </div>
+
+
+        <div class="visual-item">
+
+          <img
+            src="Imagem 6.JPG"
+            alt=""
+          >
+
+        </div>
+
+
+        <div class="visual-item">
+
+          <img
+            src="Foto 7.JPG"
+            alt=""
+          >
+
+        </div>
+
 
       </div>
+
 
     </section>
 
@@ -1427,22 +1654,30 @@
     <!-- FRASE FINAL -->
 
     <div class="closing">
+
       criar também é uma forma de viver.
+
     </div>
 
 
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- ========================================
+       FOOTER
+  ========================================= -->
 
   <footer>
 
+
     <div class="container footer-inner">
 
+
       <div class="copyright">
+
         © 2026 MILENAR —
         TODOS OS DIREITOS RESERVADOS
+
       </div>
 
 
@@ -1458,6 +1693,7 @@
           rel="noopener noreferrer"
           aria-label="Instagram"
         >
+
 
           <svg viewBox="0 0 24 24">
 
@@ -1485,6 +1721,7 @@
 
           </svg>
 
+
         </a>
 
 
@@ -1496,9 +1733,11 @@
           aria-label="YouTube"
         >
 
+
           <svg viewBox="0 0 24 24">
 
-            <path d="
+            <path
+              d="
               M21.6 7.2
               C21.4 5.9 20.4 4.9 19.1 4.7
               C17.3 4.4 14.8 4.3 12 4.3
@@ -1518,9 +1757,11 @@
               V8.5
               L16 12
               Z
-            "></path>
+              "
+            ></path>
 
           </svg>
+
 
         </a>
 
@@ -1533,47 +1774,77 @@
           aria-label="WhatsApp"
         >
 
-          <svg viewBox="0 0 24 24">
 
-            <path d="
-              M20.5 11.7
-              A8.5 8.5 0 0 1 8 19.2
-              L3.5 20.5
-              L4.8 16.1
-              A8.5 8.5 0 1 1 20.5 11.7
-              Z
-            "></path>
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
 
-            <path d="
-              M8.4 7.8
-              C8.7 7.5 9 7.6 9.2 8
-              L10.2 10
-              C10.4 10.4 10.3 10.7 10 11
-              L9.4 11.6
-              C10.2 13.1 11.4 14.2 13 14.9
-              L13.6 14.2
-              C13.9 13.9 14.2 13.8 14.6 14
-              L16.6 15
-              C17 15.2 17.1 15.5 16.8 15.9
-              C16.2 16.7 15.4 17.1 14.4 17
-              C11 16.6 7.5 13.2 7.1 9.8
-              C7 9 7.5 8.2 8.4 7.8
-              Z
-            "></path>
+
+            <!-- CONTORNO -->
+
+            <path
+              d="
+              M12.04 2
+              A9.84 9.84 0 0 0 3.6 16.9
+              L2 22
+              l5.23-1.54
+              A9.92 9.92 0 1 0 12.04 2Z
+              "
+            ></path>
+
+
+            <!-- TELEFONE -->
+
+            <path
+              d="
+              M8.1 7.2
+              c.2-.43.42-.44.62-.45
+              h.53
+              c.17 0 .4.06.5.34
+              l.75 1.82
+              c.09.23.05.42-.08.61
+              l-.58.72
+              c-.13.16-.27.33-.12.59
+              .15.26.67 1.08 1.45 1.75
+              1 .86 1.84 1.13 2.11 1.26
+              .27.13.43.11.59-.08
+              l.91-1.06
+              c.18-.21.37-.17.62-.08
+              l1.7.8
+              c.26.13.44.19.5.3
+              .07.11.07.63-.15 1.24
+              -.22.61-1.28 1.17-1.76 1.24
+              -.45.07-1.02.1-1.65-.1
+              -.38-.12-.87-.28-1.5-.55
+              -2.64-1.14-4.36-3.8-4.5-4
+              -.13-.2-1.07-1.42-1.07-2.71
+              0-1.29.67-1.93.92-2.2Z
+              "
+            ></path>
+
 
           </svg>
+
 
         </a>
 
 
       </div>
 
+
     </div>
+
 
   </footer>
 
 
+  <!-- ========================================
+       JAVASCRIPT
+  ========================================= -->
+
   <script>
+
 
     /* MENU */
 
@@ -1590,10 +1861,13 @@
     function openMenu() {
 
       menuButton.classList.add("active");
+
       sideMenu.classList.add("active");
+
       menuOverlay.classList.add("active");
 
       document.body.classList.add("menu-open");
+
 
       menuButton.setAttribute(
         "aria-expanded",
@@ -1616,10 +1890,13 @@
     function closeMenu() {
 
       menuButton.classList.remove("active");
+
       sideMenu.classList.remove("active");
+
       menuOverlay.classList.remove("active");
 
       document.body.classList.remove("menu-open");
+
 
       menuButton.setAttribute(
         "aria-expanded",
@@ -1646,9 +1923,13 @@
         if (
           sideMenu.classList.contains("active")
         ) {
+
           closeMenu();
+
         } else {
+
           openMenu();
+
         }
 
       }
@@ -1685,7 +1966,7 @@
     );
 
 
-    /* HEADER */
+    /* HEADER AO ROLAR */
 
     const header =
       document.getElementById("siteHeader");
@@ -1701,7 +1982,10 @@
         );
 
       },
-      { passive: true }
+
+      {
+        passive: true
+      }
     );
 
 
@@ -1717,6 +2001,7 @@
       "IntersectionObserver" in window
     ) {
 
+
       const observer =
         new IntersectionObserver(
 
@@ -1725,11 +2010,14 @@
             entries.forEach(
               entry => {
 
-                if (entry.isIntersecting) {
+                if (
+                  entry.isIntersecting
+                ) {
 
                   entry.target
                     .classList
                     .add("visible");
+
 
                   observer.unobserve(
                     entry.target
@@ -1754,17 +2042,20 @@
           observer.observe(photo)
       );
 
+
     } else {
+
 
       photos.forEach(
         photo =>
           photo.classList.add("visible")
       );
 
+
     }
 
 
-    /* COR DOS ÍCONES NO TOQUE */
+    /* CORES DAS REDES NO TOQUE */
 
     document
       .querySelectorAll(".social-link")
@@ -1779,12 +2070,18 @@
             );
 
           },
-          { passive: true }
+
+          {
+            passive: true
+          }
         );
 
       });
 
+
   </script>
 
+
 </body>
+
 </html>
