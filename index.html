@@ -300,7 +300,7 @@
 
 
     /* ========================================
-       TEXTO
+       TEXTO SOBRE
     ======================================== */
 
     .intro-content {
@@ -369,6 +369,15 @@
 
     /* ========================================
        ESTRELA NA TRANSIÇÃO
+
+       São duas cópias da mesma estrela,
+       perfeitamente alinhadas.
+
+       A parte superior fica preta/cinza
+       sobre o creme.
+
+       A parte inferior fica branca
+       sobre o preto.
     ======================================== */
 
     .transition-star {
@@ -377,30 +386,82 @@
       width: 100%;
       height: 0;
 
-      z-index: 4;
+      z-index: 20;
 
       pointer-events: none;
+
+      --star-size:
+        clamp(360px,32vw,520px);
+
+      --star-right: -85px;
     }
 
-    .transition-star img {
+
+    /* PARTE SOBRE O CREME */
+
+    .star-top {
       position: absolute;
 
-      width:
-        clamp(300px,27vw,430px);
+      right: var(--star-right);
+      bottom: 0;
 
-      height: auto;
+      width: var(--star-size);
+      height:
+        calc(var(--star-size) / 2);
 
-      right: -70px;
+      overflow: hidden;
+    }
+
+    .star-top img {
+      position: absolute;
+
+      width: var(--star-size);
+      height: var(--star-size);
+
+      left: 0;
+
+      bottom:
+        calc(var(--star-size) / -2);
+
+      object-fit: contain;
+
+      opacity: .10;
+
+      user-select: none;
+    }
+
+
+    /* PARTE SOBRE O PRETO */
+
+    .star-bottom {
+      position: absolute;
+
+      right: var(--star-right);
       top: 0;
 
-      transform:
-        translateY(-50%);
+      width: var(--star-size);
+      height:
+        calc(var(--star-size) / 2);
 
-      opacity: .075;
+      overflow: hidden;
+    }
 
-      mix-blend-mode: difference;
+    .star-bottom img {
+      position: absolute;
 
-      pointer-events: none;
+      width: var(--star-size);
+      height: var(--star-size);
+
+      left: 0;
+
+      top:
+        calc(var(--star-size) / -2);
+
+      object-fit: contain;
+
+      filter: invert(1);
+
+      opacity: .10;
 
       user-select: none;
     }
@@ -427,13 +488,13 @@
         5%
         46px;
 
-      overflow: visible;
+      overflow: hidden;
     }
 
     .links-inner {
       position: relative;
 
-      z-index: 10;
+      z-index: 30;
 
       width: 100%;
 
@@ -454,6 +515,7 @@
 
     .links-heading-left {
       width: fit-content;
+
       max-width: 620px;
     }
 
@@ -594,39 +656,46 @@
       color: #ffffff;
     }
 
-    .network-link:hover .network-icon {
+    .network-link:hover
+    .network-icon {
       transform:
         scale(1.09);
     }
 
-    .network-link.instagram:hover .network-icon {
+    .network-link.instagram:hover
+    .network-icon {
       color: #e1306c;
     }
 
-    .network-link.tiktok:hover .network-icon {
+    .network-link.tiktok:hover
+    .network-icon {
       color: #25f4ee;
     }
 
-    .network-link.pinterest:hover .network-icon {
+    .network-link.pinterest:hover
+    .network-icon {
       color: #e60023;
     }
 
-    .network-link.linkedin:hover .network-icon {
+    .network-link.linkedin:hover
+    .network-icon {
       color: #0a66c2;
     }
 
-    .network-link.youtube:hover .network-icon {
+    .network-link.youtube:hover
+    .network-icon {
       color: #ff0000;
     }
 
-    .network-link.whatsapp:hover .network-icon {
+    .network-link.whatsapp:hover
+    .network-icon {
       color: #25d366;
     }
 
 
 
     /* ========================================
-       ÁREA DE ENCERRAMENTO
+       RESPIRO APÓS LINKS
     ======================================== */
 
     .ending-space {
@@ -725,7 +794,7 @@
 
 
     /* ========================================
-       ENTRADA SUAVE
+       ANIMAÇÃO
     ======================================== */
 
     .reveal {
@@ -773,7 +842,8 @@
         width: 140px;
       }
 
-      .header.scrolled .header-logo img {
+      .header.scrolled
+      .header-logo img {
         width: 125px;
       }
 
@@ -864,10 +934,9 @@
         letter-spacing: .07em;
       }
 
-      .transition-star img {
-        width: 330px;
-
-        right: -90px;
+      .transition-star {
+        --star-size: 380px;
+        --star-right: -90px;
       }
     }
 
@@ -878,6 +947,7 @@
     ======================================== */
 
     @media (max-width: 700px) {
+
 
       /* CABEÇALHO */
 
@@ -900,7 +970,8 @@
         width: 108px;
       }
 
-      .header.scrolled .header-logo img {
+      .header.scrolled
+      .header-logo img {
         width: 100px;
       }
 
@@ -941,6 +1012,7 @@
 
       .portrait-frame {
         width: 100%;
+
         max-width: none;
       }
 
@@ -1010,12 +1082,14 @@
 
       /* ESTRELA */
 
-      .transition-star img {
-        width: 255px;
+      .transition-star {
+        --star-size: 300px;
+        --star-right: -85px;
+      }
 
-        right: -78px;
-
-        opacity: .065;
+      .star-top img,
+      .star-bottom img {
+        opacity: .08;
       }
 
 
@@ -1092,7 +1166,7 @@
 
 
 
-      /* FINAL */
+      /* RESPIRO */
 
       .ending-space {
         min-height: 120px;
@@ -1188,9 +1262,7 @@
 
 
     <div class="header-location">
-
       Belo Horizonte — MG
-
     </div>
 
   </header>
@@ -1229,9 +1301,7 @@
 
 
           <div class="portrait-year">
-
             ’26
-
           </div>
 
         </div>
@@ -1263,7 +1333,6 @@
           <div class="intro-text">
 
             <p>
-
               Meu nome é
               <strong>Milena Roberta</strong>.
               Cresci em Belo Horizonte, sempre
@@ -1271,12 +1340,10 @@
               formas. Desenho desde que me lembro
               e criar sempre foi uma das coisas
               que mais amo fazer.
-
             </p>
 
 
             <p>
-
               Com o tempo, encontrei na tatuagem
               uma nova forma de transformar desenho
               em expressão. Gosto de pensar nela
@@ -1285,12 +1352,10 @@
               que atravessa histórias, pessoas e
               gerações — e que acabou dando sentido
               também ao nome Milenar.
-
             </p>
 
 
             <p>
-
               Por aqui, compartilho não só o que
               crio, mas também um pouco do meu
               lifestyle, das minhas referências
@@ -1299,7 +1364,6 @@
                 a arte não está só no que a gente
                 cria. Ela está em cada parte da vida.
               </strong>
-
             </p>
 
           </div>
@@ -1314,7 +1378,7 @@
 
 
     <!-- ====================================
-         ESTRELA
+         ESTRELA NA DIVISÃO
     ===================================== -->
 
     <div
@@ -1322,10 +1386,28 @@
       aria-hidden="true"
     >
 
-      <img
-        src="estrela.png"
-        alt=""
-      >
+      <!-- PARTE SOBRE O CREME -->
+
+      <div class="star-top">
+
+        <img
+          src="estrela.png"
+          alt=""
+        >
+
+      </div>
+
+
+      <!-- PARTE SOBRE O PRETO -->
+
+      <div class="star-bottom">
+
+        <img
+          src="estrela.png"
+          alt=""
+        >
+
+      </div>
 
     </div>
 
@@ -1355,15 +1437,10 @@
               class="links-title-image"
             >
 
-            <div
-              class="links-small-line"
-            ></div>
+            <div class="links-small-line"></div>
 
             <p class="links-description">
-
-              Um pouco de mim,
-              em outros lugares.
-
+              Um pouco de mim, em outros lugares.
             </p>
 
           </div>
@@ -1617,9 +1694,7 @@
 
 
     <div class="footer-copy">
-
       © 2026 Milenar
-
     </div>
 
 
