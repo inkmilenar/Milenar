@@ -3,32 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Milenar</title>
 
-  <link
-    rel="icon"
-    type="image/png"
-    href="LOGOMARCA PRETA.png"
-  >
-
-  <link
-    rel="apple-touch-icon"
-    href="LOGOMARCA PRETA.png"
-  >
+  <link rel="icon" type="image/png" href="LOGOMARCA PRETA.png">
+  <link rel="apple-touch-icon" href="LOGOMARCA PRETA.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@300;400;500&family=Libre+Caslon+Display&display=swap"
@@ -97,7 +80,6 @@
       inset: 0;
 
       pointer-events: none;
-
       z-index: 9999;
 
       opacity: .20;
@@ -135,10 +117,10 @@
       left: 0;
 
       width: 100%;
-      height: 92px;
+      height: 94px;
 
       padding:
-        12px
+        15px
         5%
         0;
 
@@ -204,12 +186,14 @@
     ======================================== */
 
     .intro {
+      position: relative;
+
       min-height: 100vh;
 
       padding:
-        112px
+        116px
         5%
-        42px;
+        44px;
 
       display: flex;
 
@@ -233,7 +217,9 @@
 
 
 
-    /* FOTO */
+    /* ========================================
+       FOTO
+    ======================================== */
 
     .portrait-area {
       position: relative;
@@ -310,7 +296,9 @@
 
 
 
-    /* TEXTO */
+    /* ========================================
+       TEXTO SOBRE
+    ======================================== */
 
     .intro-content {
       width: 100%;
@@ -363,7 +351,6 @@
       margin-bottom: 15px;
 
       text-align: justify;
-
       text-justify: inter-word;
     }
 
@@ -378,6 +365,103 @@
 
 
     /* ========================================
+       ESTRELA ENTRE CREME E PRETO
+    ======================================== */
+
+    .transition-star {
+      position: relative;
+
+      width: 100%;
+      height: 0;
+
+      z-index: 5;
+
+      pointer-events: none;
+    }
+
+    .star-half {
+      position: absolute;
+
+      right: -90px;
+
+      width:
+        clamp(330px,31vw,520px);
+
+      height:
+        clamp(330px,31vw,520px);
+
+      transform:
+        translateY(-50%);
+
+      overflow: hidden;
+
+      pointer-events: none;
+    }
+
+    /*
+       PARTE DE CIMA:
+       estrela preta sobre o creme
+    */
+
+    .star-light {
+      bottom: 0;
+
+      height:
+        calc(clamp(330px,31vw,520px) / 2);
+    }
+
+    .star-light img {
+      position: absolute;
+
+      left: 0;
+      bottom: 0;
+
+      width:
+        clamp(330px,31vw,520px);
+
+      height:
+        clamp(330px,31vw,520px);
+
+      object-fit: contain;
+
+      opacity: .055;
+    }
+
+    /*
+       PARTE DE BAIXO:
+       mesma estrela invertida para branco
+       sobre o fundo preto.
+    */
+
+    .star-dark {
+      top: 0;
+
+      height:
+        calc(clamp(330px,31vw,520px) / 2);
+    }
+
+    .star-dark img {
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width:
+        clamp(330px,31vw,520px);
+
+      height:
+        clamp(330px,31vw,520px);
+
+      object-fit: contain;
+
+      filter: invert(1);
+
+      opacity: .045;
+    }
+
+
+
+    /* ========================================
        DESKTOP COM POUCA ALTURA
     ======================================== */
 
@@ -387,9 +471,9 @@
     (max-height: 760px) {
 
       .header {
-        height: 82px;
+        height: 84px;
 
-        padding-top: 10px;
+        padding-top: 12px;
       }
 
       .header.scrolled {
@@ -407,20 +491,24 @@
         width: 125px;
       }
 
+      .header-location {
+        font-size: 12px;
+      }
+
       .intro {
         min-height: 100vh;
 
         padding:
-          92px
+          94px
           5%
           28px;
       }
 
       .portrait-frame img {
         height:
-          calc(100vh - 145px);
+          calc(100vh - 148px);
 
-        min-height: 420px;
+        min-height: 415px;
 
         max-height: 555px;
       }
@@ -460,6 +548,8 @@
     ======================================== */
 
     .links-section {
+      position: relative;
+
       width: 100%;
 
       background:
@@ -469,12 +559,18 @@
         var(--dark-text);
 
       padding:
-        48px
+        50px
         5%
-        46px;
+        48px;
+
+      overflow: hidden;
     }
 
     .links-inner {
+      position: relative;
+
+      z-index: 10;
+
       width: 100%;
 
       max-width: 1500px;
@@ -482,24 +578,31 @@
       margin: 0 auto;
     }
 
+
+
+    /* ========================================
+       CABEÇALHO LINKS
+    ======================================== */
+
     .links-heading {
       display: flex;
 
-      align-items: flex-end;
+      align-items: flex-start;
       justify-content: space-between;
 
       gap: 40px;
 
-      margin-bottom: 34px;
+      margin-bottom: 25px;
     }
 
     .links-heading-left {
       max-width: 620px;
     }
 
-
-
-    /* TÍTULO LINKS EM IMAGEM */
+    /*
+       IMAGEM "LINKS"
+       com a tipografia Milenar
+    */
 
     .links-title-image {
       width: 145px;
@@ -508,14 +611,14 @@
 
       object-fit: contain;
 
-      margin-bottom: 11px;
+      margin-bottom: 8px;
     }
 
     .links-small-line {
       width: 42px;
       height: 1px;
 
-      margin-bottom: 15px;
+      margin-bottom: 12px;
 
       background:
         rgba(255,255,255,.75);
@@ -524,7 +627,7 @@
     .links-description {
       font-size: 14px;
 
-      line-height: 1.5;
+      line-height: 1.4;
 
       letter-spacing: .04em;
 
@@ -533,12 +636,16 @@
     }
 
     .links-index {
+      padding-top: 7px;
+
       font-size: 10px;
 
       letter-spacing: .22em;
 
       color:
         rgba(255,255,255,.45);
+
+      white-space: nowrap;
     }
 
 
@@ -555,6 +662,10 @@
       grid-template-columns:
         repeat(6,minmax(0,1fr));
     }
+
+    /*
+       LINHAS HORIZONTAIS COM FADE
+    */
 
     .social-grid::before,
     .social-grid::after {
@@ -579,6 +690,8 @@
         );
 
       pointer-events: none;
+
+      z-index: 2;
     }
 
     .social-grid::before {
@@ -603,7 +716,7 @@
 
       gap: 10px;
 
-      color: #fff;
+      color: #ffffff;
 
       border-right:
         1px solid var(--dark-line);
@@ -622,7 +735,7 @@
       align-items: center;
       justify-content: center;
 
-      color: #fff;
+      color: #ffffff;
 
       transition:
         color .25s ease,
@@ -643,7 +756,7 @@
 
       text-transform: uppercase;
 
-      color: #fff;
+      color: #ffffff;
     }
 
     .network-link:hover
@@ -685,15 +798,11 @@
 
 
     /* ========================================
-       ESPAÇO DE ENCERRAMENTO
-
-       Mantém o site respirando depois da
-       seção preta enquanto decidimos a
-       terceira seção.
+       ENCERRAMENTO
     ======================================== */
 
     .ending-space {
-      min-height: 145px;
+      min-height: 165px;
 
       background:
         var(--background);
@@ -708,7 +817,7 @@
     .footer {
       width: 90%;
 
-      min-height: 92px;
+      min-height: 94px;
 
       margin: 0 auto;
 
@@ -741,7 +850,7 @@
 
       align-items: center;
 
-      gap: 21px;
+      gap: 22px;
     }
 
     .footer-social {
@@ -753,7 +862,8 @@
       align-items: center;
       justify-content: center;
 
-      color: var(--text);
+      color:
+        var(--text);
 
       transition:
         color .25s ease,
@@ -787,7 +897,7 @@
 
 
     /* ========================================
-       ANIMAÇÃO
+       ENTRADA SUAVE
     ======================================== */
 
     .reveal {
@@ -844,6 +954,10 @@
 
         letter-spacing: .07em;
       }
+
+      .star-half {
+        right: -120px;
+      }
     }
 
 
@@ -854,11 +968,13 @@
 
     @media (max-width: 700px) {
 
+      /* CABEÇALHO */
+
       .header {
-        height: 72px;
+        height: 74px;
 
         padding:
-          9px
+          10px
           18px
           0;
       }
@@ -881,7 +997,7 @@
       .header-location {
         font-size: 9px;
 
-        letter-spacing: .10em;
+        letter-spacing: .09em;
       }
 
 
@@ -894,9 +1010,9 @@
         display: block;
 
         padding:
-          101px
+          103px
           18px
-          65px;
+          68px;
       }
 
       .intro-grid {
@@ -915,7 +1031,6 @@
 
       .portrait-frame {
         width: 100%;
-
         max-width: none;
       }
 
@@ -984,31 +1099,64 @@
 
 
 
+      /* ESTRELA */
+
+      .star-half {
+        right: -105px;
+
+        width: 290px;
+        height: 290px;
+      }
+
+      .star-light {
+        height: 145px;
+      }
+
+      .star-dark {
+        height: 145px;
+      }
+
+      .star-light img,
+      .star-dark img {
+        width: 290px;
+        height: 290px;
+      }
+
+      .star-light img {
+        opacity: .045;
+      }
+
+      .star-dark img {
+        opacity: .04;
+      }
+
+
+
       /* LINKS */
 
       .links-section {
         padding:
-          42px
+          43px
           18px
-          38px;
+          40px;
       }
 
       .links-heading {
         display: block;
 
-        margin-bottom: 30px;
+        margin-bottom: 28px;
       }
 
       .links-title-image {
         width: 125px;
 
-        margin-bottom: 10px;
+        margin-bottom: 8px;
       }
 
       .links-small-line {
         width: 38px;
 
-        margin-bottom: 14px;
+        margin-bottom: 12px;
       }
 
       .links-description {
@@ -1057,7 +1205,7 @@
       /* FINAL */
 
       .ending-space {
-        min-height: 105px;
+        min-height: 120px;
       }
 
 
@@ -1068,7 +1216,7 @@
         width:
           calc(100% - 36px);
 
-        min-height: 78px;
+        min-height: 80px;
       }
 
       .footer-copy {
@@ -1174,6 +1322,8 @@
       <div class="intro-grid">
 
 
+        <!-- FOTO -->
+
         <div
           class="portrait-area reveal"
         >
@@ -1187,6 +1337,7 @@
 
           </div>
 
+
           <div class="portrait-year">
 
             ’26
@@ -1196,6 +1347,8 @@
         </div>
 
 
+
+        <!-- TEXTO -->
 
         <div
           class="intro-content reveal"
@@ -1272,6 +1425,50 @@
 
 
     <!-- ====================================
+         ESTRELA NA TRANSIÇÃO
+    ===================================== -->
+
+    <div
+      class="transition-star"
+      aria-hidden="true"
+    >
+
+      <!--
+        METADE PRETA SOBRE O CREME
+      -->
+
+      <div
+        class="star-half star-light"
+      >
+
+        <img
+          src="estrela.png"
+          alt=""
+        >
+
+      </div>
+
+
+      <!--
+        METADE BRANCA SOBRE O PRETO
+      -->
+
+      <div
+        class="star-half star-dark"
+      >
+
+        <img
+          src="estrela.png"
+          alt=""
+        >
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ====================================
          LINKS
     ===================================== -->
 
@@ -1283,15 +1480,13 @@
       <div class="links-inner">
 
 
+        <!-- CABEÇALHO -->
+
         <div class="links-heading">
+
 
           <div class="links-heading-left">
 
-
-            <!--
-              NOVO TÍTULO COM A
-              TIPOGRAFIA DA MILENAR
-            -->
 
             <img
               src="links branco.png"
@@ -1315,15 +1510,21 @@
           </div>
 
 
+
           <div class="links-index">
 
             MILENAR — ONLINE
 
           </div>
 
+
         </div>
 
 
+
+        <!-- =================================
+             REDES
+        ================================== -->
 
         <div class="social-grid">
 
@@ -1535,6 +1736,7 @@
 
           </a>
 
+
         </div>
 
       </div>
@@ -1543,10 +1745,9 @@
 
 
 
-    <!--
-      ESPAÇO TEMPORÁRIO PARA A FUTURA
-      SEÇÃO DE ENCERRAMENTO
-    -->
+    <!-- ====================================
+         RESPIRO ANTES DO RODAPÉ
+    ===================================== -->
 
     <div
       class="ending-space"
@@ -1672,6 +1873,10 @@
   </footer>
 
 
+
+  <!-- ======================================
+       JAVASCRIPT
+  ======================================= -->
 
   <script>
 
