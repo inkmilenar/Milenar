@@ -2,833 +2,909 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Milenar — Arte, Processo & Lifestyle</title>
-
-  <style>
-
-    :root {
-      --bg: #f7f5ef;
-      --black: #111111;
-      --text: #333333;
-      --muted: #777777;
-      --line: #cbc8c0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<title>Milenar — Arte, Processo & Lifestyle</title>
 
-    html {
-      scroll-behavior: smooth;
-    }
+<style>
 
-    body {
-      background: var(--bg);
-      color: var(--black);
+:root {
+  --bg: #f7f5ef;
+  --black: #111;
+  --text: #333;
+  --muted: #777;
+  --line: #cbc8c0;
+}
 
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 400;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-      -webkit-font-smoothing: antialiased;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    img {
-      display: block;
-      width: 100%;
-    }
+body {
+  background: var(--bg);
+  color: var(--black);
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
 
+  -webkit-font-smoothing: antialiased;
+}
 
-    /* =========================
-       TOPO
-    ========================= */
+img {
+  width: 100%;
+  display: block;
+}
 
-    header {
-      width: 88%;
-      max-width: 1100px;
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-      margin: 0 auto;
-      padding: 28px 0 42px;
-    }
 
-    .top-info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+/* ========================================
+   TOPO
+======================================== */
 
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+header {
+  width: 88%;
+  max-width: 1100px;
 
-    .logo-area {
-      padding-top: 48px;
-      text-align: center;
-    }
+  margin: auto;
+  padding: 27px 0 38px;
+}
 
-    .logo {
-      width: min(80%, 620px);
-      margin: 0 auto;
-    }
+.top-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    .tagline {
-      margin-top: 22px;
+  font-size: 11px;
+  font-weight: 300;
 
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: lowercase;
-    }
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
 
+.logo-area {
+  padding-top: 48px;
+  text-align: center;
+}
 
-    /* =========================
-       FOTO PRINCIPAL
-    ========================= */
+.logo {
+  width: min(82%, 620px);
+  margin: auto;
+}
 
-    .hero {
-      width: 100%;
-      position: relative;
-      overflow: hidden;
-    }
+.tagline {
+  margin-top: 23px;
 
-    .hero img {
-      height: min(58vw, 680px);
-      min-height: 450px;
+  font-size: 16px;
+  font-weight: 300;
 
-      object-fit: cover;
-      object-position: center;
-    }
+  letter-spacing: 2px;
+}
 
-    .hero-text {
-      position: absolute;
 
-      left: 7%;
-      bottom: 8%;
+/* ========================================
+   FOTO PRINCIPAL
+======================================== */
 
-      color: white;
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
 
-      font-size: clamp(16px, 2vw, 22px);
-      font-weight: 700;
-      letter-spacing: 1px;
+.hero img {
+  width: 100%;
 
-      white-space: nowrap;
-    }
+  height: min(58vw, 680px);
+  min-height: 450px;
 
+  object-fit: cover;
+  object-position: center;
+}
 
-    /* =========================
-       CONTAINER
-    ========================= */
+.hero-text {
+  position: absolute;
 
-    .container {
-      width: 88%;
-      max-width: 1050px;
+  left: 7%;
+  bottom: 8%;
 
-      margin: 0 auto;
-    }
+  color: #fff;
 
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 300;
 
-    /* =========================
-       SOBRE
-    ========================= */
+  line-height: 1.45;
+  letter-spacing: 2px;
+}
 
-    .sobre {
-      padding: 90px 0;
 
-      display: grid;
-      grid-template-columns: 42% 1fr;
+/* ========================================
+   CONTAINER
+======================================== */
 
-      gap: 60px;
-      align-items: center;
-    }
+.container {
+  width: 88%;
+  max-width: 1050px;
 
-    .sobre-foto img {
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      filter: grayscale(100%);
-    }
+  margin: auto;
+}
 
-    .sobre-label {
-      margin-bottom: 25px;
 
-      font-size: 20px;
-      font-weight: 700;
-    }
+/* ========================================
+   SOBRE
+======================================== */
 
-    .sobre-frase {
-      margin-bottom: 28px;
+.about {
+  padding: 90px 0;
 
-      font-size: clamp(27px, 3.5vw, 46px);
-      font-weight: 700;
+  display: grid;
+  grid-template-columns: 42% 1fr;
 
-      line-height: 1.1;
-      letter-spacing: -1.5px;
+  gap: 60px;
+  align-items: center;
+}
 
-      white-space: nowrap;
-    }
+.about-photo img {
+  aspect-ratio: 4 / 5;
 
-    .sobre-texto {
-      max-width: 520px;
+  object-fit: cover;
 
-      color: var(--text);
+  filter: grayscale(100%);
+}
 
-      font-size: 17px;
-      line-height: 1.7;
-    }
+.about-title {
+  margin-bottom: 27px;
 
+  font-size: 23px;
+  font-weight: 700;
+}
 
-    /* =========================
-       LINKS
-    ========================= */
+.about-highlight {
+  margin-bottom: 28px;
 
-    .links {
-      padding: 15px 0 90px;
-    }
+  font-size: clamp(25px, 3.3vw, 43px);
+  font-weight: 300;
 
-    .section-title {
-      margin-bottom: 20px;
+  line-height: 1.1;
+  letter-spacing: -1px;
 
-      display: flex;
-      align-items: center;
-      gap: 25px;
+  white-space: nowrap;
+}
 
-      font-size: 17px;
-      font-weight: 700;
-    }
+.about-text {
+  max-width: 540px;
 
-    .section-title::after {
-      content: "";
+  color: var(--text);
 
-      flex: 1;
-      height: 1px;
+  font-size: 16px;
+  font-weight: 300;
 
-      background: var(--line);
-    }
+  line-height: 1.75;
+}
 
-    .link {
-      min-height: 75px;
+.about-text p + p {
+  margin-top: 17px;
+}
 
-      display: grid;
-      grid-template-columns: 1fr 1fr 30px;
-      align-items: center;
+.about-text strong {
+  color: var(--black);
+  font-weight: 700;
+}
 
-      border-top: 1px solid var(--line);
 
-      transition: padding .2s ease;
-    }
+/* ========================================
+   LINKS
+======================================== */
 
-    .link:last-child {
-      border-bottom: 1px solid var(--line);
-    }
+.links {
+  padding: 15px 0 90px;
+}
 
-    .link:hover {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
+.links-title {
+  padding-bottom: 18px;
 
-    .link-name {
-      font-size: 16px;
-      font-weight: 700;
-    }
+  border-bottom: 1px solid var(--line);
 
-    .link-description {
-      color: var(--muted);
+  font-size: 15px;
+  font-weight: 300;
 
-      font-size: 14px;
-    }
+  letter-spacing: 1px;
+}
 
+.link-row {
+  width: 100%;
+  min-height: 72px;
 
-    /* SETA EM CSS */
+  display: grid;
+  grid-template-columns: 1fr 34px;
+  align-items: center;
 
-    .arrow {
-      position: relative;
+  border-bottom: 1px solid var(--line);
 
-      width: 21px;
-      height: 16px;
+  transition: padding .2s ease;
+}
 
-      justify-self: end;
-    }
+.link-row:hover {
+  padding-left: 8px;
+}
 
-    .arrow::before {
-      content: "";
+.link-name {
+  font-size: 16px;
+  font-weight: 300;
 
-      position: absolute;
+  letter-spacing: .5px;
+}
 
-      width: 19px;
-      height: 1.5px;
 
-      background: var(--black);
+/* ========================================
+   SETA DIAGONAL
+======================================== */
 
-      top: 7px;
-      left: 0;
-    }
+.arrow {
+  position: relative;
 
-    .arrow::after {
-      content: "";
+  width: 20px;
+  height: 20px;
 
-      position: absolute;
+  justify-self: end;
+}
 
-      width: 7px;
-      height: 7px;
+.arrow::before {
+  content: "";
 
-      border-top: 1.5px solid var(--black);
-      border-right: 1.5px solid var(--black);
+  position: absolute;
 
-      right: 0;
-      top: 3px;
+  width: 15px;
+  height: 1px;
 
-      transform: rotate(45deg);
-    }
+  background: var(--black);
 
+  top: 10px;
+  left: 2px;
 
-    /* =========================
-       PROCESSO
-    ========================= */
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
 
-    .processo {
-      padding-bottom: 75px;
-    }
+.arrow::after {
+  content: "";
 
-    .processo-title {
-      margin-bottom: 25px;
+  position: absolute;
 
-      display: flex;
-      align-items: center;
-      gap: 25px;
+  width: 7px;
+  height: 7px;
 
-      font-size: 17px;
-      font-weight: 700;
-    }
+  top: 2px;
+  right: 1px;
 
-    .processo-title::after {
-      content: "";
+  border-top: 1px solid var(--black);
+  border-right: 1px solid var(--black);
+}
 
-      flex: 1;
-      height: 1px;
 
-      background: var(--line);
-    }
+/* ========================================
+   DIÁRIO VISUAL
+======================================== */
 
-    .processo-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+.visual-diary {
+  padding-bottom: 85px;
+}
 
-      gap: 22px;
-    }
+/* primeira fileira */
 
-    .processo-item img {
-      aspect-ratio: 1.35 / 1;
+.gallery-top {
+  display: grid;
 
-      object-fit: cover;
-    }
+  grid-template-columns:
+    1.15fr
+    .95fr
+    1.15fr;
 
-    .caption {
-      margin-top: 14px;
+  gap: 4px;
 
-      text-align: center;
+  margin-bottom: 4px;
+}
 
-      font-size: 13px;
-      letter-spacing: 1px;
-    }
+.gallery-top img {
+  width: 100%;
+  height: 390px;
 
+  object-fit: cover;
+}
 
-    /* =========================
-       FRASE FINAL
-    ========================= */
+/* segunda fileira */
 
-    .final {
-      padding: 70px 0 105px;
+.gallery-bottom {
+  display: grid;
 
-      display: flex;
-      justify-content: center;
+  grid-template-columns:
+    1fr
+    1fr
+    1fr
+    1fr
+    1fr;
 
-      text-align: center;
-    }
+  gap: 4px;
+}
 
-    .final p {
-      font-size: clamp(18px, 2.5vw, 27px);
-      font-weight: 700;
+.gallery-bottom img {
+  width: 100%;
+  height: 245px;
 
-      letter-spacing: -0.5px;
+  object-fit: cover;
+}
 
-      white-space: nowrap;
-    }
 
+/* ========================================
+   FRASE FINAL
+======================================== */
 
-    /* =========================
-       FOOTER
-    ========================= */
+.final-message {
+  padding: 35px 0 95px;
 
-    footer {
-      width: 88%;
-      max-width: 1050px;
+  text-align: center;
+}
 
-      margin: 0 auto;
+.final-message p {
+  font-size: clamp(17px, 2.3vw, 25px);
 
-      padding: 30px 0 42px;
+  font-weight: 300;
 
-      border-top: 1px solid var(--line);
+  letter-spacing: 2px;
 
-      display: flex;
-      justify-content: space-between;
+  white-space: nowrap;
+}
 
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
 
+/* ========================================
+   FOOTER
+======================================== */
 
-    /* ==================================
-       CELULAR
-    ================================== */
+footer {
+  width: 88%;
+  max-width: 1050px;
 
-    @media (max-width: 700px) {
+  margin: auto;
 
+  padding: 28px 0 42px;
 
-      /* TOPO */
+  border-top: 1px solid var(--line);
 
-      header {
-        padding: 24px 0 34px;
-      }
+  display: flex;
+  justify-content: space-between;
 
-      .top-info {
-        font-size: 10px;
-        letter-spacing: 1.5px;
-      }
+  font-size: 10px;
+  font-weight: 300;
 
-      .logo-area {
-        padding-top: 42px;
-      }
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
-      .logo {
-        width: 94%;
-      }
 
-      .tagline {
-        margin-top: 18px;
+/* ========================================
+   CELULAR
+======================================== */
 
-        font-size: 12px;
-        letter-spacing: 1px;
-      }
+@media (max-width: 700px) {
 
 
-      /* HERO */
+  /* TOPO */
 
-      .hero img {
-        height: 55vh;
-        min-height: 430px;
-      }
+  header {
+    padding: 23px 0 32px;
+  }
 
-      .hero-text {
-        left: 6%;
-        bottom: 7%;
+  .top-info {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
 
-        font-size: 16px;
-      }
+  .logo-area {
+    padding-top: 40px;
+  }
 
+  .logo {
+    width: 95%;
+  }
 
-      /* SOBRE */
+  .tagline {
+    margin-top: 20px;
 
-      .sobre {
-        padding: 65px 0 75px;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
 
-        display: flex;
-        flex-direction: column;
 
-        gap: 0;
+  /* HERO */
 
-        align-items: stretch;
-      }
+  .hero img {
+    height: 55vh;
+    min-height: 430px;
+  }
 
-      .sobre-label {
-        order: 1;
+  .hero-text {
+    left: 7%;
+    bottom: 7%;
 
-        margin-bottom: 25px;
+    font-size: 17px;
 
-        font-size: 22px;
-        font-weight: 700;
-      }
+    line-height: 1.5;
+  }
 
-      .sobre-foto {
-        order: 2;
 
-        width: 100%;
-        margin-bottom: 30px;
-      }
+  /* SOBRE */
 
-      .sobre-foto img {
-        width: 100%;
+  .container {
+    width: 88%;
+  }
 
-        aspect-ratio: 4 / 4.5;
+  .about {
+    padding: 65px 0 75px;
 
-        object-fit: cover;
-      }
+    display: flex;
+    flex-direction: column;
 
-      .sobre-conteudo {
-        display: contents;
-      }
+    gap: 0;
 
-      .sobre-frase {
-        order: 3;
+    align-items: stretch;
+  }
 
-        margin-bottom: 22px;
+  .about-content {
+    display: contents;
+  }
 
-        font-size: clamp(22px, 6.3vw, 28px);
+  .about-title {
+    order: 1;
 
-        white-space: nowrap;
-      }
+    margin-bottom: 27px;
 
-      .sobre-texto {
-        order: 4;
+    font-size: 24px;
+    font-weight: 700;
+  }
 
-        font-size: 16px;
-        line-height: 1.65;
-      }
+  .about-photo {
+    order: 2;
 
+    width: 100%;
 
-      /* LINKS */
+    margin-bottom: 32px;
+  }
 
-      .links {
-        padding: 5px 0 70px;
-      }
+  .about-photo img {
+    width: 100%;
 
-      .section-title {
-        font-size: 17px;
-      }
+    aspect-ratio: 4 / 4.7;
 
-      .link {
-        min-height: 70px;
+    object-fit: cover;
+  }
 
-        grid-template-columns: 1fr 25px;
-      }
+  .about-highlight {
+    order: 3;
 
-      .link-name {
-        font-size: 16px;
-      }
+    margin-bottom: 27px;
 
-      .link-description {
-        display: none;
-      }
+    font-size: clamp(21px, 6vw, 27px);
 
+    white-space: nowrap;
+  }
 
-      /* PROCESSO */
+  .about-text {
+    order: 4;
 
-      .processo {
-        padding-bottom: 60px;
-      }
+    font-size: 16px;
+    line-height: 1.7;
+  }
 
-      .processo-title {
-        font-size: 17px;
-      }
 
-      .processo-grid {
-        gap: 11px;
-      }
+  /* LINKS */
 
-      .processo-item img {
-        aspect-ratio: 1 / 1.1;
-      }
+  .links {
+    padding: 0 0 75px;
+  }
 
-      .caption {
-        margin-top: 10px;
+  .links-title {
+    font-size: 15px;
+  }
 
-        font-size: 11px;
-        line-height: 1.4;
-      }
+  .link-row {
+    min-height: 69px;
+  }
 
+  .link-name {
+    font-size: 16px;
+  }
 
-      /* FINAL */
 
-      .final {
-        padding: 55px 0 80px;
-      }
+  /* GALERIA */
 
-      .final p {
-        font-size: clamp(15px, 4.3vw, 19px);
+  .visual-diary {
+    padding-bottom: 65px;
+  }
 
-        white-space: nowrap;
-      }
+  .gallery-top {
+    grid-template-columns:
+      1.15fr
+      .85fr;
 
+    gap: 3px;
 
-      /* FOOTER */
+    margin-bottom: 3px;
+  }
 
-      footer {
-        font-size: 9px;
-      }
+  .gallery-top img {
+    height: 245px;
+  }
 
-    }
+  /*
+    No celular a terceira imagem da
+    primeira linha ocupa a largura inteira.
+  */
 
-  </style>
+  .gallery-top img:nth-child(3) {
+    grid-column: 1 / -1;
 
+    height: 230px;
+  }
+
+
+  .gallery-bottom {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 3px;
+  }
+
+  .gallery-bottom img {
+    height: 220px;
+  }
+
+  /*
+    A última foto fica larga.
+    Isso evita uma imagem sozinha
+    ocupando metade da tela.
+  */
+
+  .gallery-bottom img:last-child {
+    grid-column: 1 / -1;
+
+    height: 235px;
+  }
+
+
+  /* FRASE */
+
+  .final-message {
+    padding: 25px 0 75px;
+  }
+
+  .final-message p {
+    font-size: clamp(14px, 4.2vw, 18px);
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+  }
+
+
+  /* FOOTER */
+
+  footer {
+    width: 88%;
+
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-  <!-- TOPO -->
+<!-- =====================================
+     TOPO
+===================================== -->
 
-  <header>
+<header>
 
-    <div class="top-info">
+  <div class="top-info">
 
-      <span>milenar.ink</span>
+    <span>milenar.ink</span>
 
-      <span>BH • MG</span>
+    <span>BH • MG</span>
 
-    </div>
+  </div>
 
 
-    <div class="logo-area">
+  <div class="logo-area">
 
-      <img
-        class="logo"
-        src="IMG_2555.png"
-        alt="Milenar"
-      >
+    <img
+      class="logo"
+      src="IMG_2555.png"
+      alt="Milenar"
+    >
 
-      <p class="tagline">
-        arte, processo & lifestyle
+    <p class="tagline">
+      arte, processo & lifestyle
+    </p>
+
+  </div>
+
+</header>
+
+
+
+<!-- =====================================
+     FOTO PRINCIPAL
+===================================== -->
+
+<section class="hero">
+
+  <img
+    src="IMG_2690.jpeg"
+    alt="Processo criativo Milenar"
+  >
+
+  <p class="hero-text">
+    arte em tudo<br>
+    que me atravessa.
+  </p>
+
+</section>
+
+
+
+<main class="container">
+
+
+<!-- =====================================
+     SOBRE MIM
+===================================== -->
+
+<section class="about">
+
+
+  <div class="about-photo">
+
+    <img
+      src="FullSizeRender_VSCO.jpeg"
+      alt="Milena Roberta"
+    >
+
+  </div>
+
+
+  <div class="about-content">
+
+
+    <h2 class="about-title">
+      Sobre mim
+    </h2>
+
+
+    <h3 class="about-highlight">
+      arte, processo & lifestyle.
+    </h3>
+
+
+    <div class="about-text">
+
+      <p>
+        Meu nome é <strong>Milena Roberta</strong>.
+        Cresci em Belo Horizonte, sempre cercada pela arte
+        em suas diferentes formas. Desenho desde que me lembro
+        e criar sempre foi uma das coisas que mais amo fazer.
+      </p>
+
+      <p>
+        Com o tempo, encontrei na tatuagem uma nova forma de
+        transformar desenho em expressão. Gosto de pensar nela
+        pelo que ela é: uma <strong>arte milenar</strong>, que
+        atravessa histórias, pessoas e gerações — e que acabou
+        dando sentido também ao nome Milenar.
+      </p>
+
+      <p>
+        Por aqui, compartilho não só o que crio, mas também um
+        pouco do meu lifestyle, das minhas referências e do meu
+        cotidiano. Porque, para mim,
+        <strong>a arte não está só no que a gente cria.
+        Ela está em cada parte da vida.</strong>
       </p>
 
     </div>
 
-  </header>
+
+  </div>
+
+
+</section>
 
 
 
-  <!-- FOTO PRINCIPAL -->
+<!-- =====================================
+     LINKS
+===================================== -->
 
-  <section class="hero">
+<section class="links">
+
+
+  <div class="links-title">
+    Links
+  </div>
+
+
+  <a
+    class="link-row"
+    href="https://instagram.com/milenar.ink"
+    target="_blank"
+  >
+
+    <span class="link-name">
+      Instagram
+    </span>
+
+    <span class="arrow"></span>
+
+  </a>
+
+
+  <a class="link-row" href="#">
+
+    <span class="link-name">
+      Pinterest
+    </span>
+
+    <span class="arrow"></span>
+
+  </a>
+
+
+  <a class="link-row" href="#">
+
+    <span class="link-name">
+      Portfólio
+    </span>
+
+    <span class="arrow"></span>
+
+  </a>
+
+
+  <a class="link-row" href="#">
+
+    <span class="link-name">
+      WhatsApp
+    </span>
+
+    <span class="arrow"></span>
+
+  </a>
+
+
+  <a class="link-row" href="#">
+
+    <span class="link-name">
+      YouTube
+    </span>
+
+    <span class="arrow"></span>
+
+  </a>
+
+
+</section>
+
+
+
+<!-- =====================================
+     DIÁRIO VISUAL
+===================================== -->
+
+<section class="visual-diary">
+
+
+  <!-- 3 FOTOS MAIORES -->
+
+  <div class="gallery-top">
+
+    <img
+      src="IMG_9901_jpg.jpeg"
+      alt="Milenar"
+    >
+
+    <img
+      src="283021CE-CFF2-4CB8-BBE0-3017C8324A9B.jpeg"
+      alt="Milenar"
+    >
+
+    <img
+      src="IMG_9821_jpg.jpeg"
+      alt="Milenar"
+    >
+
+  </div>
+
+
+  <!-- 5 FOTOS -->
+
+  <div class="gallery-bottom">
+
+    <img
+      src="IMG_8371.jpeg"
+      alt="Milenar"
+    >
+
+    <img
+      src="IMG_1049_jpg.jpeg"
+      alt="Milenar"
+    >
+
+    <img
+      src="IMG_8688_jpg.jpeg"
+      alt="Milenar"
+    >
+
+    <img
+      src="IMG_9326_jpg.jpeg"
+      alt="Milenar"
+    >
 
     <img
       src="IMG_2690.jpeg"
-      alt="Lifestyle e processo criativo"
+      alt="Milenar"
     >
 
-    <p class="hero-text">
-      arte em tudo que me atravessa.
-    </p>
+  </div>
 
-  </section>
 
+</section>
 
 
-  <main class="container">
 
+<!-- =====================================
+     FRASE FINAL
+===================================== -->
 
-    <!-- SOBRE MIM -->
+<section class="final-message">
 
-    <section class="sobre">
+  <p>
+    criar também é uma forma de viver.
+  </p>
 
+</section>
 
-      <div class="sobre-foto">
 
-        <img
-          src="FullSizeRender_VSCO.jpeg"
-          alt="Milena"
-        >
+</main>
 
-      </div>
 
 
-      <div class="sobre-conteudo">
+<!-- =====================================
+     RODAPÉ
+===================================== -->
 
-        <p class="sobre-label">
-          Sobre mim
-        </p>
+<footer>
 
-        <h1 class="sobre-frase">
-          arte, processo & lifestyle.
-        </h1>
+  <span>© Milenar</span>
 
-        <p class="sobre-texto">
-          Sou Milena, artista em construção e futura tatuadora.
-          Aqui compartilho meu processo, meus desenhos,
-          minhas referências e um pouco da vida além da tatuagem.
-        </p>
+  <span>@milenar.ink</span>
 
-      </div>
-
-
-    </section>
-
-
-
-    <!-- LINKS -->
-
-    <section class="links">
-
-
-      <div class="section-title">
-        Me encontre por aqui
-      </div>
-
-
-      <a
-        class="link"
-        href="https://instagram.com/milenar.ink"
-        target="_blank"
-      >
-
-        <span class="link-name">
-          Instagram
-        </span>
-
-        <span class="link-description">
-          meu dia a dia
-        </span>
-
-        <span class="arrow"></span>
-
-      </a>
-
-
-      <a class="link" href="#">
-
-        <span class="link-name">
-          WhatsApp
-        </span>
-
-        <span class="link-description">
-          orçamentos & contato
-        </span>
-
-        <span class="arrow"></span>
-
-      </a>
-
-
-      <a class="link" href="#">
-
-        <span class="link-name">
-          YouTube
-        </span>
-
-        <span class="link-description">
-          vídeos & processos
-        </span>
-
-        <span class="arrow"></span>
-
-      </a>
-
-
-      <a class="link" href="#">
-
-        <span class="link-name">
-          Pinterest
-        </span>
-
-        <span class="link-description">
-          referências
-        </span>
-
-        <span class="arrow"></span>
-
-      </a>
-
-
-      <a class="link" href="#">
-
-        <span class="link-name">
-          Portfólio
-        </span>
-
-        <span class="link-description">
-          arte & tattoo
-        </span>
-
-        <span class="arrow"></span>
-
-      </a>
-
-
-    </section>
-
-
-
-    <!-- PROCESSO -->
-
-    <section class="processo">
-
-
-      <div class="processo-title">
-        Processo & criação
-      </div>
-
-
-      <div class="processo-grid">
-
-
-        <div class="processo-item">
-
-          <img
-            src="IMG_2690.jpeg"
-            alt="Processo criativo"
-          >
-
-          <p class="caption">
-            estudo • processo • referências
-          </p>
-
-        </div>
-
-
-        <div class="processo-item">
-
-          <img
-            src="IMG_9326_jpg.jpeg"
-            alt="Tattoo"
-          >
-
-          <p class="caption">
-            tattoo • arte na pele
-          </p>
-
-        </div>
-
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- FRASE FINAL -->
-
-    <section class="final">
-
-      <p>
-        criar também é uma forma de viver.
-      </p>
-
-    </section>
-
-
-  </main>
-
-
-
-  <!-- RODAPÉ -->
-
-  <footer>
-
-    <span>© Milenar</span>
-
-    <span>@milenar.ink</span>
-
-  </footer>
+</footer>
 
 
 </body>
-
 </html>
