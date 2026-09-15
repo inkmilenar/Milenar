@@ -23,7 +23,6 @@
     href="LOGOMARCA PRETA.png"
   >
 
-
   <!-- FONTES -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +49,11 @@
 
       --background: #f4f0e7;
       --text: #111111;
-      --line: rgba(17,17,17,.25);
+      --line: rgba(17,17,17,.24);
+
+      --dark: #101010;
+      --dark-text: #f5f2eb;
+      --dark-line: rgba(255,255,255,.20);
 
     }
 
@@ -104,26 +107,6 @@
     }
 
 
-    a {
-
-      color: inherit;
-      text-decoration: none;
-
-    }
-
-
-    img {
-
-      display: block;
-
-    }
-
-
-
-    /* ========================================
-       TEXTURA GERAL
-    ======================================== */
-
     body::before {
 
       content: "";
@@ -139,7 +122,6 @@
       opacity: .20;
 
       background-image:
-
         repeating-linear-gradient(
           0deg,
           transparent,
@@ -148,6 +130,21 @@
         );
 
       mix-blend-mode: multiply;
+
+    }
+
+
+    a {
+
+      color: inherit;
+      text-decoration: none;
+
+    }
+
+
+    img {
+
+      display: block;
 
     }
 
@@ -177,6 +174,7 @@
       background: rgba(244,240,231,.93);
 
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
 
       border-bottom: 1px solid transparent;
 
@@ -245,7 +243,7 @@
 
 
     /* ========================================
-       MENU BUTTON
+       MENU
     ======================================== */
 
     .menu-button {
@@ -282,9 +280,7 @@
 
       background: var(--text);
 
-      transition:
-        transform .35s ease,
-        opacity .25s ease;
+      transition: transform .35s ease;
 
     }
 
@@ -307,21 +303,15 @@
     }
 
 
-
-    /* ========================================
-       MENU OVERLAY
-    ======================================== */
-
     .menu-overlay {
 
       position: fixed;
 
       inset: 0;
 
-      background: rgba(0,0,0,.22);
+      background: rgba(0,0,0,.25);
 
       opacity: 0;
-
       visibility: hidden;
 
       z-index: 1050;
@@ -336,16 +326,10 @@
     .menu-overlay.active {
 
       opacity: 1;
-
       visibility: visible;
 
     }
 
-
-
-    /* ========================================
-       SIDE MENU
-    ======================================== */
 
     .side-menu {
 
@@ -369,9 +353,7 @@
       z-index: 1100;
 
       transition:
-        transform
-        .45s
-        cubic-bezier(.77,0,.18,1);
+        transform .45s cubic-bezier(.77,0,.18,1);
 
     }
 
@@ -400,7 +382,6 @@
     .menu-links {
 
       display: flex;
-
       flex-direction: column;
 
     }
@@ -410,8 +391,7 @@
 
       padding: 17px 0;
 
-      border-bottom:
-        1px solid var(--line);
+      border-bottom: 1px solid var(--line);
 
       font-size: 24px;
 
@@ -424,8 +404,7 @@
 
     .menu-links a:first-child {
 
-      border-top:
-        1px solid var(--line);
+      border-top: 1px solid var(--line);
 
     }
 
@@ -441,7 +420,7 @@
 
 
     /* ========================================
-       INTRO
+       APRESENTAÇÃO
     ======================================== */
 
     .intro {
@@ -451,7 +430,7 @@
       padding:
         142px
         5%
-        70px;
+        72px;
 
       display: flex;
 
@@ -469,8 +448,8 @@
       display: grid;
 
       grid-template-columns:
-        minmax(0, 48%)
-        minmax(0, 52%);
+        minmax(0,48%)
+        minmax(0,52%);
 
       gap: clamp(55px,7vw,115px);
 
@@ -516,8 +495,7 @@
       width: 45%;
       height: 30%;
 
-      background:
-        rgba(110,100,85,.08);
+      background: rgba(110,100,85,.08);
 
       z-index: -1;
 
@@ -541,11 +519,6 @@
     }
 
 
-
-    /* ========================================
-       LOCALIZAÇÃO VERTICAL
-    ======================================== */
-
     .portrait-location {
 
       position: absolute;
@@ -567,11 +540,6 @@
 
     }
 
-
-
-    /* ========================================
-       ANO
-    ======================================== */
 
     .portrait-year {
 
@@ -609,7 +577,7 @@
 
 
     /* ========================================
-       CONTEÚDO
+       TEXTO DA APRESENTAÇÃO
     ======================================== */
 
     .intro-content {
@@ -651,11 +619,6 @@
     }
 
 
-
-    /* ========================================
-       LINHA EDITORIAL
-    ======================================== */
-
     .editorial-line {
 
       width: 54px;
@@ -667,11 +630,6 @@
 
     }
 
-
-
-    /* ========================================
-       TEXTO
-    ======================================== */
 
     .intro-text {
 
@@ -733,7 +691,7 @@
 
       gap: 20px;
 
-      font-size: 11px;
+      font-size: 10px;
 
       letter-spacing: .28em;
 
@@ -748,7 +706,7 @@
       content: "";
 
       width: 1px;
-      height: 90px;
+      height: 80px;
 
       background: var(--line);
 
@@ -757,67 +715,275 @@
 
 
     /* ========================================
-       CONTINUE
+       LINKS — FUNDO PRETO
     ======================================== */
 
-    .continue {
+    .links-section {
 
-      position: absolute;
+      width: 100%;
 
-      left: 50%;
+      background: var(--dark);
 
-      bottom: 22px;
+      color: var(--dark-text);
 
-      transform: translateX(-50%);
+      padding:
+        52px
+        5%
+        48px;
+
+      scroll-margin-top: 68px;
+
+    }
+
+
+    .links-inner {
+
+      width: 100%;
+
+      max-width: 1500px;
+
+      margin: 0 auto;
+
+    }
+
+
+    .links-heading {
+
+      display: flex;
+
+      align-items: flex-end;
+      justify-content: space-between;
+
+      gap: 40px;
+
+      margin-bottom: 42px;
+
+    }
+
+
+    .links-heading-left {
+
+      max-width: 620px;
+
+    }
+
+
+    .links-title {
+
+      font-family:
+        "Libre Caslon Display",
+        Georgia,
+        serif;
+
+      font-size: 46px;
+
+      line-height: 1;
+
+      font-weight: 400;
+
+      margin-bottom: 15px;
+
+    }
+
+
+    .links-small-line {
+
+      width: 42px;
+      height: 1px;
+
+      background: rgba(255,255,255,.72);
+
+      margin-bottom: 16px;
+
+    }
+
+
+    .links-description {
+
+      font-size: 14px;
+
+      line-height: 1.5;
+
+      letter-spacing: .04em;
+
+      color: rgba(255,255,255,.72);
+
+    }
+
+
+    .links-index {
+
+      font-size: 10px;
+
+      letter-spacing: .22em;
+
+      color: rgba(255,255,255,.48);
+
+    }
+
+
+
+    /* ========================================
+       ÍCONES / LINKS
+    ======================================== */
+
+    .social-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(7,minmax(0,1fr));
+
+      border-top:
+        1px solid var(--dark-line);
+
+      border-bottom:
+        1px solid var(--dark-line);
+
+    }
+
+
+    .network-link {
+
+      min-width: 0;
+
+      height: 105px;
 
       display: flex;
 
       flex-direction: column;
 
       align-items: center;
+      justify-content: center;
 
-      gap: 6px;
+      gap: 10px;
 
-      font-size: 9px;
+      color: #ffffff;
 
-      letter-spacing: .28em;
+      border-right:
+        1px solid var(--dark-line);
+
+      transition:
+        color .25s ease,
+        opacity .25s ease;
+
+    }
+
+
+    .network-link:last-child {
+
+      border-right: 0;
+
+    }
+
+
+    .network-icon {
+
+      width: 29px;
+      height: 29px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      transition:
+        transform .25s ease,
+        color .25s ease;
+
+    }
+
+
+    .network-icon svg {
+
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+    }
+
+
+    .network-name {
+
+      font-size: 11px;
+
+      letter-spacing: .12em;
 
       text-transform: uppercase;
 
-    }
-
-
-    .continue-arrow {
-
-      font-size: 18px;
-
-      line-height: 1;
-
-      letter-spacing: 0;
-
-      animation:
-        arrowMove
-        1.8s
-        ease-in-out
-        infinite;
+      transition: color .25s ease;
 
     }
 
 
-    @keyframes arrowMove {
+    .network-link:hover
+    .network-icon {
 
-      0%,
-      100% {
+      transform: scale(1.09);
 
-        transform: translateY(0);
+    }
 
-      }
 
-      50% {
+    /* INSTAGRAM */
 
-        transform: translateY(5px);
+    .network-link.instagram:hover {
 
-      }
+      color: #e1306c;
+
+    }
+
+
+    /* TIKTOK */
+
+    .network-link.tiktok:hover {
+
+      color: #25f4ee;
+
+    }
+
+
+    /* PINTEREST */
+
+    .network-link.pinterest:hover {
+
+      color: #e60023;
+
+    }
+
+
+    /* LINKEDIN */
+
+    .network-link.linkedin:hover {
+
+      color: #0a66c2;
+
+    }
+
+
+    /* YOUTUBE */
+
+    .network-link.youtube:hover {
+
+      color: #ff0000;
+
+    }
+
+
+    /* WHATSAPP */
+
+    .network-link.whatsapp:hover {
+
+      color: #25d366;
+
+    }
+
+
+    /* EMAIL */
+
+    .network-link.email:hover {
+
+      color: #f4c542;
 
     }
 
@@ -848,7 +1014,6 @@
       display: flex;
 
       align-items: flex-end;
-
       justify-content: space-between;
 
       margin-bottom: 25px;
@@ -883,8 +1048,7 @@
 
 
     /* ========================================
-       LIFESTYLE DESKTOP
-       UMA FILEIRA
+       LIFESTYLE — PC EM UMA FILEIRA
     ======================================== */
 
     .visual-grid {
@@ -940,18 +1104,13 @@
       right: 13px;
       bottom: 10px;
 
-      color: white;
+      color: #ffffff;
 
       font-size: 19px;
 
       opacity: 0;
 
-      transform:
-        translate(-3px,3px);
-
-      transition:
-        opacity .3s ease,
-        transform .3s ease;
+      transition: opacity .3s ease;
 
     }
 
@@ -969,8 +1128,6 @@
 
       opacity: 1;
 
-      transform: translate(0);
-
     }
 
 
@@ -985,12 +1142,12 @@
 
       display: flex;
 
-      justify-content: center;
       align-items: center;
-
-      text-align: center;
+      justify-content: center;
 
       padding: 30px 20px;
+
+      text-align: center;
 
       font-family:
         "Libre Caslon Display",
@@ -1037,78 +1194,12 @@
     }
 
 
-    .socials {
+    .footer-mark img {
 
-      display: flex;
+      width: 35px;
+      height: auto;
 
-      align-items: center;
-
-      gap: 5px;
-
-    }
-
-
-    .social-link {
-
-      width: 42px;
-      height: 42px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      transition:
-        color .25s ease,
-        transform .25s ease;
-
-    }
-
-
-    .social-link svg {
-
-      width: 23px;
-      height: 23px;
-
-    }
-
-
-    .social-link:hover {
-
-      transform: translateY(-2px);
-
-    }
-
-
-    .social-link.instagram:hover,
-    .social-link.instagram.active-color {
-
-      color: #d62976;
-
-    }
-
-
-    .social-link.youtube:hover,
-    .social-link.youtube.active-color {
-
-      color: #ff0000;
-
-    }
-
-
-    .social-link.whatsapp:hover,
-    .social-link.whatsapp.active-color {
-
-      color: #25D366;
-
-    }
-
-
-    .social-link.youtube svg,
-    .social-link.whatsapp svg {
-
-      fill: currentColor;
-      stroke: none;
+      opacity: .9;
 
     }
 
@@ -1145,7 +1236,7 @@
        MOBILE
     ======================================== */
 
-    @media (max-width: 700px) {
+    @media (max-width:700px) {
 
 
       /* HEADER */
@@ -1197,7 +1288,7 @@
 
 
 
-      /* SIDE MENU */
+      /* MENU */
 
       .side-menu {
 
@@ -1262,9 +1353,6 @@
       }
 
 
-
-      /* FOTO */
-
       .portrait-area {
 
         width: 100%;
@@ -1320,7 +1408,6 @@
       .portrait-year {
 
         left: 24px;
-
         bottom: -27px;
 
         font-size: 13px;
@@ -1334,9 +1421,6 @@
 
       }
 
-
-
-      /* CONTEÚDO */
 
       .intro-content {
 
@@ -1369,13 +1453,6 @@
       }
 
 
-      .intro-text {
-
-        max-width: none;
-
-      }
-
-
       .intro-text p {
 
         font-size: 15px;
@@ -1391,9 +1468,6 @@
       }
 
 
-
-      /* FRASE VERTICAL SOME NO MOBILE */
-
       .vertical-phrase {
 
         display: none;
@@ -1402,11 +1476,121 @@
 
 
 
-      /* CONTINUE SOME NO MOBILE */
+      /* ====================================
+         LINKS MOBILE
+      ==================================== */
 
-      .continue {
+      .links-section {
+
+        padding:
+          42px
+          18px
+          38px;
+
+      }
+
+
+      .links-heading {
+
+        display: block;
+
+        margin-bottom: 31px;
+
+      }
+
+
+      .links-title {
+
+        font-size: 40px;
+
+        margin-bottom: 14px;
+
+      }
+
+
+      .links-small-line {
+
+        width: 38px;
+
+        margin-bottom: 15px;
+
+      }
+
+
+      .links-description {
+
+        max-width: 260px;
+
+        font-size: 13px;
+
+      }
+
+
+      .links-index {
 
         display: none;
+
+      }
+
+
+      .social-grid {
+
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
+
+      }
+
+
+      .network-link {
+
+        height: 112px;
+
+        border-right:
+          1px solid var(--dark-line);
+
+        border-bottom:
+          1px solid var(--dark-line);
+
+      }
+
+
+      .network-link:nth-child(even) {
+
+        border-right: 0;
+
+      }
+
+
+      .network-link:nth-child(7) {
+
+        grid-column: 1 / -1;
+
+        border-right: 0;
+
+        border-bottom: 0;
+
+      }
+
+
+      .network-link:nth-child(6) {
+
+        border-bottom:
+          1px solid var(--dark-line);
+
+      }
+
+
+      .network-icon {
+
+        width: 31px;
+        height: 31px;
+
+      }
+
+
+      .network-name {
+
+        font-size: 11px;
 
       }
 
@@ -1419,7 +1603,7 @@
         width:
           calc(100% - 22px);
 
-        padding-top: 35px;
+        padding-top: 55px;
 
       }
 
@@ -1448,7 +1632,7 @@
 
 
 
-      /* MOSAICO */
+      /* MOSAICO MOBILE */
 
       .visual-grid {
 
@@ -1486,8 +1670,6 @@
       .visual-item:nth-child(2),
       .visual-item:nth-child(3) {
 
-        grid-column: auto;
-
         aspect-ratio: .82 / 1;
 
       }
@@ -1504,8 +1686,6 @@
 
       .visual-item:nth-child(5),
       .visual-item:nth-child(6) {
-
-        grid-column: auto;
 
         aspect-ratio: .82 / 1;
 
@@ -1527,17 +1707,13 @@
         right: 11px;
         bottom: 9px;
 
-        font-size: 18px;
-
         opacity: .72;
-
-        transform: none;
 
       }
 
 
 
-      /* CLOSING */
+      /* FINAL */
 
       .closing {
 
@@ -1550,17 +1726,12 @@
       }
 
 
-
-      /* FOOTER */
-
       .footer {
 
         width:
           calc(100% - 36px);
 
         min-height: 78px;
-
-        gap: 10px;
 
       }
 
@@ -1572,18 +1743,9 @@
       }
 
 
-      .social-link {
+      .footer-mark img {
 
-        width: 36px;
-        height: 36px;
-
-      }
-
-
-      .social-link svg {
-
-        width: 21px;
-        height: 21px;
+        width: 30px;
 
       }
 
@@ -1592,13 +1754,13 @@
 
 
     /* ========================================
-       TELAS INTERMEDIÁRIAS
+       TABLET
     ======================================== */
 
     @media
-    (min-width: 701px)
+    (min-width:701px)
     and
-    (max-width: 1050px) {
+    (max-width:1050px) {
 
 
       .intro {
@@ -1660,6 +1822,15 @@
 
       }
 
+
+      .network-name {
+
+        font-size: 9px;
+
+        letter-spacing: .06em;
+
+      }
+
     }
 
 
@@ -1669,7 +1840,7 @@
     ======================================== */
 
     @media
-    (prefers-reduced-motion: reduce) {
+    (prefers-reduced-motion:reduce) {
 
 
       html {
@@ -1708,6 +1879,7 @@
   </style>
 
 </head>
+
 
 
 <body>
@@ -1760,7 +1932,7 @@
 
 
   <!-- ======================================
-       MENU
+       MENU LATERAL
   ======================================= -->
 
   <div
@@ -1788,6 +1960,10 @@
 
       <a href="#sobre">
         Sobre mim
+      </a>
+
+      <a href="#links">
+        Links
       </a>
 
       <a href="#lifestyle">
@@ -1851,7 +2027,7 @@
 
 
 
-        <!-- CONTEÚDO -->
+        <!-- TEXTO -->
 
         <div
           class="intro-content reveal"
@@ -1882,9 +2058,7 @@
             <p>
 
               Meu nome é
-              <strong>
-                Milena Roberta
-              </strong>.
+              <strong>Milena Roberta</strong>.
 
               Cresci em Belo Horizonte,
               sempre cercada pela arte
@@ -1934,9 +2108,6 @@
           </div>
 
 
-
-          <!-- FRASE VERTICAL -->
-
           <div class="vertical-phrase">
 
             Arte em tudo que me atravessa
@@ -1950,23 +2121,320 @@
       </div>
 
 
+    </section>
 
-      <!-- CONTINUE -->
 
-      <a
-        href="#lifestyle"
-        class="continue"
-      >
 
-        <span class="continue-arrow">
-          ↓
-        </span>
+    <!-- ====================================
+         LINKS
+    ===================================== -->
 
-        <span>
-          Continue
-        </span>
+    <section
+      class="links-section"
+      id="links"
+    >
 
-      </a>
+
+      <div class="links-inner">
+
+
+        <div class="links-heading">
+
+
+          <div class="links-heading-left">
+
+
+            <h2 class="links-title">
+
+              Links
+
+            </h2>
+
+
+            <div
+              class="links-small-line"
+            ></div>
+
+
+            <p class="links-description">
+
+              Onde me encontrar,
+              acompanhar e conversar.
+
+            </p>
+
+
+          </div>
+
+
+          <div class="links-index">
+
+            MILENAR — ONLINE
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- REDES -->
+
+        <div class="social-grid">
+
+
+          <!-- INSTAGRAM -->
+
+          <a
+            href="https://instagram.com/milenar.ink"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="network-link instagram"
+            aria-label="Instagram"
+          >
+
+            <span class="network-icon">
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+
+                <rect
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="18"
+                  rx="5"
+                ></rect>
+
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="4"
+                ></circle>
+
+                <circle
+                  cx="17.5"
+                  cy="6.5"
+                  r="1"
+                  fill="currentColor"
+                  stroke="none"
+                ></circle>
+
+              </svg>
+
+            </span>
+
+            <span class="network-name">
+              Instagram
+            </span>
+
+          </a>
+
+
+
+          <!-- TIKTOK -->
+
+          <a
+            href="#"
+            class="network-link tiktok"
+            aria-label="TikTok"
+          >
+
+            <span class="network-icon">
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+
+                <path
+                  d="M15.6 3c.3 2.2 1.6 3.6 3.8 3.8v3.1c-1.4 0-2.7-.4-3.8-1.1v6.3c0 4-3.1 6.3-6.2 6.3-3.4 0-6.1-2.7-6.1-6.1 0-3.7 3.2-6.6 7.1-6v3.2c-2-.3-3.8.9-3.8 2.8 0 1.6 1.2 2.9 2.8 2.9 1.8 0 3-1.2 3-3.4V3h3.2Z"
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span class="network-name">
+              TikTok
+            </span>
+
+          </a>
+
+
+
+          <!-- PINTEREST -->
+
+          <a
+            href="#"
+            class="network-link pinterest"
+            aria-label="Pinterest"
+          >
+
+            <span class="network-icon">
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+
+                <path
+                  d="M12 2C6.5 2 3 6 3 10.7c0 3.4 1.9 5.4 3.1 5.4.5 0 .8-1.4.8-1.8 0-.5-1.3-1.6-1.3-3.8 0-3.5 2.7-6 6.2-6 3 0 5.2 1.7 5.2 4.8 0 2.3-.9 6.5-3.9 6.5-1.1 0-2-1-2-2.1 0-1.6 1.1-3.1 1.1-4.7 0-2.7-3.9-2.2-3.9 1 0 .7.1 1.4.4 2-.6 2.5-1.8 6.2-1.8 8.8 0 .8.1 1.6.2 2.2.8-1.1 1.4-2.6 1.8-4 .3-1 .7-2.6.7-2.6.7 1.3 2.4 2 3.8 2 4.8 0 8.1-4.4 8.1-8.7C21.5 5.1 17.5 2 12 2Z"
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span class="network-name">
+              Pinterest
+            </span>
+
+          </a>
+
+
+
+          <!-- LINKEDIN -->
+
+          <a
+            href="#"
+            class="network-link linkedin"
+            aria-label="LinkedIn"
+          >
+
+            <span class="network-icon">
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+
+                <path
+                  d="M5.3 3.5A2.3 2.3 0 1 1 5.3 8a2.3 2.3 0 0 1 0-4.5ZM3.4 9.7h3.8V21H3.4V9.7Zm6.2 0h3.6v1.6h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-3.8v-5c0-1.2 0-2.8-1.7-2.8-1.7 0-2 1.3-2 2.7V21H9.6V9.7Z"
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span class="network-name">
+              LinkedIn
+            </span>
+
+          </a>
+
+
+
+          <!-- YOUTUBE -->
+
+          <a
+            href="#"
+            class="network-link youtube"
+            aria-label="YouTube"
+          >
+
+            <span class="network-icon">
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+
+                <path
+                  d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12Z"
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span class="network-name">
+              YouTube
+            </span>
+
+          </a>
+
+
+
+          <!-- WHATSAPP -->
+
+          <a
+            href="#"
+            class="network-link whatsapp"
+            aria-label="WhatsApp"
+          >
+
+            <span class="network-icon">
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.009-.371-.011-.57-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.89-9.884a9.82 9.82 0 0 1 7.021 2.91 9.825 9.825 0 0 1 2.9 7.022c-.003 5.45-4.437 9.884-9.927 9.884m8.413-18.297A11.815 11.815 0 0 0 12.055 0C5.495 0 .16 5.335.157 11.893c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.689 1.448h.005c6.558 0 11.893-5.335 11.896-11.893a11.82 11.82 0 0 0-3.488-8.413Z"
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span class="network-name">
+              WhatsApp
+            </span>
+
+          </a>
+
+
+
+          <!-- EMAIL -->
+
+          <a
+            href="#"
+            class="network-link email"
+            aria-label="E-mail"
+          >
+
+            <span class="network-icon">
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              >
+
+                <rect
+                  x="2.5"
+                  y="5"
+                  width="19"
+                  height="14"
+                  rx="1"
+                ></rect>
+
+                <path
+                  d="M3 6l9 7 9-7"
+                ></path>
+
+              </svg>
+
+            </span>
+
+            <span class="network-name">
+              E-mail
+            </span>
+
+          </a>
+
+
+        </div>
+
+
+      </div>
 
 
     </section>
@@ -1985,13 +2453,20 @@
 
       <div class="lifestyle-header">
 
+
         <h2 class="lifestyle-title">
+
           Lifestyle
+
         </h2>
 
+
         <span class="lifestyle-number">
+
           01 — 06
+
         </span>
+
 
       </div>
 
@@ -2015,7 +2490,6 @@
         </a>
 
 
-
         <a
           class="visual-item reveal"
           href="https://www.instagram.com/reel/DUB0davjxMN/?stkn=MTBkamFxODNwZDYzag=="
@@ -2029,7 +2503,6 @@
           >
 
         </a>
-
 
 
         <a
@@ -2047,7 +2520,6 @@
         </a>
 
 
-
         <a
           class="visual-item reveal"
           href="https://www.instagram.com/p/C4-_3OhrA0e/?stkn=bmprZXd0M3Z3cm03"
@@ -2063,7 +2535,6 @@
         </a>
 
 
-
         <a
           class="visual-item reveal"
           href="https://www.instagram.com/p/C4oRgfIPhzX/?stkn=YzR2amg4MG5rcWlj"
@@ -2077,7 +2548,6 @@
           >
 
         </a>
-
 
 
         <a
@@ -2097,6 +2567,7 @@
 
       </div>
 
+
     </section>
 
 
@@ -2108,7 +2579,9 @@
     <section class="closing">
 
       <p>
+
         Criar também é uma forma de viver.
+
       </p>
 
     </section>
@@ -2132,107 +2605,12 @@
     </div>
 
 
+    <div class="footer-mark">
 
-    <div class="socials">
-
-
-      <!-- INSTAGRAM -->
-
-      <a
-        href="https://instagram.com/milenar.ink"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="social-link instagram"
-        aria-label="Instagram"
+      <img
+        src="LOGOMARCA PRETA.png"
+        alt="MR"
       >
-
-
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.7"
-          aria-hidden="true"
-        >
-
-          <rect
-            x="3"
-            y="3"
-            width="18"
-            height="18"
-            rx="5"
-          ></rect>
-
-          <circle
-            cx="12"
-            cy="12"
-            r="4"
-          ></circle>
-
-          <circle
-            cx="17.5"
-            cy="6.5"
-            r="1"
-            fill="currentColor"
-            stroke="none"
-          ></circle>
-
-        </svg>
-
-
-      </a>
-
-
-
-      <!-- YOUTUBE -->
-
-      <a
-        href="#"
-        class="social-link youtube"
-        aria-label="YouTube"
-      >
-
-
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-
-          <path
-            d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12Z"
-          ></path>
-
-        </svg>
-
-
-      </a>
-
-
-
-      <!-- WHATSAPP -->
-
-      <a
-        href="#"
-        class="social-link whatsapp"
-        aria-label="WhatsApp"
-      >
-
-
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-
-          <path
-            fill="currentColor"
-            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.009-.371-.011-.57-.011-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.89-9.884a9.82 9.82 0 0 1 7.021 2.91 9.825 9.825 0 0 1 2.9 7.022c-.003 5.45-4.437 9.884-9.927 9.884m8.413-18.297A11.815 11.815 0 0 0 12.055 0C5.495 0 .16 5.335.157 11.893c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.88 11.88 0 0 0 5.689 1.448h.005c6.558 0 11.893-5.335 11.896-11.893a11.82 11.82 0 0 0-3.488-8.413Z"
-          ></path>
-
-        </svg>
-
-
-      </a>
-
 
     </div>
 
@@ -2271,9 +2649,7 @@
 
 
 
-    /* ======================================
-       HEADER
-    ======================================= */
+    /* HEADER */
 
     function updateHeader() {
 
@@ -2307,9 +2683,7 @@
 
 
 
-    /* ======================================
-       MENU
-    ======================================= */
+    /* MENU */
 
     function openMenu() {
 
@@ -2427,9 +2801,7 @@
       event => {
 
 
-        if (
-          event.key === "Escape"
-        ) {
+        if (event.key === "Escape") {
 
           closeMenu();
 
@@ -2441,9 +2813,7 @@
 
 
 
-    /* ======================================
-       REVEAL
-    ======================================= */
+    /* REVEAL */
 
     const revealElements =
       document.querySelectorAll(
@@ -2532,65 +2902,6 @@
 
 
     }
-
-
-
-    /* ======================================
-       SOCIAL TOUCH
-    ======================================= */
-
-    const socialLinks =
-      document.querySelectorAll(
-        ".social-link"
-      );
-
-
-    socialLinks.forEach(
-      link => {
-
-
-        link.addEventListener(
-          "touchstart",
-          () => {
-
-
-            socialLinks.forEach(
-              item => {
-
-
-                if (
-                  item !== link
-                ) {
-
-                  item.classList.remove(
-                    "active-color"
-                  );
-
-                }
-
-
-              }
-            );
-
-
-            link.classList.toggle(
-              "active-color"
-            );
-
-
-          },
-
-
-          {
-            passive: true
-          }
-
-
-        );
-
-
-      }
-    );
 
 
   </script>
