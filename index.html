@@ -10,11 +10,11 @@
   <style>
 
     :root {
-      --fundo: #f7f5ef;
-      --preto: #111111;
-      --texto: #333333;
-      --cinza: #777777;
-      --linha: #cbc8c0;
+      --bg: #f7f5ef;
+      --black: #111111;
+      --text: #333333;
+      --muted: #777777;
+      --line: #cbc8c0;
     }
 
     * {
@@ -28,9 +28,12 @@
     }
 
     body {
-      background: var(--fundo);
-      color: var(--preto);
+      background: var(--bg);
+      color: var(--black);
+
       font-family: Arial, Helvetica, sans-serif;
+      font-weight: 400;
+
       -webkit-font-smoothing: antialiased;
     }
 
@@ -41,6 +44,7 @@
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
 
@@ -51,8 +55,9 @@
     header {
       width: 88%;
       max-width: 1100px;
+
       margin: 0 auto;
-      padding: 28px 0 38px;
+      padding: 28px 0 42px;
     }
 
     .top-info {
@@ -60,30 +65,27 @@
       justify-content: space-between;
       align-items: center;
 
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 3px;
+      font-size: 12px;
+      letter-spacing: 2px;
       text-transform: uppercase;
     }
 
     .logo-area {
-      width: 100%;
+      padding-top: 48px;
       text-align: center;
-      padding-top: 42px;
     }
 
     .logo {
-      width: min(72%, 520px);
+      width: min(80%, 620px);
       margin: 0 auto;
     }
 
     .tagline {
-      margin-top: 18px;
+      margin-top: 22px;
 
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: 4px;
-      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: lowercase;
     }
 
 
@@ -92,16 +94,14 @@
     ========================= */
 
     .hero {
-      position: relative;
       width: 100%;
+      position: relative;
       overflow: hidden;
     }
 
     .hero img {
-      width: 100%;
-      height: 55vw;
-      max-height: 650px;
-      min-height: 440px;
+      height: min(58vw, 680px);
+      min-height: 450px;
 
       object-fit: cover;
       object-position: center;
@@ -109,75 +109,77 @@
 
     .hero-text {
       position: absolute;
+
       left: 7%;
       bottom: 8%;
 
       color: white;
 
-      font-size: 13px;
+      font-size: clamp(16px, 2vw, 22px);
       font-weight: 700;
-      line-height: 1.7;
-      letter-spacing: 3px;
-      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      white-space: nowrap;
     }
 
 
     /* =========================
-       CONTEÚDO
+       CONTAINER
     ========================= */
 
     .container {
-      width: 86%;
+      width: 88%;
       max-width: 1050px;
+
       margin: 0 auto;
     }
 
 
     /* =========================
-       SOBRE MIM
+       SOBRE
     ========================= */
 
     .sobre {
-      padding: 75px 0 85px;
+      padding: 90px 0;
 
       display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      gap: 55px;
+      grid-template-columns: 42% 1fr;
 
+      gap: 60px;
       align-items: center;
     }
 
     .sobre-foto img {
-      aspect-ratio: 4 / 4.6;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
       filter: grayscale(100%);
     }
 
     .sobre-label {
-      margin-bottom: 24px;
+      margin-bottom: 25px;
 
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .sobre h1 {
-      margin-bottom: 26px;
-
-      font-size: clamp(36px, 5vw, 55px);
+      font-size: 20px;
       font-weight: 700;
-      line-height: 1.03;
-      letter-spacing: -2px;
     }
 
-    .sobre-descricao {
+    .sobre-frase {
+      margin-bottom: 28px;
+
+      font-size: clamp(27px, 3.5vw, 46px);
+      font-weight: 700;
+
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+
+      white-space: nowrap;
+    }
+
+    .sobre-texto {
       max-width: 520px;
 
-      color: var(--texto);
+      color: var(--text);
 
-      font-size: 16px;
-      font-weight: 400;
+      font-size: 17px;
       line-height: 1.7;
     }
 
@@ -187,96 +189,88 @@
     ========================= */
 
     .links {
-      padding-bottom: 80px;
+      padding: 15px 0 90px;
     }
 
-    .titulo-secao {
+    .section-title {
+      margin-bottom: 20px;
+
       display: flex;
       align-items: center;
       gap: 25px;
 
-      margin-bottom: 18px;
-
-      font-size: 13px;
+      font-size: 17px;
       font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
     }
 
-    .titulo-secao::after {
+    .section-title::after {
       content: "";
-      flex: 1;
 
+      flex: 1;
       height: 1px;
-      background: var(--linha);
+
+      background: var(--line);
     }
 
     .link {
-      min-height: 72px;
+      min-height: 75px;
 
       display: grid;
-      grid-template-columns: 1fr 1fr 25px;
+      grid-template-columns: 1fr 1fr 30px;
       align-items: center;
 
-      border-top: 1px solid var(--linha);
+      border-top: 1px solid var(--line);
 
-      text-decoration: none;
-
-      transition:
-        padding .2s ease,
-        opacity .2s ease;
+      transition: padding .2s ease;
     }
 
     .link:last-child {
-      border-bottom: 1px solid var(--linha);
+      border-bottom: 1px solid var(--line);
     }
 
     .link:hover {
-      padding-left: 8px;
-      padding-right: 8px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
 
-    .link-nome {
+    .link-name {
       font-size: 16px;
       font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
     }
 
-    .link-descricao {
-      color: var(--texto);
+    .link-description {
+      color: var(--muted);
 
       font-size: 14px;
-      font-weight: 400;
     }
 
 
-    /* seta sem emoji */
+    /* SETA EM CSS */
 
-    .seta {
+    .arrow {
       position: relative;
 
-      width: 20px;
-      height: 14px;
+      width: 21px;
+      height: 16px;
 
       justify-self: end;
     }
 
-    .seta::before {
+    .arrow::before {
       content: "";
 
       position: absolute;
 
-      width: 18px;
+      width: 19px;
       height: 1.5px;
 
-      background: var(--preto);
+      background: var(--black);
 
-      top: 6px;
+      top: 7px;
       left: 0;
     }
 
-    .seta::after {
+    .arrow::after {
       content: "";
 
       position: absolute;
@@ -284,11 +278,11 @@
       width: 7px;
       height: 7px;
 
-      border-top: 1.5px solid var(--preto);
-      border-right: 1.5px solid var(--preto);
+      border-top: 1.5px solid var(--black);
+      border-right: 1.5px solid var(--black);
 
       right: 0;
-      top: 2.5px;
+      top: 3px;
 
       transform: rotate(45deg);
     }
@@ -302,48 +296,46 @@
       padding-bottom: 75px;
     }
 
-    .processo-titulo {
+    .processo-title {
+      margin-bottom: 25px;
+
       display: flex;
       align-items: center;
       gap: 25px;
 
-      margin-bottom: 22px;
-
-      font-size: 13px;
+      font-size: 17px;
       font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
     }
 
-    .processo-titulo::after {
+    .processo-title::after {
       content: "";
-      flex: 1;
 
+      flex: 1;
       height: 1px;
-      background: var(--linha);
+
+      background: var(--line);
     }
 
     .processo-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 22px;
     }
 
     .processo-item img {
-      width: 100%;
-      aspect-ratio: 1.45 / 1;
+      aspect-ratio: 1.35 / 1;
+
       object-fit: cover;
     }
 
-    .legenda {
-      margin-top: 13px;
+    .caption {
+      margin-top: 14px;
 
       text-align: center;
 
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1px;
     }
 
 
@@ -351,8 +343,8 @@
        FRASE FINAL
     ========================= */
 
-    .frase-final {
-      padding: 50px 0 95px;
+    .final {
+      padding: 70px 0 105px;
 
       display: flex;
       justify-content: center;
@@ -360,153 +352,168 @@
       text-align: center;
     }
 
-    .frase-final p {
-      max-width: 500px;
-
-      font-size: 17px;
+    .final p {
+      font-size: clamp(18px, 2.5vw, 27px);
       font-weight: 700;
-      line-height: 1.6;
-      letter-spacing: 4px;
-      text-transform: uppercase;
+
+      letter-spacing: -0.5px;
+
+      white-space: nowrap;
     }
 
 
     /* =========================
-       RODAPÉ
+       FOOTER
     ========================= */
 
     footer {
-      width: 86%;
+      width: 88%;
       max-width: 1050px;
 
       margin: 0 auto;
 
-      padding: 28px 0 40px;
+      padding: 30px 0 42px;
 
-      border-top: 1px solid var(--linha);
+      border-top: 1px solid var(--line);
 
       display: flex;
       justify-content: space-between;
 
       font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
     }
 
 
-    /* =========================
+    /* ==================================
        CELULAR
-    ========================= */
+    ================================== */
 
     @media (max-width: 700px) {
 
+
+      /* TOPO */
+
       header {
-        width: 88%;
-        padding: 24px 0 32px;
+        padding: 24px 0 34px;
       }
 
       .top-info {
         font-size: 10px;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
       }
 
       .logo-area {
-        padding-top: 38px;
+        padding-top: 42px;
       }
 
       .logo {
-        width: 88%;
+        width: 94%;
       }
 
       .tagline {
-        margin-top: 16px;
+        margin-top: 18px;
 
-        font-size: 11px;
-        letter-spacing: 3px;
+        font-size: 12px;
+        letter-spacing: 1px;
       }
 
 
-      /* FOTO PRINCIPAL */
+      /* HERO */
 
       .hero img {
-        height: 54vh;
+        height: 55vh;
         min-height: 430px;
       }
 
       .hero-text {
-        left: 7%;
+        left: 6%;
         bottom: 7%;
 
-        font-size: 12px;
-        letter-spacing: 2px;
+        font-size: 16px;
       }
 
 
       /* SOBRE */
 
-      .container {
-        width: 88%;
-      }
-
       .sobre {
-        padding: 65px 0 70px;
+        padding: 65px 0 75px;
 
-        grid-template-columns: 42% 1fr;
-        gap: 22px;
+        display: flex;
+        flex-direction: column;
 
-        align-items: center;
-      }
+        gap: 0;
 
-      .sobre-foto img {
-        aspect-ratio: 3 / 4;
+        align-items: stretch;
       }
 
       .sobre-label {
-        margin-bottom: 15px;
+        order: 1;
 
-        font-size: 11px;
-        letter-spacing: 2px;
+        margin-bottom: 25px;
+
+        font-size: 22px;
+        font-weight: 700;
       }
 
-      .sobre h1 {
-        margin-bottom: 18px;
+      .sobre-foto {
+        order: 2;
 
-        font-size: 28px;
-        line-height: 1.05;
-        letter-spacing: -1px;
+        width: 100%;
+        margin-bottom: 30px;
       }
 
-      .sobre-descricao {
-        font-size: 14px;
-        line-height: 1.55;
+      .sobre-foto img {
+        width: 100%;
+
+        aspect-ratio: 4 / 4.5;
+
+        object-fit: cover;
+      }
+
+      .sobre-conteudo {
+        display: contents;
+      }
+
+      .sobre-frase {
+        order: 3;
+
+        margin-bottom: 22px;
+
+        font-size: clamp(22px, 6.3vw, 28px);
+
+        white-space: nowrap;
+      }
+
+      .sobre-texto {
+        order: 4;
+
+        font-size: 16px;
+        line-height: 1.65;
       }
 
 
       /* LINKS */
 
       .links {
-        padding-bottom: 65px;
+        padding: 5px 0 70px;
       }
 
-      .titulo-secao {
-        margin-bottom: 15px;
-
-        font-size: 12px;
-        letter-spacing: 2px;
+      .section-title {
+        font-size: 17px;
       }
 
       .link {
-        min-height: 68px;
+        min-height: 70px;
 
-        grid-template-columns: 1fr 22px;
+        grid-template-columns: 1fr 25px;
       }
 
-      .link-nome {
-        font-size: 15px;
+      .link-name {
+        font-size: 16px;
       }
 
-      .link-descricao {
+      .link-description {
         display: none;
       }
 
@@ -517,49 +524,49 @@
         padding-bottom: 60px;
       }
 
-      .processo-titulo {
-        font-size: 12px;
-        letter-spacing: 2px;
+      .processo-title {
+        font-size: 17px;
       }
 
       .processo-grid {
-        gap: 10px;
+        gap: 11px;
       }
 
       .processo-item img {
-        aspect-ratio: 1 / 1.15;
+        aspect-ratio: 1 / 1.1;
       }
 
-      .legenda {
+      .caption {
         margin-top: 10px;
 
-        font-size: 10px;
-        line-height: 1.5;
-        letter-spacing: 1px;
+        font-size: 11px;
+        line-height: 1.4;
       }
 
 
       /* FINAL */
 
-      .frase-final {
-        padding: 35px 0 70px;
+      .final {
+        padding: 55px 0 80px;
       }
 
-      .frase-final p {
-        font-size: 14px;
-        letter-spacing: 3px;
+      .final p {
+        font-size: clamp(15px, 4.3vw, 19px);
+
+        white-space: nowrap;
       }
+
+
+      /* FOOTER */
 
       footer {
-        width: 88%;
-
         font-size: 9px;
-        letter-spacing: 1.5px;
       }
 
     }
 
   </style>
+
 </head>
 
 
@@ -571,20 +578,24 @@
   <header>
 
     <div class="top-info">
+
       <span>milenar.ink</span>
+
       <span>BH • MG</span>
+
     </div>
+
 
     <div class="logo-area">
 
       <img
         class="logo"
-        src="Milenar (6).png"
+        src="IMG_2555.png"
         alt="Milenar"
       >
 
       <p class="tagline">
-        arte • processo • lifestyle
+        arte, processo & lifestyle
       </p>
 
     </div>
@@ -603,8 +614,7 @@
     >
 
     <p class="hero-text">
-      arte em tudo<br>
-      que me atravessa.
+      arte em tudo que me atravessa.
     </p>
 
   </section>
@@ -617,6 +627,7 @@
     <!-- SOBRE MIM -->
 
     <section class="sobre">
+
 
       <div class="sobre-foto">
 
@@ -634,18 +645,18 @@
           Sobre mim
         </p>
 
-        <h1>
-          arte, processo<br>
-          & vida real.
+        <h1 class="sobre-frase">
+          arte, processo & lifestyle.
         </h1>
 
-        <p class="sobre-descricao">
+        <p class="sobre-texto">
           Sou Milena, artista em construção e futura tatuadora.
           Aqui compartilho meu processo, meus desenhos,
           minhas referências e um pouco da vida além da tatuagem.
         </p>
 
       </div>
+
 
     </section>
 
@@ -655,7 +666,8 @@
 
     <section class="links">
 
-      <div class="titulo-secao">
+
+      <div class="section-title">
         Me encontre por aqui
       </div>
 
@@ -666,77 +678,78 @@
         target="_blank"
       >
 
-        <span class="link-nome">
+        <span class="link-name">
           Instagram
         </span>
 
-        <span class="link-descricao">
+        <span class="link-description">
           meu dia a dia
         </span>
 
-        <span class="seta"></span>
+        <span class="arrow"></span>
 
       </a>
 
 
       <a class="link" href="#">
 
-        <span class="link-nome">
+        <span class="link-name">
           WhatsApp
         </span>
 
-        <span class="link-descricao">
+        <span class="link-description">
           orçamentos & contato
         </span>
 
-        <span class="seta"></span>
+        <span class="arrow"></span>
 
       </a>
 
 
       <a class="link" href="#">
 
-        <span class="link-nome">
+        <span class="link-name">
           YouTube
         </span>
 
-        <span class="link-descricao">
+        <span class="link-description">
           vídeos & processos
         </span>
 
-        <span class="seta"></span>
+        <span class="arrow"></span>
 
       </a>
 
 
       <a class="link" href="#">
 
-        <span class="link-nome">
+        <span class="link-name">
           Pinterest
         </span>
 
-        <span class="link-descricao">
+        <span class="link-description">
           referências
         </span>
 
-        <span class="seta"></span>
+        <span class="arrow"></span>
 
       </a>
 
 
       <a class="link" href="#">
 
-        <span class="link-nome">
+        <span class="link-name">
           Portfólio
         </span>
 
-        <span class="link-descricao">
+        <span class="link-description">
           arte & tattoo
         </span>
 
-        <span class="seta"></span>
+        <span class="arrow"></span>
 
       </a>
+
 
     </section>
 
@@ -746,7 +759,8 @@
 
     <section class="processo">
 
-      <div class="processo-titulo">
+
+      <div class="processo-title">
         Processo & criação
       </div>
 
@@ -761,7 +775,7 @@
             alt="Processo criativo"
           >
 
-          <p class="legenda">
+          <p class="caption">
             estudo • processo • referências
           </p>
 
@@ -775,7 +789,7 @@
             alt="Tattoo"
           >
 
-          <p class="legenda">
+          <p class="caption">
             tattoo • arte na pele
           </p>
 
@@ -784,17 +798,17 @@
 
       </div>
 
+
     </section>
 
 
 
     <!-- FRASE FINAL -->
 
-    <section class="frase-final">
+    <section class="final">
 
       <p>
-        criar também é uma<br>
-        forma de viver.
+        criar também é uma forma de viver.
       </p>
 
     </section>
