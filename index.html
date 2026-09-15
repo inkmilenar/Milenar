@@ -45,6 +45,16 @@
     }
 
     body {
+      color: var(--text);
+
+      font-family:
+        "IBM Plex Sans Condensed",
+        sans-serif;
+
+      font-weight: 300;
+
+      overflow-x: hidden;
+
       background:
         radial-gradient(
           circle at 20% 20%,
@@ -61,16 +71,6 @@
       background-size:
         17px 17px,
         23px 23px;
-
-      color: var(--text);
-
-      font-family:
-        "IBM Plex Sans Condensed",
-        sans-serif;
-
-      font-weight: 300;
-
-      overflow-x: hidden;
     }
 
     body::before {
@@ -117,10 +117,10 @@
       left: 0;
 
       width: 100%;
-      height: 94px;
+      height: 96px;
 
       padding:
-        15px
+        16px
         5%
         0;
 
@@ -154,6 +154,10 @@
       border-color: var(--line);
     }
 
+    .header-logo {
+      display: block;
+    }
+
     .header-logo img {
       width: 150px;
       height: auto;
@@ -162,8 +166,7 @@
         width .35s ease;
     }
 
-    .header.scrolled
-    .header-logo img {
+    .header.scrolled .header-logo img {
       width: 130px;
     }
 
@@ -172,7 +175,7 @@
 
       font-weight: 400;
 
-      letter-spacing: .20em;
+      letter-spacing: .19em;
 
       text-transform: uppercase;
 
@@ -193,7 +196,7 @@
       padding:
         116px
         5%
-        44px;
+        43px;
 
       display: flex;
 
@@ -297,7 +300,7 @@
 
 
     /* ========================================
-       TEXTO SOBRE
+       TEXTO
     ======================================== */
 
     .intro-content {
@@ -322,7 +325,7 @@
 
       letter-spacing: -.035em;
 
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
     .title-line {
@@ -336,7 +339,7 @@
       background:
         var(--text);
 
-      margin-bottom: 27px;
+      margin-bottom: 25px;
     }
 
     .intro-text {
@@ -365,7 +368,7 @@
 
 
     /* ========================================
-       ESTRELA ENTRE CREME E PRETO
+       ESTRELA NA TRANSIÇÃO
     ======================================== */
 
     .transition-star {
@@ -374,171 +377,32 @@
       width: 100%;
       height: 0;
 
-      z-index: 5;
+      z-index: 4;
 
       pointer-events: none;
     }
 
-    .star-half {
+    .transition-star img {
       position: absolute;
 
-      right: -90px;
-
       width:
-        clamp(330px,31vw,520px);
+        clamp(300px,27vw,430px);
 
-      height:
-        clamp(330px,31vw,520px);
+      height: auto;
+
+      right: -70px;
+      top: 0;
 
       transform:
         translateY(-50%);
 
-      overflow: hidden;
+      opacity: .075;
+
+      mix-blend-mode: difference;
 
       pointer-events: none;
-    }
 
-    /*
-       PARTE DE CIMA:
-       estrela preta sobre o creme
-    */
-
-    .star-light {
-      bottom: 0;
-
-      height:
-        calc(clamp(330px,31vw,520px) / 2);
-    }
-
-    .star-light img {
-      position: absolute;
-
-      left: 0;
-      bottom: 0;
-
-      width:
-        clamp(330px,31vw,520px);
-
-      height:
-        clamp(330px,31vw,520px);
-
-      object-fit: contain;
-
-      opacity: .055;
-    }
-
-    /*
-       PARTE DE BAIXO:
-       mesma estrela invertida para branco
-       sobre o fundo preto.
-    */
-
-    .star-dark {
-      top: 0;
-
-      height:
-        calc(clamp(330px,31vw,520px) / 2);
-    }
-
-    .star-dark img {
-      position: absolute;
-
-      left: 0;
-      top: 0;
-
-      width:
-        clamp(330px,31vw,520px);
-
-      height:
-        clamp(330px,31vw,520px);
-
-      object-fit: contain;
-
-      filter: invert(1);
-
-      opacity: .045;
-    }
-
-
-
-    /* ========================================
-       DESKTOP COM POUCA ALTURA
-    ======================================== */
-
-    @media
-    (min-width: 901px)
-    and
-    (max-height: 760px) {
-
-      .header {
-        height: 84px;
-
-        padding-top: 12px;
-      }
-
-      .header.scrolled {
-        height: 64px;
-
-        padding-top: 0;
-      }
-
-      .header-logo img {
-        width: 140px;
-      }
-
-      .header.scrolled
-      .header-logo img {
-        width: 125px;
-      }
-
-      .header-location {
-        font-size: 12px;
-      }
-
-      .intro {
-        min-height: 100vh;
-
-        padding:
-          94px
-          5%
-          28px;
-      }
-
-      .portrait-frame img {
-        height:
-          calc(100vh - 148px);
-
-        min-height: 415px;
-
-        max-height: 555px;
-      }
-
-      .intro-title {
-        font-size:
-          clamp(46px,4.25vw,68px);
-
-        margin-bottom: 21px;
-      }
-
-      .editorial-line {
-        margin-bottom: 18px;
-      }
-
-      .intro-text p {
-        font-size: 14px;
-
-        line-height: 1.38;
-
-        margin-bottom: 10px;
-      }
-
-      .portrait-year {
-        bottom: -21px;
-      }
-
-      .portrait-year::before {
-        height: 33px;
-      }
+      user-select: none;
     }
 
 
@@ -559,11 +423,11 @@
         var(--dark-text);
 
       padding:
-        50px
+        48px
         5%
-        48px;
+        46px;
 
-      overflow: hidden;
+      overflow: visible;
     }
 
     .links-inner {
@@ -581,32 +445,20 @@
 
 
     /* ========================================
-       CABEÇALHO LINKS
+       TÍTULO LINKS
     ======================================== */
 
     .links-heading {
-      display: flex;
-
-      align-items: flex-start;
-      justify-content: space-between;
-
-      gap: 40px;
-
-      margin-bottom: 25px;
+      margin-bottom: 26px;
     }
 
     .links-heading-left {
+      width: fit-content;
       max-width: 620px;
     }
 
-    /*
-       IMAGEM "LINKS"
-       com a tipografia Milenar
-    */
-
     .links-title-image {
       width: 145px;
-
       height: auto;
 
       object-fit: contain;
@@ -621,7 +473,7 @@
       margin-bottom: 12px;
 
       background:
-        rgba(255,255,255,.75);
+        rgba(255,255,255,.72);
     }
 
     .links-description {
@@ -632,20 +484,7 @@
       letter-spacing: .04em;
 
       color:
-        rgba(255,255,255,.70);
-    }
-
-    .links-index {
-      padding-top: 7px;
-
-      font-size: 10px;
-
-      letter-spacing: .22em;
-
-      color:
-        rgba(255,255,255,.45);
-
-      white-space: nowrap;
+        rgba(255,255,255,.68);
     }
 
 
@@ -663,10 +502,6 @@
         repeat(6,minmax(0,1fr));
     }
 
-    /*
-       LINHAS HORIZONTAIS COM FADE
-    */
-
     .social-grid::before,
     .social-grid::after {
       content: "";
@@ -682,10 +517,10 @@
         linear-gradient(
           90deg,
           transparent 0%,
-          rgba(255,255,255,.10) 5%,
-          rgba(255,255,255,.22) 16%,
-          rgba(255,255,255,.22) 84%,
-          rgba(255,255,255,.10) 95%,
+          rgba(255,255,255,.08) 5%,
+          rgba(255,255,255,.22) 15%,
+          rgba(255,255,255,.22) 85%,
+          rgba(255,255,255,.08) 95%,
           transparent 100%
         );
 
@@ -759,46 +594,39 @@
       color: #ffffff;
     }
 
-    .network-link:hover
-    .network-icon {
+    .network-link:hover .network-icon {
       transform:
         scale(1.09);
     }
 
-    .network-link.instagram:hover
-    .network-icon {
+    .network-link.instagram:hover .network-icon {
       color: #e1306c;
     }
 
-    .network-link.tiktok:hover
-    .network-icon {
+    .network-link.tiktok:hover .network-icon {
       color: #25f4ee;
     }
 
-    .network-link.pinterest:hover
-    .network-icon {
+    .network-link.pinterest:hover .network-icon {
       color: #e60023;
     }
 
-    .network-link.linkedin:hover
-    .network-icon {
+    .network-link.linkedin:hover .network-icon {
       color: #0a66c2;
     }
 
-    .network-link.youtube:hover
-    .network-icon {
+    .network-link.youtube:hover .network-icon {
       color: #ff0000;
     }
 
-    .network-link.whatsapp:hover
-    .network-icon {
+    .network-link.whatsapp:hover .network-icon {
       color: #25d366;
     }
 
 
 
     /* ========================================
-       ENCERRAMENTO
+       ÁREA DE ENCERRAMENTO
     ======================================== */
 
     .ending-space {
@@ -921,6 +749,87 @@
 
 
     /* ========================================
+       DESKTOP COM POUCA ALTURA
+    ======================================== */
+
+    @media
+    (min-width: 901px)
+    and
+    (max-height: 760px) {
+
+      .header {
+        height: 84px;
+
+        padding-top: 12px;
+      }
+
+      .header.scrolled {
+        height: 64px;
+
+        padding-top: 0;
+      }
+
+      .header-logo img {
+        width: 140px;
+      }
+
+      .header.scrolled .header-logo img {
+        width: 125px;
+      }
+
+      .header-location {
+        font-size: 12px;
+      }
+
+      .intro {
+        min-height: 100vh;
+
+        padding:
+          94px
+          5%
+          29px;
+      }
+
+      .portrait-frame img {
+        height:
+          calc(100vh - 148px);
+
+        min-height: 415px;
+
+        max-height: 555px;
+      }
+
+      .intro-title {
+        font-size:
+          clamp(46px,4.25vw,68px);
+
+        margin-bottom: 20px;
+      }
+
+      .editorial-line {
+        margin-bottom: 18px;
+      }
+
+      .intro-text p {
+        font-size: 14px;
+
+        line-height: 1.38;
+
+        margin-bottom: 10px;
+      }
+
+      .portrait-year {
+        bottom: -21px;
+      }
+
+      .portrait-year::before {
+        height: 33px;
+      }
+    }
+
+
+
+    /* ========================================
        TABLET
     ======================================== */
 
@@ -955,8 +864,10 @@
         letter-spacing: .07em;
       }
 
-      .star-half {
-        right: -120px;
+      .transition-star img {
+        width: 330px;
+
+        right: -90px;
       }
     }
 
@@ -989,8 +900,7 @@
         width: 108px;
       }
 
-      .header.scrolled
-      .header-logo img {
+      .header.scrolled .header-logo img {
         width: 100px;
       }
 
@@ -1093,7 +1003,6 @@
         margin-bottom: 16px;
 
         text-align: justify;
-
         text-justify: inter-word;
       }
 
@@ -1101,33 +1010,12 @@
 
       /* ESTRELA */
 
-      .star-half {
-        right: -105px;
+      .transition-star img {
+        width: 255px;
 
-        width: 290px;
-        height: 290px;
-      }
+        right: -78px;
 
-      .star-light {
-        height: 145px;
-      }
-
-      .star-dark {
-        height: 145px;
-      }
-
-      .star-light img,
-      .star-dark img {
-        width: 290px;
-        height: 290px;
-      }
-
-      .star-light img {
-        opacity: .045;
-      }
-
-      .star-dark img {
-        opacity: .04;
+        opacity: .065;
       }
 
 
@@ -1142,9 +1030,7 @@
       }
 
       .links-heading {
-        display: block;
-
-        margin-bottom: 28px;
+        margin-bottom: 27px;
       }
 
       .links-title-image {
@@ -1160,12 +1046,16 @@
       }
 
       .links-description {
+        max-width: 210px;
+
         font-size: 13px;
+
+        line-height: 1.4;
       }
 
-      .links-index {
-        display: none;
-      }
+
+
+      /* REDES */
 
       .social-grid {
         grid-template-columns:
@@ -1367,9 +1257,7 @@
           </h1>
 
 
-          <div
-            class="editorial-line"
-          ></div>
+          <div class="editorial-line"></div>
 
 
           <div class="intro-text">
@@ -1378,11 +1266,11 @@
 
               Meu nome é
               <strong>Milena Roberta</strong>.
-              Cresci em Belo Horizonte,
-              sempre cercada pela arte em suas
-              diferentes formas. Desenho desde
-              que me lembro e criar sempre foi
-              uma das coisas que mais amo fazer.
+              Cresci em Belo Horizonte, sempre
+              cercada pela arte em suas diferentes
+              formas. Desenho desde que me lembro
+              e criar sempre foi uma das coisas
+              que mais amo fazer.
 
             </p>
 
@@ -1390,13 +1278,13 @@
             <p>
 
               Com o tempo, encontrei na tatuagem
-              uma nova forma de transformar
-              desenho em expressão. Gosto de
-              pensar nela pelo que ela é: uma
+              uma nova forma de transformar desenho
+              em expressão. Gosto de pensar nela
+              pelo que ela é: uma
               <strong>arte milenar</strong>,
-              que atravessa histórias, pessoas
-              e gerações — e que acabou dando
-              sentido também ao nome Milenar.
+              que atravessa histórias, pessoas e
+              gerações — e que acabou dando sentido
+              também ao nome Milenar.
 
             </p>
 
@@ -1418,6 +1306,7 @@
 
         </div>
 
+
       </div>
 
     </section>
@@ -1425,7 +1314,7 @@
 
 
     <!-- ====================================
-         ESTRELA NA TRANSIÇÃO
+         ESTRELA
     ===================================== -->
 
     <div
@@ -1433,36 +1322,10 @@
       aria-hidden="true"
     >
 
-      <!--
-        METADE PRETA SOBRE O CREME
-      -->
-
-      <div
-        class="star-half star-light"
+      <img
+        src="estrela.png"
+        alt=""
       >
-
-        <img
-          src="estrela.png"
-          alt=""
-        >
-
-      </div>
-
-
-      <!--
-        METADE BRANCA SOBRE O PRETO
-      -->
-
-      <div
-        class="star-half star-dark"
-      >
-
-        <img
-          src="estrela.png"
-          alt=""
-        >
-
-      </div>
 
     </div>
 
@@ -1480,13 +1343,11 @@
       <div class="links-inner">
 
 
-        <!-- CABEÇALHO -->
+        <!-- TÍTULO -->
 
         <div class="links-heading">
 
-
           <div class="links-heading-left">
-
 
             <img
               src="links branco.png"
@@ -1494,11 +1355,9 @@
               class="links-title-image"
             >
 
-
             <div
               class="links-small-line"
             ></div>
-
 
             <p class="links-description">
 
@@ -1508,15 +1367,6 @@
             </p>
 
           </div>
-
-
-
-          <div class="links-index">
-
-            MILENAR — ONLINE
-
-          </div>
-
 
         </div>
 
@@ -1746,7 +1596,7 @@
 
 
     <!-- ====================================
-         RESPIRO ANTES DO RODAPÉ
+         RESPIRO
     ===================================== -->
 
     <div
@@ -1890,15 +1740,11 @@
 
       if (window.scrollY > 25) {
 
-        header.classList.add(
-          "scrolled"
-        );
+        header.classList.add("scrolled");
 
       } else {
 
-        header.classList.remove(
-          "scrolled"
-        );
+        header.classList.remove("scrolled");
 
       }
 
@@ -1919,40 +1765,31 @@
     /* ENTRADA SUAVE */
 
     const revealElements =
-      document.querySelectorAll(
-        ".reveal"
-      );
+      document.querySelectorAll(".reveal");
 
 
-    if (
-      "IntersectionObserver"
-      in window
-    ) {
+    if ("IntersectionObserver" in window) {
 
       const observer =
         new IntersectionObserver(
 
           entries => {
 
-            entries.forEach(
-              entry => {
+            entries.forEach(entry => {
 
-                if (
-                  entry.isIntersecting
-                ) {
+              if (entry.isIntersecting) {
 
+                entry.target
+                  .classList
+                  .add("visible");
+
+                observer.unobserve(
                   entry.target
-                    .classList
-                    .add("visible");
-
-                  observer.unobserve(
-                    entry.target
-                  );
-
-                }
+                );
 
               }
-            );
+
+            });
 
           },
 
@@ -1963,27 +1800,20 @@
         );
 
 
-      revealElements.forEach(
-        element => {
+      revealElements.forEach(element => {
 
-          observer.observe(
-            element
-          );
+        observer.observe(element);
 
-        }
-      );
+      });
+
 
     } else {
 
-      revealElements.forEach(
-        element => {
+      revealElements.forEach(element => {
 
-          element.classList.add(
-            "visible"
-          );
+        element.classList.add("visible");
 
-        }
-      );
+      });
 
     }
 
