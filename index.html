@@ -7,10 +7,13 @@
 
   <title>Milenar — Art & Lifestyle</title>
 
-  <!-- NOVA FONTE -->
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="LOGOMARCA PRETA.png">
+  <link rel="apple-touch-icon" href="LOGOMARCA PRETA.png">
+
+  <!-- FONTE -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link
     href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600&display=swap"
     rel="stylesheet"
@@ -30,11 +33,6 @@
       --page-width: 1180px;
       --page-padding: 42px;
     }
-
-
-    /* ========================================
-       BASE
-    ======================================== */
 
     * {
       box-sizing: border-box;
@@ -85,13 +83,12 @@
     }
 
 
-    /* ========================================
-       HEADER FIXO
-    ======================================== */
+    /* ================================
+       HEADER
+    ================================ */
 
     .site-header {
       position: fixed;
-
       top: 0;
       left: 0;
 
@@ -105,13 +102,12 @@
       border-bottom: 1px solid transparent;
 
       transition:
-        height 0.3s ease,
-        border-color 0.3s ease;
+        height .3s ease,
+        border-color .3s ease;
     }
 
     .site-header.scrolled {
-      height: 67px;
-
+      height: 68px;
       border-bottom-color: var(--line);
     }
 
@@ -122,9 +118,6 @@
       align-items: center;
       justify-content: space-between;
     }
-
-
-    /* LOGO */
 
     .header-logo {
       display: flex;
@@ -138,47 +131,44 @@
       object-fit: contain;
       object-position: left center;
 
-      transition: width 0.3s ease;
+      transition: width .3s ease;
     }
 
     .site-header.scrolled .header-logo img {
       width: 130px;
     }
 
-
-    /* LADO DIREITO */
-
     .header-right {
       display: flex;
       align-items: center;
-
-      gap: 24px;
+      gap: 22px;
     }
 
+    /* BELO HORIZONTE MAIOR */
+
     .location {
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 300;
 
-      letter-spacing: 0.08em;
+      letter-spacing: .06em;
 
       white-space: nowrap;
     }
 
 
-    /* ========================================
-       BOTÃO MENU
-    ======================================== */
+    /* ================================
+       HAMBÚRGUER
+    ================================ */
 
     .menu-button {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
 
       border: 0;
       background: transparent;
 
       display: flex;
       flex-direction: column;
-
       align-items: center;
       justify-content: center;
 
@@ -187,21 +177,20 @@
       cursor: pointer;
 
       position: relative;
-
       z-index: 1200;
     }
 
     .menu-button span {
-      width: 23px;
-      height: 1px;
-
       display: block;
+
+      width: 24px;
+      height: 1px;
 
       background: var(--text);
 
       transition:
-        transform 0.35s ease,
-        opacity 0.25s ease;
+        transform .35s ease,
+        opacity .25s ease;
     }
 
     .menu-button.active span:nth-child(1) {
@@ -217,16 +206,15 @@
     }
 
 
-    /* ========================================
+    /* ================================
        OVERLAY
-    ======================================== */
+    ================================ */
 
     .menu-overlay {
       position: fixed;
-
       inset: 0;
 
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0,0,0,.25);
 
       opacity: 0;
       visibility: hidden;
@@ -234,8 +222,8 @@
       z-index: 1050;
 
       transition:
-        opacity 0.35s ease,
-        visibility 0.35s ease;
+        opacity .35s ease,
+        visibility .35s ease;
     }
 
     .menu-overlay.active {
@@ -244,9 +232,9 @@
     }
 
 
-    /* ========================================
+    /* ================================
        MENU LATERAL
-    ======================================== */
+    ================================ */
 
     .side-menu {
       position: fixed;
@@ -262,18 +250,32 @@
       z-index: 1100;
 
       padding:
-        120px
+        105px
         55px
         50px;
 
       transform: translateX(100%);
 
       transition:
-        transform 0.45s cubic-bezier(.22,.75,.2,1);
+        transform .45s cubic-bezier(.22,.75,.2,1);
     }
 
     .side-menu.active {
       transform: translateX(0);
+    }
+
+    /* NOVA LOGOMARCA MR */
+
+    .menu-brand {
+      margin-bottom: 42px;
+    }
+
+    .menu-brand img {
+      width: 72px;
+      height: 72px;
+
+      object-fit: contain;
+      object-position: left center;
     }
 
     .side-menu nav {
@@ -281,7 +283,7 @@
       flex-direction: column;
     }
 
-    .side-menu a {
+    .side-menu nav a {
       padding: 19px 0;
 
       border-bottom: 1px solid var(--line);
@@ -290,27 +292,27 @@
       font-weight: 300;
 
       transition:
-        padding-left 0.25s ease,
-        opacity 0.25s ease;
+        padding-left .25s ease,
+        opacity .25s ease;
     }
 
-    .side-menu a:first-child {
+    .side-menu nav a:first-child {
       border-top: 1px solid var(--line);
     }
 
     @media (hover: hover) {
 
-      .side-menu a:hover {
+      .side-menu nav a:hover {
         padding-left: 7px;
-        opacity: 0.55;
+        opacity: .55;
       }
 
     }
 
 
-    /* ========================================
+    /* ================================
        HERO
-    ======================================== */
+    ================================ */
 
     .hero {
       margin-top: 82px;
@@ -323,40 +325,36 @@
       overflow: hidden;
     }
 
-    .hero img {
+    .hero > img {
       width: 100%;
       height: 100%;
 
       object-fit: cover;
 
-      transition: transform 0.8s ease;
-    }
-
-    @media (hover: hover) {
-
-      .hero:hover img {
-        transform: scale(1.01);
-      }
-
+      transition: transform .8s ease;
     }
 
     .hero::after {
       content: "";
 
       position: absolute;
-
       inset: 0;
 
       background:
         linear-gradient(
           to top,
-          rgba(0,0,0,0.22),
+          rgba(0,0,0,.22),
           rgba(0,0,0,0) 40%
         );
     }
 
+    @media (hover: hover) {
 
-    /* TEXTO DA FOTO */
+      .hero:hover > img {
+        transform: scale(1.01);
+      }
+
+    }
 
     .hero-content {
       position: absolute;
@@ -375,68 +373,57 @@
     }
 
     .hero-text {
-      color: #ffffff;
+      color: white;
 
-      font-size: 28px;
+      font-size: 27px;
       font-weight: 300;
 
-      line-height: 1.15;
-
-      letter-spacing: 0.055em;
+      line-height: 1.12;
+      letter-spacing: .05em;
     }
 
 
-    /* ========================================
-       SEÇÕES
-    ======================================== */
+    /* ================================
+       BLOCO EDITORIAL
+       FOTO + SOBRE + LINKS
+    ================================ */
 
-    section {
+    .editorial-section {
+      padding: 76px 0 88px;
+
       scroll-margin-top: 90px;
     }
 
-    .section-title {
-      font-size: 43px;
-      font-weight: 300;
-
-      line-height: 1;
-
-      margin-bottom: 34px;
-    }
-
-
-    /* ========================================
-       SOBRE
-    ======================================== */
-
-    .about {
-      padding: 78px 0 45px;
-    }
-
-    .about-grid {
+    .editorial-grid {
       display: grid;
 
+      /* FOTO / SOBRE / LINKS */
       grid-template-columns:
-        minmax(0, 0.9fr)
-        minmax(0, 1.1fr);
+        minmax(0, 34fr)
+        minmax(0, 38fr)
+        minmax(0, 28fr);
 
-      gap: 65px;
+      gap: 46px;
 
-      align-items: center;
+      align-items: start;
     }
+
+
+    /* FOTO */
 
     .about-photo {
       overflow: hidden;
     }
 
     .about-photo img {
+      width: 100%;
+
       aspect-ratio: 4 / 5;
 
       object-fit: cover;
-
-      /* CORTA UM POUCO MAIS A PARTE SUPERIOR */
       object-position: center 65%;
 
-      transition: transform 0.7s ease;
+      transition: transform .7s ease;
     }
 
     @media (hover: hover) {
@@ -447,43 +434,49 @@
 
     }
 
-    .about-impact {
-      font-size: 27px;
+
+    /* SOBRE */
+
+    .section-title {
+      font-size: 41px;
       font-weight: 300;
 
-      letter-spacing: 0.025em;
+      line-height: 1;
 
-      margin-bottom: 26px;
+      margin-bottom: 28px;
+    }
+
+    .about-impact {
+      font-size: 25px;
+      font-weight: 300;
+
+      letter-spacing: .025em;
+
+      margin-bottom: 24px;
     }
 
     .about-text p {
-      max-width: 610px;
-
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 300;
 
-      line-height: 1.65;
+      line-height: 1.55;
 
-      letter-spacing: 0.01em;
+      letter-spacing: .008em;
 
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .about-text strong {
       font-weight: 500;
     }
 
-
-    /* ========================================
-       ESTRELAS
-    ======================================== */
+    /* ESTRELAS */
 
     .stars {
-      padding: 27px 0 60px;
+      margin-top: 27px;
 
-      font-size: 18px;
-
-      letter-spacing: 0.35em;
+      font-size: 17px;
+      letter-spacing: .3em;
 
       user-select: none;
     }
@@ -493,7 +486,7 @@
     }
 
     .stars span:last-child {
-      transition: transform 0.8s ease;
+      transition: transform .8s ease;
     }
 
     @media (hover: hover) {
@@ -505,12 +498,12 @@
     }
 
 
-    /* ========================================
-       LINKS
-    ======================================== */
+    /* ================================
+       LINKS — TERCEIRA COLUNA
+    ================================ */
 
-    .links-section {
-      padding: 0 0 90px;
+    .links-column {
+      min-width: 0;
     }
 
     .links-list {
@@ -518,55 +511,60 @@
     }
 
     .link-row {
-      min-height: 64px;
+      min-height: 58px;
 
       display: grid;
 
       grid-template-columns:
         minmax(0, 1fr)
-        28px;
+        25px;
 
       align-items: center;
 
       border-bottom: 1px solid var(--line);
 
-      font-size: 21px;
+      font-size: 20px;
       font-weight: 300;
 
       transition:
-        opacity 0.25s ease,
-        padding-left 0.25s ease;
+        opacity .25s ease,
+        padding-left .25s ease;
     }
 
     .link-arrow {
       justify-self: end;
 
-      font-size: 20px;
+      font-size: 19px;
 
-      transition: transform 0.25s ease;
+      transition: transform .25s ease;
     }
 
     @media (hover: hover) {
 
       .link-row:hover {
-        opacity: 0.55;
-
-        padding-left: 7px;
+        opacity: .55;
+        padding-left: 6px;
       }
 
       .link-row:hover .link-arrow {
-        transform: translate(3px, -3px);
+        transform: translate(3px,-3px);
       }
 
     }
 
 
-    /* ========================================
+    /* ================================
        DIÁRIO VISUAL
-    ======================================== */
+    ================================ */
 
     .visual {
-      padding: 0 0 32px;
+      padding: 0 0 30px;
+
+      scroll-margin-top: 90px;
+    }
+
+    .visual .section-title {
+      margin-bottom: 32px;
     }
 
     .visual-grid {
@@ -589,12 +587,9 @@
       object-fit: cover;
 
       transition:
-        transform 0.7s ease,
-        filter 0.7s ease;
+        transform .7s ease,
+        filter .7s ease;
     }
-
-
-    /* 6 IMAGENS */
 
     .visual-item:nth-child(1) {
       grid-column: span 5;
@@ -630,16 +625,15 @@
 
       .visual-item:hover img {
         transform: scale(1.025);
-
-        filter: brightness(0.92);
+        filter: brightness(.92);
       }
 
     }
 
 
-    /* ========================================
-       ANIMAÇÃO APENAS EM ALGUMAS FOTOS
-    ======================================== */
+    /* ================================
+       REVEAL DISCRETO
+    ================================ */
 
     .photo-reveal {
       opacity: 0;
@@ -647,20 +641,19 @@
       transform: translateY(12px);
 
       transition:
-        opacity 0.65s ease,
-        transform 0.65s ease;
+        opacity .65s ease,
+        transform .65s ease;
     }
 
     .photo-reveal.visible {
       opacity: 1;
-
       transform: translateY(0);
     }
 
 
-    /* ========================================
+    /* ================================
        FRASE FINAL
-    ======================================== */
+    ================================ */
 
     .closing {
       padding: 30px 0 38px;
@@ -670,20 +663,20 @@
       font-size: 20px;
       font-weight: 300;
 
-      letter-spacing: 0.04em;
+      letter-spacing: .04em;
     }
 
 
-    /* ========================================
+    /* ================================
        FOOTER
-    ======================================== */
+    ================================ */
 
     footer {
       border-top: 1px solid var(--line);
     }
 
     .footer-inner {
-      min-height: 72px;
+      min-height: 86px;
 
       display: flex;
       align-items: center;
@@ -692,54 +685,52 @@
       gap: 30px;
     }
 
+    /* TEXTO MAIOR */
+
     .copyright {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 300;
 
-      letter-spacing: 0.08em;
+      letter-spacing: .07em;
 
       text-transform: uppercase;
     }
 
 
-    /* ========================================
-       REDES SOCIAIS
-    ======================================== */
+    /* ================================
+       REDES SOCIAIS MAIORES
+    ================================ */
 
     .socials {
       display: flex;
-
       align-items: center;
 
-      gap: 13px;
+      gap: 10px;
     }
 
     .social-link {
-      width: 34px;
-      height: 34px;
+      width: 40px;
+      height: 40px;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
       color: var(--text);
 
       transition:
-        color 0.22s ease,
-        transform 0.22s ease;
+        color .22s ease,
+        transform .22s ease;
     }
 
     .social-link svg {
-      width: 18px;
-      height: 18px;
+      width: 22px;
+      height: 22px;
 
       fill: none;
-
       stroke: currentColor;
 
       stroke-width: 1.7;
-
       stroke-linecap: round;
       stroke-linejoin: round;
     }
@@ -749,33 +740,21 @@
       stroke: none;
     }
 
-
-    /* CORES DAS REDES */
-
     @media (hover: hover) {
 
       .social-link.instagram:hover {
         color: var(--instagram);
-
-        transform:
-          translateY(-2px)
-          scale(1.07);
+        transform: translateY(-2px) scale(1.07);
       }
 
       .social-link.youtube:hover {
         color: var(--youtube);
-
-        transform:
-          translateY(-2px)
-          scale(1.07);
+        transform: translateY(-2px) scale(1.07);
       }
 
       .social-link.whatsapp:hover {
         color: var(--whatsapp);
-
-        transform:
-          translateY(-2px)
-          scale(1.07);
+        transform: translateY(-2px) scale(1.07);
       }
 
     }
@@ -796,16 +775,15 @@
     }
 
 
-    /* ========================================
+    /* =====================================
        MOBILE
-    ======================================== */
+    ====================================== */
 
     @media (max-width: 700px) {
 
       :root {
         --page-padding: 22px;
       }
-
 
       /* HEADER */
 
@@ -827,18 +805,19 @@
       }
 
       .header-right {
-        gap: 7px;
+        gap: 4px;
       }
 
-      .location {
-        font-size: 12px;
+      /* BELO HORIZONTE MAIOR NO CELULAR TAMBÉM */
 
-        letter-spacing: 0.045em;
+      .location {
+        font-size: 14px;
+        letter-spacing: .025em;
       }
 
       .menu-button {
-        width: 39px;
-        height: 39px;
+        width: 38px;
+        height: 38px;
       }
 
       .menu-button span {
@@ -852,14 +831,22 @@
         width: 82%;
 
         padding:
-          105px
+          92px
           28px
           40px;
       }
 
-      .side-menu a {
-        font-size: 25px;
+      .menu-brand {
+        margin-bottom: 35px;
+      }
 
+      .menu-brand img {
+        width: 62px;
+        height: 62px;
+      }
+
+      .side-menu nav a {
+        font-size: 25px;
         padding: 19px 0;
       }
 
@@ -868,7 +855,6 @@
 
       .hero {
         margin-top: 67px;
-
         height: 465px;
       }
 
@@ -877,16 +863,63 @@
       }
 
       .hero-text {
-        font-size: 24px;
-
-        line-height: 1.15;
+        font-size: 23px;
+        line-height: 1.13;
       }
 
 
-      /* TÍTULOS */
+      /* =================================
+         EDITORIAL MOBILE
+         VOLTA A SER EMPILHADO
+      ================================= */
 
-      section {
-        scroll-margin-top: 75px;
+      .editorial-section {
+        padding: 56px 0 68px;
+      }
+
+      .editorial-grid {
+        display: flex;
+        flex-direction: column;
+
+        gap: 0;
+      }
+
+      /*
+        No celular:
+        Sobre mim
+        foto
+        texto
+        estrelas
+        Links
+      */
+
+      .about-column {
+        display: contents;
+      }
+
+      .about-photo {
+        order: 2;
+
+        width: 100%;
+
+        margin-bottom: 27px;
+      }
+
+      .about-photo img {
+        aspect-ratio: 4 / 5;
+        object-position: center 65%;
+      }
+
+      .about-content {
+        order: 3;
+      }
+
+      .links-column {
+        order: 4;
+
+        width: 100%;
+
+        margin-top: 49px;
       }
 
       .section-title {
@@ -895,34 +928,22 @@
         margin-bottom: 27px;
       }
 
+      /*
+        Este título fica acima da foto
+      */
 
-      /* SOBRE */
+      .mobile-about-title {
+        display: block;
 
-      .about {
-        padding: 58px 0 35px;
+        order: 1;
       }
 
-      .about-grid {
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 26px;
-      }
-
-      .about-photo {
-        width: 100%;
-      }
-
-      .about-photo img {
-        aspect-ratio: 4 / 5;
-
-        object-position: center 65%;
+      .desktop-about-title {
+        display: none;
       }
 
       .about-impact {
         font-size: 24px;
-
         margin-bottom: 21px;
       }
 
@@ -934,21 +955,14 @@
         margin-bottom: 17px;
       }
 
-
-      /* ESTRELAS */
-
       .stars {
-        padding: 18px 0 48px;
+        margin-top: 28px;
 
         font-size: 16px;
       }
 
 
       /* LINKS */
-
-      .links-section {
-        padding: 0 0 70px;
-      }
 
       .link-row {
         min-height: 58px;
@@ -957,7 +971,7 @@
       }
 
 
-      /* GALERIA */
+      /* DIÁRIO */
 
       .visual {
         padding-bottom: 25px;
@@ -965,7 +979,7 @@
 
       .visual-grid {
         grid-template-columns:
-          repeat(2, 1fr);
+          repeat(2,1fr);
 
         gap: 4px;
       }
@@ -980,7 +994,7 @@
       .visual-item:nth-child(3) {
         grid-column: span 1;
 
-        aspect-ratio: 0.9 / 1;
+        aspect-ratio: .9 / 1;
       }
 
       .visual-item:nth-child(4) {
@@ -993,11 +1007,11 @@
       .visual-item:nth-child(6) {
         grid-column: span 1;
 
-        aspect-ratio: 0.9 / 1;
+        aspect-ratio: .9 / 1;
       }
 
 
-      /* FRASE FINAL */
+      /* FRASE */
 
       .closing {
         padding: 26px 0 32px;
@@ -1009,39 +1023,54 @@
       /* FOOTER */
 
       .footer-inner {
-        min-height: 65px;
+        min-height: 76px;
 
-        gap: 10px;
+        gap: 8px;
       }
 
       .copyright {
-        max-width: 185px;
+        max-width: 205px;
 
-        font-size: 9px;
+        font-size: 11px;
 
-        line-height: 1.4;
+        line-height: 1.35;
+
+        letter-spacing: .045em;
       }
 
       .socials {
-        gap: 4px;
+        gap: 2px;
       }
 
       .social-link {
-        width: 30px;
-        height: 30px;
+        width: 34px;
+        height: 34px;
       }
 
       .social-link svg {
-        width: 17px;
-        height: 17px;
+        width: 20px;
+        height: 20px;
       }
 
     }
 
 
-    /* ========================================
-       ACESSIBILIDADE
-    ======================================== */
+    /* DESKTOP */
+
+    @media (min-width: 701px) {
+
+      .mobile-about-title {
+        display: none;
+      }
+
+      .desktop-about-title {
+        display: block;
+      }
+
+    }
+
+
+    /* ACESSIBILIDADE */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -1057,23 +1086,19 @@
 
       .photo-reveal {
         opacity: 1;
-
         transform: none;
       }
 
     }
 
   </style>
-
 </head>
 
 
 <body>
 
 
-  <!-- =====================================
-       HEADER
-  ====================================== -->
+  <!-- HEADER -->
 
   <header
     class="site-header"
@@ -1082,18 +1107,15 @@
 
     <div class="container header-inner">
 
-
       <a
         href="#top"
         class="header-logo"
         aria-label="Milenar - início"
       >
-
         <img
           src="Logo preta.PNG"
           alt="Milenar"
         >
-
       </a>
 
 
@@ -1103,24 +1125,19 @@
           Belo Horizonte • MG
         </span>
 
-
         <button
           class="menu-button"
           id="menuButton"
           type="button"
-
           aria-label="Abrir menu"
           aria-expanded="false"
         >
-
           <span></span>
           <span></span>
           <span></span>
-
         </button>
 
       </div>
-
 
     </div>
 
@@ -1135,21 +1152,23 @@
   ></div>
 
 
-  <!-- =====================================
-       MENU LATERAL
-  ====================================== -->
+  <!-- MENU LATERAL -->
 
   <aside
     class="side-menu"
     id="sideMenu"
-
     aria-hidden="true"
   >
 
-    <!--
-      Quando você subir a logo MR,
-      vamos colocar ela aqui.
-    -->
+    <!-- LOGOMARCA MR -->
+
+    <div class="menu-brand">
+      <img
+        src="LOGOMARCA PRETA.png"
+        alt="MR"
+      >
+    </div>
+
 
     <nav>
 
@@ -1170,9 +1189,7 @@
   </aside>
 
 
-  <!-- =====================================
-       HERO
-  ====================================== -->
+  <!-- HERO -->
 
   <section
     class="hero"
@@ -1184,14 +1201,11 @@
       alt="Universo Milenar"
     >
 
-
     <div class="hero-content">
 
       <div class="hero-text">
-
         arte em tudo<br>
         que me atravessa.
-
       </div>
 
     </div>
@@ -1202,22 +1216,26 @@
   <main class="container">
 
 
-    <!-- =====================================
-         SOBRE
-    ====================================== -->
+    <!-- ==================================
+         FOTO + SOBRE + LINKS
+    =================================== -->
 
     <section
-      class="about"
+      class="editorial-section"
       id="sobre"
     >
 
-      <h2 class="section-title">
-        Sobre mim
-      </h2>
+      <div class="editorial-grid">
 
 
-      <div class="about-grid">
+        <!-- TÍTULO APENAS NO MOBILE -->
 
+        <h2 class="section-title mobile-about-title">
+          Sobre mim
+        </h2>
+
+
+        <!-- COLUNA 1: FOTO -->
 
         <div class="about-photo photo-reveal">
 
@@ -1229,172 +1247,131 @@
         </div>
 
 
-        <div class="about-text">
+        <!-- COLUNA 2: SOBRE -->
+
+        <div class="about-content">
+
+          <h2 class="section-title desktop-about-title">
+            Sobre mim
+          </h2>
 
 
           <div class="about-impact">
-
             Potential Artist &amp; Lifestyle
+          </div>
+
+
+          <div class="about-text">
+
+            <p>
+              Meu nome é
+              <strong>Milena Roberta</strong>.
+              Cresci em Belo Horizonte,
+              sempre cercada pela arte em suas
+              diferentes formas. Desenho desde
+              que me lembro e criar sempre foi
+              uma das coisas que mais amo fazer.
+            </p>
+
+            <p>
+              Com o tempo, encontrei na tatuagem
+              uma nova forma de transformar desenho
+              em expressão. Gosto de pensar nela
+              pelo que ela é: uma
+              <strong>arte milenar</strong>,
+              que atravessa histórias, pessoas e
+              gerações — e que acabou dando sentido
+              também ao nome Milenar.
+            </p>
+
+            <p>
+              Por aqui, compartilho não só o que
+              crio, mas também um pouco do meu
+              lifestyle, das minhas referências
+              e do meu cotidiano. Porque, para mim,
+              <strong>
+                a arte não está só no que a gente
+                cria. Ela está em cada parte da vida.
+              </strong>
+            </p>
 
           </div>
 
 
-          <p>
-
-            Meu nome é
-            <strong>Milena Roberta</strong>.
-            Cresci em Belo Horizonte,
-            sempre cercada pela arte em
-            suas diferentes formas.
-            Desenho desde que me lembro
-            e criar sempre foi uma das
-            coisas que mais amo fazer.
-
-          </p>
-
-
-          <p>
-
-            Com o tempo, encontrei na
-            tatuagem uma nova forma de
-            transformar desenho em expressão.
-
-            Gosto de pensar nela pelo que ela é:
-            uma <strong>arte milenar</strong>,
-            que atravessa histórias, pessoas e
-            gerações — e que acabou dando sentido
-            também ao nome Milenar.
-
-          </p>
-
-
-          <p>
-
-            Por aqui, compartilho não só
-            o que crio, mas também um pouco
-            do meu lifestyle, das minhas
-            referências e do meu cotidiano.
-
-            Porque, para mim,
-
-            <strong>
-              a arte não está só no que
-              a gente cria. Ela está em
-              cada parte da vida.
-            </strong>
-
-          </p>
-
+          <div
+            class="stars"
+            aria-hidden="true"
+          >
+            <span>✶</span>
+            <span>✶</span>
+          </div>
 
         </div>
 
-      </div>
 
-    </section>
+        <!-- COLUNA 3: LINKS -->
 
-
-    <!-- ESTRELAS -->
-
-    <div
-      class="stars"
-      aria-hidden="true"
-    >
-
-      <span>✶</span>
-      <span>✶</span>
-
-    </div>
-
-
-    <!-- =====================================
-         LINKS
-    ====================================== -->
-
-    <section
-      class="links-section"
-      id="links"
-    >
-
-      <h2 class="section-title">
-        Links
-      </h2>
-
-
-      <div class="links-list">
-
-
-        <a
-          class="link-row"
-
-          href="https://instagram.com/milenar.ink"
-
-          target="_blank"
-          rel="noopener noreferrer"
+        <div
+          class="links-column"
+          id="links"
         >
 
-          <span>Instagram</span>
-
-          <span class="link-arrow">
-            ↗
-          </span>
-
-        </a>
+          <h2 class="section-title">
+            Links
+          </h2>
 
 
-        <a
-          class="link-row"
-          href="#"
-        >
+          <div class="links-list">
 
-          <span>Pinterest</span>
-
-          <span class="link-arrow">
-            ↗
-          </span>
-
-        </a>
-
-
-        <a
-          class="link-row"
-          href="#"
-        >
-
-          <span>Portfólio</span>
-
-          <span class="link-arrow">
-            ↗
-          </span>
-
-        </a>
+            <a
+              class="link-row"
+              href="https://instagram.com/milenar.ink"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Instagram</span>
+              <span class="link-arrow">↗</span>
+            </a>
 
 
-        <a
-          class="link-row"
-          href="#"
-        >
-
-          <span>WhatsApp</span>
-
-          <span class="link-arrow">
-            ↗
-          </span>
-
-        </a>
+            <a
+              class="link-row"
+              href="#"
+            >
+              <span>Pinterest</span>
+              <span class="link-arrow">↗</span>
+            </a>
 
 
-        <a
-          class="link-row"
-          href="#"
-        >
+            <a
+              class="link-row"
+              href="#"
+            >
+              <span>Portfólio</span>
+              <span class="link-arrow">↗</span>
+            </a>
 
-          <span>YouTube</span>
 
-          <span class="link-arrow">
-            ↗
-          </span>
+            <a
+              class="link-row"
+              href="#"
+            >
+              <span>WhatsApp</span>
+              <span class="link-arrow">↗</span>
+            </a>
 
-        </a>
+
+            <a
+              class="link-row"
+              href="#"
+            >
+              <span>YouTube</span>
+              <span class="link-arrow">↗</span>
+            </a>
+
+          </div>
+
+        </div>
 
 
       </div>
@@ -1402,9 +1379,9 @@
     </section>
 
 
-    <!-- =====================================
+    <!-- ==================================
          DIÁRIO VISUAL
-    ====================================== -->
+    =================================== -->
 
     <section
       class="visual"
@@ -1418,101 +1395,54 @@
 
       <div class="visual-grid">
 
+        <div class="visual-item photo-reveal">
+          <img src="Imagem 2.JPG" alt="">
+        </div>
+
+        <div class="visual-item">
+          <img src="Imagem 3.JPG" alt="">
+        </div>
+
+        <div class="visual-item">
+          <img src="Imagem 4.JPG" alt="">
+        </div>
 
         <div class="visual-item photo-reveal">
-
-          <img
-            src="Imagem 2.JPG"
-            alt=""
-          >
-
+          <img src="Imagem 5.JPG" alt="">
         </div>
-
 
         <div class="visual-item">
-
-          <img
-            src="Imagem 3.JPG"
-            alt=""
-          >
-
+          <img src="Imagem 6.JPG" alt="">
         </div>
-
 
         <div class="visual-item">
-
-          <img
-            src="Imagem 4.JPG"
-            alt=""
-          >
-
+          <img src="Foto 7.JPG" alt="">
         </div>
-
-
-        <div class="visual-item photo-reveal">
-
-          <img
-            src="Imagem 5.JPG"
-            alt=""
-          >
-
-        </div>
-
-
-        <div class="visual-item">
-
-          <img
-            src="Imagem 6.JPG"
-            alt=""
-          >
-
-        </div>
-
-
-        <div class="visual-item">
-
-          <img
-            src="Foto 7.JPG"
-            alt=""
-          >
-
-        </div>
-
 
       </div>
 
     </section>
 
 
-    <!-- =====================================
-         FRASE FINAL
-    ====================================== -->
+    <!-- FRASE FINAL -->
 
     <div class="closing">
-
       criar também é uma forma de viver.
-
     </div>
 
 
   </main>
 
 
-  <!-- =====================================
-       FOOTER
-  ====================================== -->
+  <!-- FOOTER -->
 
   <footer>
 
-
     <div class="container footer-inner">
 
-
       <div class="copyright">
-
         © 2026 MILENAR —
         TODOS OS DIREITOS RESERVADOS
-
       </div>
 
 
@@ -1523,12 +1453,9 @@
 
         <a
           class="social-link instagram"
-
           href="https://instagram.com/milenar.ink"
-
           target="_blank"
           rel="noopener noreferrer"
-
           aria-label="Instagram"
         >
 
@@ -1551,8 +1478,7 @@
             <circle
               cx="17.5"
               cy="6.5"
-              r="0.8"
-
+              r=".8"
               fill="currentColor"
               stroke="none"
             ></circle>
@@ -1566,16 +1492,13 @@
 
         <a
           class="social-link youtube"
-
           href="#"
-
           aria-label="YouTube"
         >
 
           <svg viewBox="0 0 24 24">
 
-            <path
-              d="
+            <path d="
               M21.6 7.2
               C21.4 5.9 20.4 4.9 19.1 4.7
               C17.3 4.4 14.8 4.3 12 4.3
@@ -1595,8 +1518,7 @@
               V8.5
               L16 12
               Z
-              "
-            ></path>
+            "></path>
 
           </svg>
 
@@ -1607,27 +1529,22 @@
 
         <a
           class="social-link whatsapp"
-
           href="#"
-
           aria-label="WhatsApp"
         >
 
           <svg viewBox="0 0 24 24">
 
-            <path
-              d="
+            <path d="
               M20.5 11.7
               A8.5 8.5 0 0 1 8 19.2
               L3.5 20.5
               L4.8 16.1
               A8.5 8.5 0 1 1 20.5 11.7
               Z
-              "
-            ></path>
+            "></path>
 
-            <path
-              d="
+            <path d="
               M8.4 7.8
               C8.7 7.5 9 7.6 9.2 8
               L10.2 10
@@ -1642,8 +1559,7 @@
               C11 16.6 7.5 13.2 7.1 9.8
               C7 9 7.5 8.2 8.4 7.8
               Z
-              "
-            ></path>
+            "></path>
 
           </svg>
 
@@ -1659,10 +1575,7 @@
 
   <script>
 
-
-    /* =====================================
-       MENU
-    ====================================== */
+    /* MENU */
 
     const menuButton =
       document.getElementById("menuButton");
@@ -1677,13 +1590,10 @@
     function openMenu() {
 
       menuButton.classList.add("active");
-
       sideMenu.classList.add("active");
-
       menuOverlay.classList.add("active");
 
       document.body.classList.add("menu-open");
-
 
       menuButton.setAttribute(
         "aria-expanded",
@@ -1706,13 +1616,10 @@
     function closeMenu() {
 
       menuButton.classList.remove("active");
-
       sideMenu.classList.remove("active");
-
       menuOverlay.classList.remove("active");
 
       document.body.classList.remove("menu-open");
-
 
       menuButton.setAttribute(
         "aria-expanded",
@@ -1739,13 +1646,9 @@
         if (
           sideMenu.classList.contains("active")
         ) {
-
           closeMenu();
-
         } else {
-
           openMenu();
-
         }
 
       }
@@ -1782,9 +1685,7 @@
     );
 
 
-    /* =====================================
-       HEADER AO ROLAR
-    ====================================== */
+    /* HEADER */
 
     const header =
       document.getElementById("siteHeader");
@@ -1800,14 +1701,11 @@
         );
 
       },
-
       { passive: true }
     );
 
 
-    /* =====================================
-       ANIMAÇÃO APENAS DE ALGUMAS FOTOS
-    ====================================== */
+    /* FOTOS */
 
     const photos =
       document.querySelectorAll(
@@ -1827,9 +1725,7 @@
             entries.forEach(
               entry => {
 
-                if (
-                  entry.isIntersecting
-                ) {
+                if (entry.isIntersecting) {
 
                   entry.target
                     .classList
@@ -1847,7 +1743,7 @@
           },
 
           {
-            threshold: 0.12
+            threshold: .12
           }
 
         );
@@ -1868,9 +1764,7 @@
     }
 
 
-    /* =====================================
-       COR DOS ÍCONES NO TOQUE
-    ====================================== */
+    /* COR DOS ÍCONES NO TOQUE */
 
     document
       .querySelectorAll(".social-link")
@@ -1885,15 +1779,12 @@
             );
 
           },
-
           { passive: true }
         );
 
       });
 
-
   </script>
 
 </body>
-
 </html>
