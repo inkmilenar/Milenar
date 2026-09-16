@@ -28,7 +28,6 @@
       --background: #f4f0e7;
       --text: #111111;
       --line: rgba(17,17,17,.24);
-
       --dark: #101010;
       --dark-text: #f5f2eb;
       --dark-line: rgba(255,255,255,.20);
@@ -158,9 +157,7 @@
 
     .header.scrolled {
       height: 68px;
-
       padding-top: 0;
-
       border-color: var(--line);
     }
 
@@ -182,11 +179,14 @@
     }
 
     .header-location {
-      font-size: 15px;
+      font-family:
+        "IBM Plex Sans Condensed",
+        sans-serif;
 
+      font-size: 15px;
       font-weight: 300;
 
-      letter-spacing: .12em;
+      letter-spacing: .08em;
 
       text-transform: uppercase;
 
@@ -249,9 +249,10 @@
 
       width: 100%;
       max-width: 600px;
-
-      overflow: hidden;
     }
+
+
+    /* DETALHE ATRÁS DA FOTO */
 
     .portrait-frame::before {
       content: "";
@@ -267,10 +268,24 @@
       background:
         rgba(110,100,85,.08);
 
-      z-index: -1;
+      z-index: 0;
     }
 
-    .portrait-frame img {
+
+    /* Camada que segura a foto
+       para permitir o zoom sem cortar o detalhe */
+
+    .portrait-image-wrap {
+      position: relative;
+
+      width: 100%;
+
+      overflow: hidden;
+
+      z-index: 1;
+    }
+
+    .portrait-image-wrap img {
       width: 100%;
 
       height:
@@ -291,17 +306,21 @@
         transform 1s cubic-bezier(.2,.7,.2,1);
     }
 
-    /* Movimento sutil da foto */
+
+    /* MOVIMENTO SUTIL NO DESKTOP */
 
     @media (hover: hover) and (pointer: fine) {
 
-      .portrait-frame:hover img {
+      .portrait-image-wrap:hover img {
         transform:
           scale(1.025)
           translate(2px,-2px);
       }
 
     }
+
+
+    /* ANO DA FOTO */
 
     .portrait-year {
       position: absolute;
@@ -321,6 +340,8 @@
         serif;
 
       font-size: 15px;
+
+      z-index: 2;
     }
 
     .portrait-year::before {
@@ -383,7 +404,12 @@
     }
 
     .intro-text p {
+      font-family:
+        "IBM Plex Sans Condensed",
+        sans-serif;
+
       font-size: 15px;
+      font-weight: 300;
 
       line-height: 1.48;
 
@@ -683,46 +709,39 @@
       color: #ffffff;
     }
 
-    .network-link:hover
-    .network-icon {
+    .network-link:hover .network-icon {
       transform:
         scale(1.09);
     }
 
-    .network-link.instagram:hover
-    .network-icon {
+    .network-link.instagram:hover .network-icon {
       color: #e1306c;
     }
 
-    .network-link.tiktok:hover
-    .network-icon {
+    .network-link.tiktok:hover .network-icon {
       color: #25f4ee;
     }
 
-    .network-link.pinterest:hover
-    .network-icon {
+    .network-link.pinterest:hover .network-icon {
       color: #e60023;
     }
 
-    .network-link.linkedin:hover
-    .network-icon {
+    .network-link.linkedin:hover .network-icon {
       color: #0a66c2;
     }
 
-    .network-link.youtube:hover
-    .network-icon {
+    .network-link.youtube:hover .network-icon {
       color: #ff0000;
     }
 
-    .network-link.whatsapp:hover
-    .network-icon {
+    .network-link.whatsapp:hover .network-icon {
       color: #25d366;
     }
 
 
 
     /* ========================================
-       ENCERRAMENTO
+       FRASE FINAL
     ======================================== */
 
     .closing-section {
@@ -730,12 +749,12 @@
 
       width: 100%;
 
-      min-height: 320px;
+      min-height: 170px;
 
       padding:
-        70px
+        50px
         5%
-        62px;
+        44px;
 
       display: flex;
 
@@ -754,37 +773,20 @@
     }
 
     .closing-quote {
-      max-width: 920px;
+      max-width: 650px;
 
       font-family:
-        "Libre Caslon Display",
-        Georgia,
-        serif;
+        "IBM Plex Sans Condensed",
+        sans-serif;
 
-      font-size:
-        clamp(38px,4.2vw,68px);
+      font-size: 15px;
+      font-weight: 300;
 
-      font-weight: 400;
+      line-height: 1.48;
 
-      line-height: 1.02;
+      letter-spacing: 0;
 
-      letter-spacing: -.025em;
-    }
-
-    .closing-quote span {
-      display: block;
-    }
-
-    .closing-signature {
-      margin-top: 27px;
-
-      font-size: 11px;
-
-      font-weight: 400;
-
-      letter-spacing: .18em;
-
-      text-transform: uppercase;
+      font-style: normal;
     }
 
 
@@ -817,9 +819,7 @@
     .footer-copy {
       font-size: 11px;
 
-      letter-spacing: .10em;
-
-      text-transform: uppercase;
+      letter-spacing: .08em;
 
       white-space: nowrap;
     }
@@ -876,7 +876,7 @@
 
 
     /* ========================================
-       ANIMAÇÃO DE ENTRADA DO SOBRE
+       ANIMAÇÃO DO SOBRE
     ======================================== */
 
     .reveal {
@@ -910,13 +910,11 @@
 
       .header {
         height: 84px;
-
         padding-top: 12px;
       }
 
       .header.scrolled {
         height: 64px;
-
         padding-top: 0;
       }
 
@@ -924,8 +922,7 @@
         width: 140px;
       }
 
-      .header.scrolled
-      .header-logo img {
+      .header.scrolled .header-logo img {
         width: 125px;
       }
 
@@ -938,7 +935,7 @@
           29px;
       }
 
-      .portrait-frame img {
+      .portrait-image-wrap img {
         height:
           calc(100vh - 148px);
 
@@ -958,11 +955,20 @@
         margin-bottom: 18px;
       }
 
+      /*
+        Mantemos 15px aqui para o texto do Sobre,
+        Belo Horizonte e frase final continuarem
+        exatamente no mesmo tamanho.
+      */
+
+      .intro-text p,
+      .header-location,
+      .closing-quote {
+        font-size: 15px;
+      }
+
       .intro-text p {
-        font-size: 14px;
-
         line-height: 1.38;
-
         margin-bottom: 10px;
       }
 
@@ -1000,10 +1006,6 @@
 
       .intro-title {
         font-size: 52px;
-      }
-
-      .intro-text p {
-        font-size: 13px;
       }
 
       .network-name {
@@ -1059,17 +1061,15 @@
         width: 103px;
       }
 
-      .header.scrolled
-      .header-logo img {
+      .header.scrolled .header-logo img {
         width: 96px;
       }
 
       .header-location {
         font-size: 15px;
-
         font-weight: 300;
 
-        letter-spacing: .06em;
+        letter-spacing: .04em;
 
         white-space: nowrap;
       }
@@ -1115,17 +1115,28 @@
         max-width: none;
       }
 
-      .portrait-frame img {
+
+      /* DETALHE DA FOTO NO CELULAR */
+
+      .portrait-frame::before {
+        top: -14px;
+        left: -9px;
+
+        width: 43%;
+        height: 26%;
+      }
+
+      .portrait-image-wrap {
+        width: 100%;
+      }
+
+      .portrait-image-wrap img {
         width: 100%;
         height: 440px;
 
         object-position:
           center 68%;
 
-        transform: none;
-      }
-
-      .portrait-frame:hover img {
         transform: none;
       }
 
@@ -1168,6 +1179,7 @@
 
       .intro-text p {
         font-size: 15px;
+        font-weight: 300;
 
         line-height: 1.57;
 
@@ -1288,39 +1300,24 @@
 
 
 
-      /* ENCERRAMENTO */
+      /* FRASE FINAL */
 
       .closing-section {
-        min-height: 260px;
+        min-height: 145px;
 
         padding:
-          58px
+          44px
           18px
-          52px;
-
-        align-items: center;
+          40px;
       }
 
       .closing-quote {
         max-width: 100%;
 
-        font-size: 38px;
+        font-size: 15px;
+        font-weight: 300;
 
-        line-height: 1.04;
-
-        letter-spacing: -.02em;
-      }
-
-      .closing-quote span {
-        display: inline;
-      }
-
-      .closing-signature {
-        margin-top: 23px;
-
-        font-size: 10px;
-
-        letter-spacing: .16em;
+        line-height: 1.57;
       }
 
 
@@ -1332,13 +1329,23 @@
           calc(100% - 36px);
 
         min-height: 80px;
+
+        gap: 18px;
       }
 
       .footer-copy {
         font-size: 9px;
+
+        line-height: 1.35;
+
+        letter-spacing: .04em;
+
+        white-space: normal;
       }
 
       .footer-socials {
+        flex-shrink: 0;
+
         gap: 17px;
       }
 
@@ -1365,23 +1372,24 @@
         width: 96px;
       }
 
-      .header.scrolled
-      .header-logo img {
+      .header.scrolled .header-logo img {
         width: 90px;
       }
 
+      /*
+        Não reduzimos Belo Horizonte.
+        Ele permanece com os mesmos 15px
+        do texto do Sobre e da frase final.
+      */
+
       .header-location {
-        font-size: 14px;
-        letter-spacing: .035em;
+        font-size: 15px;
+        letter-spacing: .02em;
       }
 
       .links-description {
         font-size: 12px;
         letter-spacing: .025em;
-      }
-
-      .closing-quote {
-        font-size: 34px;
       }
 
     }
@@ -1418,7 +1426,7 @@
         transform: none;
       }
 
-      .portrait-frame img {
+      .portrait-image-wrap img {
         transform: none !important;
       }
     }
@@ -1477,16 +1485,22 @@
       <div class="intro-grid">
 
 
+        <!-- FOTO -->
+
         <div
           class="portrait-area reveal"
         >
 
           <div class="portrait-frame">
 
-            <img
-              src="Minha foto .JPG"
-              alt="Milena Roberta"
-            >
+            <div class="portrait-image-wrap">
+
+              <img
+                src="Minha foto .JPG"
+                alt="Milena Roberta"
+              >
+
+            </div>
 
           </div>
 
@@ -1498,6 +1512,8 @@
         </div>
 
 
+
+        <!-- TEXTO -->
 
         <div
           class="intro-content reveal"
@@ -1852,21 +1868,16 @@
 
 
     <!-- ====================================
-         ENCERRAMENTO
+         FRASE FINAL
     ===================================== -->
 
     <section class="closing-section">
 
       <div class="closing-inner">
 
-        <blockquote class="closing-quote">
-          <span>“Entre o que vivo e o que crio,</span>
-          <span>a arte acontece.”</span>
-        </blockquote>
-
-        <div class="closing-signature">
-          Milenar — ’26
-        </div>
+        <p class="closing-quote">
+          “Entre o que vivo e o que crio, a arte acontece.”
+        </p>
 
       </div>
 
@@ -1885,7 +1896,7 @@
 
 
     <div class="footer-copy">
-      © 2026 Milenar
+      © 2026 Milenar. Todos os direitos reservados.
     </div>
 
 
