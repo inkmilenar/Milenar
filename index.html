@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ========================================
-       TÍTULO
+       TÍTULO E DESCRIÇÃO
   ========================================= -->
 
   <title>Milenar — Potential Artist & Lifestyle</title>
@@ -18,18 +18,28 @@
 
 
   <!-- ========================================
-       FAVICON
+       FAVICON AUTOMÁTICO
+       Claro = ícone preto
+       Escuro = ícone branco
   ========================================= -->
 
   <link
     rel="icon"
     type="image/png"
-    href="icone-guia-v2.png"
+    href="icone-modo-claro.png"
+    media="(prefers-color-scheme: light)"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="icone-modo-escuro.png"
+    media="(prefers-color-scheme: dark)"
   >
 
   <link
     rel="apple-touch-icon"
-    href="icone-guia-v2.png"
+    href="icone-modo-claro.png"
   >
 
 
@@ -38,14 +48,16 @@
        WhatsApp / Instagram / Facebook etc.
   ========================================= -->
 
-  <meta
-    property="og:type"
-    content="website"
-  >
+  <meta property="og:type" content="website">
 
   <meta
     property="og:site_name"
     content="Milenar"
+  >
+
+  <meta
+    property="og:url"
+    content="https://milenar.vercel.app/"
   >
 
   <meta
@@ -56,11 +68,6 @@
   <meta
     property="og:description"
     content="Arte, tatuagem, referências e lifestyle por Milena Roberta."
-  >
-
-  <meta
-    property="og:url"
-    content="https://milenar.vercel.app/"
   >
 
   <meta
@@ -110,7 +117,7 @@
 
 
   <!-- ========================================
-       PRELOAD DAS IMAGENS IMPORTANTES
+       PRELOAD
   ========================================= -->
 
   <link
@@ -1622,7 +1629,6 @@
         width: 17px;
         height: 17px;
       }
-
 
       .footer-social:active {
         transform:
